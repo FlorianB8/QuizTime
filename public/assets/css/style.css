@@ -1,0 +1,96 @@
+body, html{
+    font-family: 'Bubblegum Sans', cursive;
+    height: 100%;
+    width: 100%;
+    background-color: #fcf7f8;
+    color: #1A1C1F;
+}
+.footer, .header{
+    background-color: #B4656F;
+}
+
+/* Couleur background et texte différentes pour chaque bloc */
+.bgBlue {
+    background-color: #2A2E45;
+}
+.bgPink {
+    background-color: #B4656F;
+}
+.textPink {
+    color: #B4656F;
+}
+.textBlue {
+    color: #2A2E45;
+}
+/* ----------------------------------------------------------- */
+
+/* Bordure en bas pour faire un soulignement de texte */
+.borderPink{
+    border-bottom: 5px solid #B4656F;
+    border-radius: 5px;
+}
+.borderBlue {
+    border-bottom: 5px solid #2A2E45;
+    border-radius: 5px; 
+}
+/* -------------------------------------------------- */
+
+/* Affichage des catégories à gauche et à droite en alternance */
+.categoryLeft, .categoryRight{
+    width: 70%;
+}
+
+.categoryLeft {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+
+.categoryRight {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; 
+}
+a {
+    text-decoration: none;
+    color: #2A2E45;
+}
+/*-------------------------------------------------------------*/
+
+
+
+
+/* HEADER */
+.linkPage {
+    font-size: 1.5rem;
+}
+.btnLog {
+    border: 2px solid #1A1C1F;
+    border-radius: 10px;
+    background-color:rgba(252, 247, 248, 0.3);
+    box-shadow: 2px 2px #1A1C1F;
+}
+/* --------- */
+/* FOOTER */
+
+/* -------- */
+.linkCategory{
+    font-size: 2rem;
+}
+
+
+/* Formulaire de chaque page */
+
+.fieldForm {
+    background-color: #B4656F;
+    border: 0px;
+    border-radius: 7px;
+    color: #1A1C1F;
+    box-shadow: 2px 2px 5px #1A1C1F, inset 1px 1px 3px #1A1C1F;
+}
+.fieldForm::placeholder {
+    color: white;
+    opacity: 0.4;
+  }
+
+/* -------------------------- */
+
+

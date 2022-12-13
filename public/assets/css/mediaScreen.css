@@ -1,0 +1,55 @@
+/* Responsive pour le mobile */
+@media screen and (max-width : 992px) {
+    body {
+        font-size: 2rem;
+    }
+    /* Affichage podium mobile */
+    .player1,
+    .player2,
+    .player3 {
+        position: absolute;
+    }
+
+    .player1{
+        margin-top: 60px;
+        color: #F9E745;
+    }  
+    .player2,.player3{
+        margin-top: 120px;
+    }
+    .player2 {
+        margin-right: 250px;
+        color: #9F9F9F;
+    }
+    .player3 {
+        margin-left: 250px;
+        color: #87583D;
+    }
+    /* ------------------------*/
+    .categoryLeft, .categoryRight{
+        width: 70vw;
+    }
+}
+/* --------------------------- */
+
+/* Responsive pour tablette */
+@media screen and (min-width: 992px) {
+    /* Animation au survol de chaque catégorie */
+    .borderPinkRight{
+        border-right: 5px solid #B4656F;
+    }
+    
+    /* ------------------------- */
+}
+/* --------------------------- */
+
+@media screen and (min-width: 1200px) {
+    .categoryLeft, .categoryRight{
+        width: 25vw;
+        transition-duration: 1s;
+    }
+    .categoryLeft:hover, .categoryRight:hover{
+        width: 30vw;
+        background-color: #D8B4B9;
+    }
+}
