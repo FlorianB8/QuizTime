@@ -5,6 +5,13 @@ body, html{
     background-color: #fcf7f8;
     color: #1A1C1F;
 }
+.presentation {
+  height: 40vh;
+}
+
+p{
+  font-size: 1.5rem;
+}
 .footer, .header{
     background-color: #B4656F;
 }
@@ -12,6 +19,7 @@ body, html{
 /* Couleur background et texte différentes pour chaque bloc */
 .bgBlue {
     background-color: #2A2E45;
+    z-index: 2;
 }
 .bgPink {
     background-color: #B4656F;
@@ -28,10 +36,15 @@ body, html{
 .borderPink{
     border-bottom: 5px solid #B4656F;
     border-radius: 5px;
+    width: 70%;
 }
 .borderBlue {
     border-bottom: 5px solid #2A2E45;
     border-radius: 5px; 
+    z-index: 2;
+}
+.info {
+  z-index: 2;
 }
 /* -------------------------------------------------- */
 
@@ -59,14 +72,27 @@ a {
 
 
 /* HEADER */
-.linkPage {
-    font-size: 1.5rem;
+
+.linkPage{
+  font-size: 1.5rem;
+  color: #2A2E45;
+  transition-duration: 0.5s;
+}
+
+.linkPage:hover {
+  color: #D8B4B9;
+
 }
 .btnLog {
+    font-size: 1.5rem;
     border: 2px solid #1A1C1F;
     border-radius: 10px;
     background-color:rgba(252, 247, 248, 0.3);
     box-shadow: 2px 2px #1A1C1F;
+    transition-duration: 0.5s;
+}
+.btnLog:hover {
+  background-color:rgba(252, 247, 248, 0.7);
 }
 /* --------- */
 /* FOOTER */
@@ -75,6 +101,7 @@ a {
 .linkCategory{
     font-size: 2rem;
 }
+
 
 
 /* Formulaire de chaque page */
@@ -94,3 +121,85 @@ a {
 /* -------------------------- */
 
 
+/* CAROUSEL des différentes catégories pour mobile */
+ul, body, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .slider {
+    box-sizing: border-box;
+    background: transparent;
+    width: 90vw;
+    height: 50vh;
+    overflow: hidden;
+  }
+  
+  .slider .slides-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: -webkit-grab;
+    cursor: grab;
+    transition: transform .5s;
+  }
+  
+  .slider:active .slides-container {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+  
+  .slider .slide {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    transform: scale(.9);
+    transform-origin: center;
+    transition: transform .5s, opacity .5s;
+  }
+  
+  .slider .slide.current {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .slider .slide .parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .5s, opacity .5s;
+  }
+  
+  .slider .slide.current .parallax {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .slider .slide .parallax p {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+    font-family: Circular, sans-serif;
+    font-size: 3em;
+  }
+  
+.imgQuizCarousel {
+    width: 100%;
+    border: 0px;
+    border-radius: 20px;
+}
+
+.delCarousel {
+    display: none;
+}
+/* ----------------------------------- */
