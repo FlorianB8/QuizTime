@@ -9,6 +9,20 @@ body, html{
   height: 40vh;
 }
 
+.bold {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #D8B4B9;
+}
+.logoPresentation {
+  width: 10vw;
+}
+.contact {
+  height: 60vh;
+}
+.formLog {
+  height: 85vh;
+}
 p{
   font-size: 1.5rem;
 }
@@ -36,8 +50,8 @@ p{
 .borderPink{
     border-bottom: 5px solid #B4656F;
     border-radius: 5px;
-    width: 70%;
 }
+
 .borderBlue {
     border-bottom: 5px solid #2A2E45;
     border-radius: 5px; 
@@ -85,10 +99,9 @@ a {
 }
 .btnLog {
     font-size: 1.5rem;
-    border: 2px solid #1A1C1F;
     border-radius: 10px;
-    background-color:rgba(252, 247, 248, 0.3);
-    box-shadow: 2px 2px #1A1C1F;
+    color:#D8B4B9;
+    background-color: #2A2E45;
     transition-duration: 0.5s;
 }
 .btnLog:hover {

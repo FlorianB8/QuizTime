@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/assets/css/mediaScreen.css">
-    <title>Projet site La Manu</title>
+    <title>QuizTime</title>
 </head>
 <body>
     <!-- Navbar responsive bootstrap -->
@@ -27,13 +27,12 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <!-- Lien vers chaque page -->
                         <div class="navbar-nav allLinkPage me-5">
-                            <a href="index.html" class="mx-4 nav-link linkPage">Accueil</a>
                             <a href="categorie.html" class="mx-4 nav-link linkPage">Catégories</a>
                             <a href="classement.html" class="mx-4 nav-link linkPage">Classement</a>
                             <a href="contact.html" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                         </div>
                         <div class="navbar-nav ms-auto">
-                            <a href="log.html" class="nav-item nav-link btnLog linkLog">Se connecter/S'inscrire</a>
+                            <a href="log.html" class="nav-item nav-link btnLog linkLog">Se connecter</a>
                         </div>
                         <!-------------------------->
                     </div>
@@ -45,11 +44,11 @@
 
     <main>
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-8">
+            <div class="row justify-content-center test">
+                <div class="col-12 col-lg-8 ">
                     <div class="m-lg-5 my-5 d-flex flex-column justify-content-center textBlue presentation">
                         <h1 class="borderBlue">Présentation</h1>
-                        <p class="my-3 mx-lg-5 info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis iure magnam at obcaecati doloremque ex veniam, corporis, inventore distinctio excepturi neque ratione minima facilis minus dolor quis eligendi iste architecto!</p>            
+                        <p class="my-3 mx-lg-5 info"> <img class="logoPresentation" src="./public/assets/img/logo3.png" alt="Logo texte de QuizTime">  est un site de quiz pour améliorer sa culture générale. Vous retrouvez ici différentes catégories de quiz qui vous permettront d’améliorer vos connaissances sur un sujet.</p>            
                     </div>
                 </div>
                 <div class="col-12 bgBlue">
@@ -95,7 +94,7 @@
                         <!-------------------------------------------------->
 
                         <!-- Quiz les plus populaires du site -->
-                        <div class="col-12 col-lg-6 p-0 borderPinkLeft">
+                        <div class="col-12 col-lg-6 p-0 ">
                             <div class="my-4 d-flex flex-column justify-content-center">
                                 <div class="px-3 textPink bor">
                                     <h1 class="borderPink my-5">Quiz populaires</h1>
@@ -103,7 +102,7 @@
                                         <ul class="slides-container ">
                                             <li class="slide ">
                                                 <div class="parallax divCarousel ">
-                                                    <img class="imgQuizCarousel" src="./public/assets/img/harry potter.jpg" alt="Image du quiz Harry Potter">
+                                                    <a href="./categorie.html"><img class="imgQuizCarousel" src="./public/assets/img/harry potter.jpg" alt="Image du quiz Harry Potter"></a>
                                                 </div>
                                             </li>
                                             <li class="slide">
@@ -171,6 +170,9 @@
                         <a href="./contact.html">Contact</a>
                         <a href="#">Newsletter</a>
                     </nav>
+                </div>
+                <div class="col-12">
+                    <p>© copyright Florian from the MANU PAN PAN PAN</p>
                 </div>
             </div>
         </div>

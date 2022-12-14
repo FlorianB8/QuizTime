@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="public/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/assets/css/mediaScreen.css">
-    <title>Projet site La Manu</title>
+    <title>QuizTime</title>
 </head>
 <body>
     <!-- Navbar responsive bootstrap -->
@@ -44,29 +44,43 @@
     <!---------------------------->
     <main>
         <div class="container-fluid bgBlue">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-4 me-lg-5">
+            <div class="row justify-content-center ">
+                <div class="col-12 col-lg-4 me-lg-5 formLog ">
                     <div class="px-3 my-5">
                         <h1 class="borderPink textPink">Connexion</h1>
                     </div>
                     <!-- Formulaire pour la connexion -->
                     <form class="d-flex flex-column my-5" action="">
-                        <input class="fieldForm p-2 my-3" type="text" placeholder="Pseudo">
-                        <input class="fieldForm p-2 my-3" type="password" placeholder="Mot de passe">
+                        <input id="pseudoLogin" class="fieldForm p-2 my-3" type="text" placeholder="Pseudo">
+                        <input id="passwordLogin" class="fieldForm p-2 my-3" type="password" placeholder="Mot de passe">
+                        <div class="d-flex justify-content-center">
+                            <input class="fieldForm w-50 p-2 my-3" type="submit" name="confirmLogin" id="confirmLogin" value="Connexion">
+                        </div>
                     </form>
                     <!--------------------------------->
                 </div>
-                <div class="col-12 col-lg-4 ms-lg-5">
+                <div class="col-12 col-lg-4 ms-lg-5 formLog ">
                     <div class="px-3 my-5">
                         <h1 class="borderPink textPink">Inscription</h1>
                     </div>
                     <!-- Formulaire pour l'inscription -->
-                    <form class="d-flex flex-column my-5" action="">
-                        <input class="fieldForm p-2 my-3" type="text" placeholder="Pseudo">
-                        <input class="fieldForm p-2 my-3" type="email" placeholder="Adresse Mail">
-                        <input class="fieldForm p-2 my-3" type="text" placeholder="Numéro de téléphone">
-                        <input class="fieldForm p-2 my-3" type="password" placeholder="Mot de passe">
-                        <input class="fieldForm p-2 my-3" type="password" placeholder="Confirmation mot de passe">
+                    <form class="d-flex flex-column my-5 " action="">
+                        <input id="pseudoRegister" class="fieldForm p-2 my-3" type="text" placeholder="Pseudo *" autocomplete="off">
+                        <p id="errorPseudo" class="error" hidden>Erreur : Pseudo non valide !</p>
+                        <p id="errorNullPseudo" class="error" hidden>Erreur : Veuillez renseignez un pseudo !</p>
+                        <input id="mailRegister" class="fieldForm p-2 my-3" type="email" placeholder="Adresse Mail *" autocomplete="off">
+                        <p id="errorEmail" class="error" hidden>Erreur : Adresse mail non valide !</p>
+                        <p id="errorNullMail" class="error" hidden>Erreur : Veuillez renseignez un mail !</p>
+                        <input id="passwordRegister" class="fieldForm p-2 my-3" type="password" placeholder="Mot de passe *" autocomplete="off">
+                        <p id="errorPassword" class="error" hidden>Erreur : Mot de passe non valide !</p>
+                        <p id="errorNullPassword" class="error" hidden>Erreur : Veuillez renseignez un mot de passe !</p>
+                        <input id="passwordConfirmRegister" class="fieldForm p-2 my-3" type="password" placeholder="Confirmation mot de passe *">
+                        <p id="errorPasswordConfirm" class="error" hidden>Erreur : Confirmation mot de passe non valide !</p>
+                        <p id="errorNullPasswordConfirm" class="error" hidden>Erreur : Veuillez renseignez la confirmation du mot de passe !</p>
+                        <p id="errorPasswordMatch" class="error" hidden>Erreur : Mot de passe non similaire !</p>
+                        <div class="d-flex justify-content-center">
+                            <input class="fieldForm w-50 p-2 my-3" type="submit" name="confirmRegister" id="confirmRegister" value="Inscription">
+                        </div>
                     </form>
                     <!------------------------------------>
                 </div>
@@ -89,6 +103,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="/public/assets/js/script.js"></script>
+    <script src="./public/assets/js/script.js"></script>
+    <script src="./public/assets/js/log.js"></script>
 </body>
 </html>

@@ -1,7 +1,3 @@
-/**
-* Code by Noé Falque ➡️ noefalque.com
-**/
-
 class Slider {
     constructor(el) {
   
