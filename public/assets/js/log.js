@@ -9,7 +9,7 @@ let passwordLogin = document.getElementById('passwordLogin');
 
 // Récupération de chaque message d'erreur
 let errorPseudo = document.getElementById('errorPseudo');
-let errorNullPseudo = document.getElementById('errorNull');
+let errorNullPseudo = document.getElementById('errorNullPseudo');
 let errorNullMail = document.getElementById('errorNullMail');
 let errorNullPassword = document.getElementById('errorNullPassword');
 let errorNullPasswordConfirm = document.getElementById('errorNullPasswordConfirm');
@@ -23,14 +23,13 @@ let errorPasswordMatch = document.getElementById('errorPasswordMatch');
 let regexPseudo = /^((?!\.)[\w]*[^-^$°@\/~%*:;!,[}{()}\]'=+&#".])$/g;
 let regexMail = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/g;
 let regexPassword = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/gm;
-
 // -------------------------------------------
 
 
 pseudoRegister.addEventListener('change', () => {
     if(pseudoRegister.value == ""){
         errorNullPseudo.removeAttribute('hidden');
-    }else if(!errorNullPseudo.hasAttribute('hidden')){
+    }else {
         errorNullPseudo.setAttribute('hidden', '');
     }
     if (!pseudoRegister.value.match(regexPseudo) && !pseudoRegister.value == ""){

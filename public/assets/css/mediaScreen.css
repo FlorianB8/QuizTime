@@ -4,8 +4,8 @@
         font-size: 2rem;
     }
 
-    .categoryLeft, .categoryRight{
-        width: 70vw;
+    .category, .category{
+        width: 80vw;
     }
     .logo3 {
         display: block;
@@ -63,8 +63,8 @@
     .logo2 {
         display: none;
     }
-    .borderPinkRight{
-        border-right: 5px solid #B4656F;
+    .borderGreenRight{
+        border-right: 5px solid #7EA16B;
     }
     .carouselMobile {
         display: none;
@@ -99,9 +99,8 @@
 
 /* Responsive pour ordinateur */
 @media screen and (min-width: 1200px) {
-    .borderPinkRight{
-        border-right: 5px solid #B4656F;
-
+    .borderGreenRight{
+        border-right: 5px solid #7EA16B;
     }
 
     .carouselMobile {
@@ -124,14 +123,17 @@
         list-style-type: none;
     }
     /* Animation au survol pour chaque catégorie */
-    .categoryLeft, .categoryRight{
+    .category, .category{
         width: 25vw;
         transition-duration: 1s;
         
     }
-    .categoryLeft:hover, .categoryRight:hover{
+    .category:hover, .category:hover {
         width: 30vw;
-        background-color: #D8B4B9;
+        background-color: #FAFAFF;
+    }
+    .category:hover a{
+        color: #202020;
     }
     /* ------------------------------------- */
     /* Animation sur les quiz populaires au survol */
@@ -154,24 +156,25 @@
     .logo3 {
         display: none;
     }
-    .logo {
+    /* .logo {
         position: absolute;
         width: 200px;
         z-index: 2;
         top: 10px;
         left: -20px;
-    }
+        transition: 1s;
+    } */
     .logo2 {
         position: absolute;
         width: 200px;
         z-index: 1;
-        top: 70px;
+        top: 50px;
         transition: 1s;
         left: -20px;
     }
     .menu:hover .logo2{
-        left: 90px;
-        top: 10px;
+        /* left: 90px; */
+        top: -20px;
     }
     .navMenu {
         height: 15vh;
@@ -182,9 +185,7 @@
     .allLinkPage {
         margin-left: 200px;
     }
-    header {
-        border-bottom: 3px solid #1A1C1F;
-    }
+  
     /* --------------------------- */
 
     /* FOOTER */
