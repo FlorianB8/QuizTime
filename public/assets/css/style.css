@@ -49,8 +49,9 @@ html {
   height: 40vh;
 }
 
-.error {
-  color: #B83849;
+.errorMessage {
+  font-size: 1rem;
+  color: #DB2B39;
 }
 
 .bold {
@@ -73,7 +74,6 @@ html {
   padding-right: 40px;
   padding-left: 40px;
   border-radius: 10px;
-  height: 85vh;
   background-color: #202020;
 }
 
@@ -105,12 +105,25 @@ p {
 }
 
 /* ----------------------------------------------------------- */
-
+/* Animation au survol pour chaque catégorie */
+.category{
+  width: 25vw;
+  transition-duration: 1s;
+  
+}
+.category:hover{
+  width: 30vw;
+  background-color: #FAFAFF;
+}
+.category:hover a{
+  color: #202020;
+}
+/* ------------------------------------- */
 
 /* Affichage des catégories à gauche et à droite en alternance */
 .category {
   width: 70%;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 a {
@@ -137,12 +150,14 @@ a {
 }
 
 .btnLog {
+  margin-right: 20px;
   font-size: 1.5rem;
   border-radius: 5px;
-  color: #fafaff;
   background-color: #7EA16B;
   transition-duration: 0.5s;
-  width: 250px;
+  color: #fff;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .btnLog:hover {
@@ -151,7 +166,7 @@ a {
 
 /* --------- */
 /* FOOTER */
-
+*
 /* -------- */
 .linkCategory {
   font-size: 2rem;
@@ -171,11 +186,11 @@ a {
 .btnFormSubmit {
   font-size: 1.5rem;
   border-radius: 5px;
-  color: #fafaff;
   background-color: #7EA16B;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
+  color: #fff;
   width: 250px;
-  border: 0px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .btnFormSubmit:hover {
   background-color: #fafaff;

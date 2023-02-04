@@ -1,15 +1,41 @@
 <footer>
+    <div class="p-0 wave">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1536" height="150" preserveAspectRatio="none" viewBox="0 0 1440 560">
+            <g mask="url(&quot;#SvgjsMask1062&quot;)" fill="none">
+                <path d="M 0,442 C 144,409.4 432,288.6 720,279 C 1008,269.4 1296,371 1440,394L1440 560L0 560z" fill="rgba(32, 32, 32, 1)"></path>
+            </g>
+        </svg>
+    </div>
     <div class="container-fluid footer text-center">
         <div class="row">
             <div class="col-12">
-                <nav class="d-flex navFooter  align-items-center justify-content-around">
-                    <a class="linkPage" href="#">Mentions légales</a>
-                    <a class="linkPage" href="../contact.php">Contact</a>
-                    <a class="linkPage" href="#">Newsletter</a>
+                <nav class="navFooter">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="navbar-nav textGreen my-5">
+                                <h2 class="fw-bold">Accès rapide</h2>
+                                <hr class="textGreen">
+                                <a class="linkPage nav-link mx-4" href="/">Accueil</a>
+                                <a href="../../controllers/categoryCtrl.php" class="mx-4 nav-link linkPage">Catégories</a>
+                                <a href="../../controllers/classmentCtrl.php" class="mx-4 nav-link linkPage">Classement</a>
+                                <a href="../../controllers/contactCtrl.php" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="navbar-nav textGreen my-5">
+                                <h2 class="fw-bold">Informations</h2>
+                                <hr class="textGreen">
+                                <a class="linkPage nav-link" href="#">Mentions légales</a>
+                                <a class="linkPage nav-link" href="../contact.php">Contact</a>
+                                <a class="linkPage nav-link" href="#">Newsletter</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </nav>
             </div>
-            <div class="col-12">
-                <p class="textGreen">© copyright Florian from the MANU PAN PAN PAN</p>
+            <div class="col-12 mt-5">
+                <p class="textGreen">© by Florian from the Manu Amiens</p>
             </div>
         </div>
     </div>

@@ -4,31 +4,32 @@
         font-size: 2rem;
     }
 
-    .category, .category{
+    .category {
         width: 80vw;
     }
-    .logo3 {
-        display: block;
+
+    .logo2 {
         width: 200px;
     }
-    .logo {
-       display: none;
-    }
-    .logo2 {
+    .wave {
         display: none;
     }
-    
+
 }
+
 /* --------------------------- */
 
 
 /* Responsive pour mobile paysage */
-@media screen and (max-width : 992px) and (orientation:landscape){
+@media screen and (max-width : 992px) and (orientation:landscape) {
     .imgQuizCarousel {
         width: 100%;
         height: 80vh;
         border: 0px;
         border-radius: 20px;
+    }
+    .wave {
+        display: none;
     }
     .slider {
         box-sizing: border-box;
@@ -36,16 +37,10 @@
         width: 95vw;
         height: 80vh;
         overflow: hidden;
-      }
-      .logo3 {
-        display: block;
-        width: 200px;
     }
-    .logo {
-       display: none;
-    }
+
     .logo2 {
-        display: none;
+        width: 200px;
     }
 }
 
@@ -53,148 +48,146 @@
 
 /* Responsive pour tablette */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-    .logo3 {
-        display: block;
-        width: 200px;
-    }
-    .logo {
-       display: none;
-    }
     .logo2 {
+        position: relative;
+    }
+    .wave {
         display: none;
     }
-    .borderGreenRight{
+    .borderGreenRight {
         border-right: 5px solid #7EA16B;
     }
+
     .carouselMobile {
         display: none;
     }
+
     .delCarousel {
         display: block;
     }
+
     .delCarousel h1 {
         position: absolute;
         margin-top: 5vh;
         margin-left: 5vh;
     }
+
     .imgQuiz {
         width: 40vw;
         border: 0px;
         border-radius: 20px;
     }
+
     li {
         list-style-type: none;
     }
-    
+
+    .logo2 {
+        width: 200px;
+    }
+
 }
+
 /* --------------------------- */
 
 
 /* Responsive pour tablette paysage */
-@media screen and (min-width: 992px) and (orientation:landscape) {
+@media screen and (min-width: 992px) and (orientation:landscape) {}
 
-}
 /* --------------------------- */
 
 
 /* Responsive pour ordinateur */
 @media screen and (min-width: 1200px) {
-    .borderGreenRight{
+    main {
+        min-height: 100vh;
+    }
+
+    .borderGreenRight {
         border-right: 5px solid #7EA16B;
+    }
+
+    .rotate {
+        transform: rotate(180deg);
     }
 
     .carouselMobile {
         display: none;
     }
+
     .delCarousel {
         display: block;
     }
+
     .delCarousel h1 {
         position: absolute;
         margin-top: 5vh;
         margin-left: 5vh;
     }
+
     .imgQuiz {
         width: 40vw;
         border: 0px;
         border-radius: 20px;
     }
+
     li {
         list-style-type: none;
     }
-    /* Animation au survol pour chaque catégorie */
-    .category, .category{
-        width: 25vw;
-        transition-duration: 1s;
-        
-    }
-    .category:hover, .category:hover {
-        width: 30vw;
-        background-color: #FAFAFF;
-    }
-    .category:hover a{
-        color: #202020;
-    }
-    /* ------------------------------------- */
+
     /* Animation sur les quiz populaires au survol */
     .imgQuiz {
         width: 20vw;
-        transition-duration:0.5s ;
+        transition-duration: 0.5s;
     }
+
     .imgQuiz:hover {
         width: 19vw;
     }
+
     /* --------------------------- */
 
     /* Classement  */
     .ranking {
         height: 40vh;
     }
+
     /* --------------- */
     /* HEADER */
-
-    .logo3 {
-        display: none;
-    }
-    /* .logo {
-        position: absolute;
-        width: 200px;
-        z-index: 2;
-        top: 10px;
-        left: -20px;
-        transition: 1s;
-    } */
     .logo2 {
         position: absolute;
         width: 200px;
         z-index: 1;
-        top: 50px;
+        top: 75px;
         transition: 1s;
-        left: -20px;
+        left: 650px;
     }
-    .menu:hover .logo2{
+
+    .menu:hover .logo2 {
         /* left: 90px; */
-        top: -20px;
+        top: 10px;
     }
+
     .navMenu {
         height: 15vh;
     }
+
     header {
         overflow: hidden;
     }
+
     .allLinkPage {
-        margin-left: 200px;
+        margin-left: 400px;
     }
-  
+
     /* --------------------------- */
 
     /* FOOTER */
     footer {
         font-size: 1.5rem;
     }
-    .navFooter {
-        height: 15vh;
-    }
-    
+
+
 }
+
 /* --------------------------- */

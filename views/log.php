@@ -4,6 +4,7 @@
             <div class="col-12 col-lg-4 me-lg-5 formLog">
                 <div class="px-3 my-5">
                     <h1 class="textGreen text-center">Connexion</h1>
+                    <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour la connexion -->
                 <form class="d-flex flex-column my-5" action="">
@@ -20,18 +21,22 @@
             <div class="col-12 col-lg-4 ms-lg-5 formLog ">
                 <div class="px-3 my-5">
                     <h1 class="textGreen text-center">Pas encore inscrit ? <br> Rejoins nous !</h1>
+                    <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour l'inscription -->
-                <form class="d-flex flex-column my-5 " action="">
+                <form class="d-flex flex-column my-5" method="post">
                     <label class="textGreen" for="pseudoRegister">Pseudo* :</label>
-                    <input id="pseudoRegister" class="fieldForm p-2 mb-4" type="text" autocomplete="off">
-                    <label class="textGreen" for="mailRegister">E-mail* :</label>
-                    <input id="mailRegister" class="fieldForm p-2 mb-4" type="email" autocomplete="off">
-                    <label class="textGreen" for="passwordRegister">Mot de passe* :</label>
-                    <input id="passwordRegister" class="fieldForm p-2 mb-4" type="password" autocomplete="off">
-                    <label class="textGreen" for="passwordConfirmRegister">Mot de passe de confirmation* :</label>
-                    <input id="passwordConfirmRegister" class="fieldForm p-2 mb-4" type="password">
-                    <div class="mx-auto">
+                    <input id="pseudoRegister" name="pseudoRegister" class="fieldForm p-2 " type="text" autocomplete="off">
+                    <p class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    
+                    <label class="textGreen mt-4" for="emailRegister">E-mail* :</label>
+                    <input id="emailRegister" name="emailRegister" class="fieldForm p-2 " type="email" autocomplete="off">
+                    <p class="errorMessage"><?=$error['email'] ?? ''?></p>
+                    <label class="textGreen mt-4" for="passwordRegister">Mot de passe* :</label>
+                    <input id="passwordRegister" name="passwordRegister" class="fieldForm p-2 " type="password" autocomplete="off">
+                    <p class="errorMessage"><?=$error['passwordRegister'] ?? ''?></p>
+                    <label class="textGreen mt-4" for="passwordConfirmRegister">Mot de passe de confirmation* :</label>
+                    <input id="passwordConfirmRegister" name="passwordConfirmRegister" class="fieldForm p-2 " type="password">
+                    <div class="mx-auto mt-4">
                         <input class="btnFormSubmit my-3" type="submit" name="confirmRegister" id="confirmRegister" value="Inscription">
                     </div>
                 </form>
