@@ -24,7 +24,7 @@
 @media screen and (max-width : 992px) and (orientation:landscape) {
     .imgQuizCarousel {
         width: 100%;
-        height: 80vh;
+        height: 60vh;
         border: 0px;
         border-radius: 20px;
     }
@@ -48,6 +48,9 @@
 
 /* Responsive pour tablette */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .allLinkPage {
+        margin-left: 0;
+    }
     .logo2 {
         position: relative;
     }
@@ -73,7 +76,7 @@
     }
 
     .imgQuiz {
-        width: 40vw;
+        width: 30vw;
         border: 0px;
         border-radius: 20px;
     }
@@ -158,9 +161,9 @@
         position: absolute;
         width: 200px;
         z-index: 1;
-        top: 75px;
+        top: 10vh;
         transition: 1s;
-        left: 650px;
+        left: 43vw;
     }
 
     .menu:hover .logo2 {
@@ -177,7 +180,7 @@
     }
 
     .allLinkPage {
-        margin-left: 400px;
+        margin-left: 27vw;
     }
 
     /* --------------------------- */

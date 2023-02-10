@@ -44,6 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $passwordHash = password_hash($passwordRegister, PASSWORD_DEFAULT);
     }
     // * -----------------------------
+    // var_dump($_POST['pseudoRegister']);
+    if(isset($_POST['pseudoRegister'])){
+        $hiddenRegister = "";
+        $hiddenLogin = "hidden";
+    } else if (isset($_POST['pseudoLogin'])) {
+        $hiddenRegister = "hidden";
+        $hiddenLogin = "";
+    }
+    
 }
 
 

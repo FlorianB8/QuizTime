@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../public/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../public/assets/css/mediaScreen.css">
+    <link rel="shortcut icon" href="../../public/assets/imgs/logo2.png" type="image/x-icon">
     <title>QuizTime</title>
 </head>
 
@@ -28,17 +29,17 @@
                         <div class="collapse navbar-collapse" id="navbarCollapse">
                             <!-- Lien vers chaque page -->
                             <div class="navbar-nav allLinkPage me-5">
-                                <div class="me-5 d-flex">
+                                <div class="me-xl-5 me-0 d-flex">
                                     <a href="/" class="mx-4 nav-link linkPage">Accueil</a>
                                     <a href="../../controllers/categoryCtrl.php" class="mx-4 nav-link linkPage">Catégories</a>
                                 </div>
-                                <div class="ms-5 d-flex">
+                                <div class="ms-xl-5 ms-0 d-flex">
                                     <a href="../../controllers/classmentCtrl.php" class="mx-4 nav-link linkPage">Classement</a>
                                     <a href="../../controllers/contactCtrl.php" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                                 </div>
                             </div>
                             <div class="navbar-nav ms-auto">
-                                <a href="../../controllers/logCtrl.php" class="nav-item nav-link btnLog linkLog">Se connecter</a>
+                                <a href="../../controllers/logCtrl.php" class="nav-item nav-link btnLog linkLog">Connexion/Inscription</a>
                             </div>
                             <!-------------------------->
                         </div>
@@ -48,7 +49,7 @@
             </div>
         </div>
         <div class="rotate wave">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1536" height="150" preserveAspectRatio="none" viewBox="0 0 1440 560">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" preserveAspectRatio="none" viewBox="0 0 1440 560">
                 <g mask="url(&quot;#SvgjsMask1062&quot;)" fill="none">
                     <path d="M 0,442 C 144,409.4 432,288.6 720,279 C 1008,269.4 1296,371 1440,394L1440 560L0 560z" fill="rgba(32, 32, 32, 1)"></path>
                 </g>
