@@ -5,18 +5,18 @@
 
 <main>
     <div class="container-fluid bgBlue">
-        <div class="row justify-content-center bgDark mx-5 w-75 mx-auto rounded-4 my-lg-0 my-5">
-            <div class="col-12 p-0 m-0 d-flex justify-content-center mt-lg-5 mt-0 ">
+        <div class="row justify-content-center mx-5 w-75 mx-auto rounded-4 my-lg-0 my-5">
+            <div class="col-lg-10 p-0 m-0 d-flex justify-content-center mt-lg-5 mt-0 ">
                 <button id="btnLog" class="btnActiveLogin">Connexion</button>
                 <button id="btnReg" class="btnRegister">Inscription</button>
             </div>
-            <div id="login" class="col-12 col-lg-4 formLog " <?=$hiddenLogin ?? ''?>>
-                <div class="px-3 mb-5">
+            <div id="login" class="col-12 col-lg-10 formLog bgDark  " <?=$hiddenLogin ?? ''?>>
+                <div class="my-5">
                     <h1 class="textGreen text-center fw-bold">Connexion</h1>
                     <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour la connexion -->
-                <form class="d-flex flex-column my-5" action="">
+                <form class="d-flex flex-column my-5 w-75 mx-auto" action="">
                     <label class="textGreen" for="pseudoLogin">Pseudo :</label>
                     <input id="pseudoLogin" class="fieldForm p-2 mb-4" type="text" >
                     <label class="textGreen" for="passwordLogin">Mot de passe :</label>
@@ -28,13 +28,13 @@
                 </form>
                 <!--------------------------------->
             </div>
-            <div id="register" class="col-12 col-lg-4 formLog" <?=$hiddenRegister ?? 'hidden'?>>
-                <div class="mb-5">
+            <div id="register" class="col-12 col-lg-10 formLog bgDark " <?=$hiddenRegister ?? 'hidden'?>>
+                <div class="my-5">
                     <h1 class="textGreen text-center fw-bold">Pas encore inscrit ? <br> Rejoins nous !</h1>
                     <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour l'inscription -->
-                <form class="d-flex flex-column my-5" method="post">
+                <form class="d-flex flex-column my-5 w-75 mx-auto" method="post">
                     <label class="textGreen" for="pseudoRegister">Pseudo* :</label>
                     <input id="pseudoRegister" name="pseudoRegister" class="fieldForm p-2 " type="text" autocomplete="off">
                     <p class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    

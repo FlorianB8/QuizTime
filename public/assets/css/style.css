@@ -41,7 +41,8 @@ html {
   margin-bottom: 40px;
   padding-right: 40px;
   padding-left: 40px;
-  border-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-color: #202020;
 }
 
@@ -190,21 +191,21 @@ label {
 
 /* BOUTON SWITCH LOGIN/REGISTER */
 .btnLogin {
-  width: 195px;
+  width: 500px;
   border-top-left-radius: 10px;
   opacity: 0.5;
 }
 .btnRegister{
-  width: 195px;
+  width: 500px;
   border-top-right-radius: 10px;
   opacity: 0.5;
 }
 .btnActiveRegister {
-  width: 195px;
+  width: 500px;
   border-top-right-radius: 10px;
 }
 .btnActiveLogin {
-  width: 195px;
+  width: 500px;
   border-top-left-radius: 10px;
 }
 /* -------------------------- */
