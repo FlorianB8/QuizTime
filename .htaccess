@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteRule accueil /controllers/homeCtrl.php
+RewriteRule categories /controllers/categoryCtrl.php
+RewriteRule classement /controllers/classmentCtrl.php
+RewriteRule contactez-nous /controllers/contactCtrl.php
+RewriteRule connexion-inscription /controllers/logCtrl.php
+
+ErrorDocument 404 /views/404.php

@@ -24,22 +24,13 @@
                                 <h1 class="text-center fw-bold">Catégories de quiz</h1>
                             </div>
                             <div class="text-center d-flex flex-column">
-                                <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./category.php">
-                                    <i class="fa-solid fa-film me-4"></i>Cinéma
-                                </a>
-                                <hr class="w-50 textGreen mx-auto">
-                                <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./category.php">
-                                <i class="fa-solid fa-landmark me-4"></i>Culture
-                                </a>
-                                <hr class="w-50 textGreen mx-auto">
-                                <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./category.php">
-                                <i class="fa-solid fa-gamepad me-4"></i>Jeux-vidéos
-                                </a>
-                                <hr class="w-50 textGreen mx-auto">
-                                <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./category.php">
-                                <i class="fa-solid fa-robot me-4"></i>Technologies
-                                </a>
-                                <hr class="w-50 textGreen mx-auto">
+                                <?php foreach ($categories as $category) { ?>
+                                    <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./category.php?id=<?= $category->id ?>">
+                                        <i class="<?= $category->icon ?> me-4"></i><?= $category->name ?>
+                                    </a>
+                                    <hr class="w-50 textGreen mx-auto">
+
+                                <?php } ?>
                                 <div class="navbar-nav mx-auto mt-5 textDark">
                                     <a href="../../controllers/categoryCtrl.php" class="nav-item nav-link btnMoreCategory  linkLog">Voir plus</a>
                                 </div>
@@ -51,7 +42,7 @@
                     <div class="col-12 col-lg-5 p-0 ">
                         <div class="my-4 d-flex flex-column justify-content-center">
                             <div class="px-3 textGreen">
-                                <h1 class="text-center my-5 fw-bold" >Quiz populaires</h1>
+                                <h1 class="text-center my-5 fw-bold">Quiz populaires</h1>
                                 <div class="delCarousel">
                                     <ul class="row text-center">
                                         <li class="col-12 my-4">
@@ -76,7 +67,7 @@
                     <g mask="url(&quot;#SvgjsMask1062&quot;)" fill="none">
                         <path d="M 0,442 C 144,409.4 432,288.6 720,279 C 1008,269.4 1296,371 1440,394L1440 560L0 560z" fill="rgba(32, 32, 32, 1)"></path>
                     </g>
-                </svg>  
+                </svg>
             </div>
             <div class="col-8 mb-5">
                 <div class="px-3 my-5">
@@ -97,30 +88,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <h3 class="mt-5">Joueur 1</h3>
-                                    </td>
-                                    <td>
-                                        <h3 class="mt-5">200</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h3>Joueur 2</h3>
-                                    </td>
-                                    <td>
-                                        <h3>125</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h3>Joueur 3</h3>
-                                    </td>
-                                    <td>
-                                        <h3>100</h3>
-                                    </td>
-                                </tr>
+                                <?php foreach ($users as $user) {  ?>
+                                    <tr>
+                                        <td>
+                                            <h3 class="mt-5"><?=$user->pseudo?></h3>
+                                        </td>
+                                        <td>
+                                            <h3 class="mt-5"><?= $user->points?></h3>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+
                             </tbody>
                         </table>
                     </div>

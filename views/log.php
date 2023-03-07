@@ -35,16 +35,16 @@
                 </div>
                 <!-- Formulaire pour l'inscription -->
                 <form class="d-flex flex-column my-5 w-75 mx-auto" method="post">
-                    <label class="textGreen" for="pseudoRegister">Pseudo* :</label>
+                    <label id="labelPseudo" class="textGreen" for="pseudoRegister">Pseudo* :</label>
                     <input id="pseudoRegister" name="pseudoRegister" class="fieldForm p-2 " type="text" autocomplete="off">
-                    <p class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    
-                    <label class="textGreen mt-4" for="emailRegister">E-mail* :</label>
+                    <p id="errorPseudo" class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    
+                    <label id="labelEmail" class="textGreen mt-4" for="emailRegister">E-mail* :</label>
                     <input id="emailRegister" name="emailRegister" class="fieldForm p-2 " type="email" autocomplete="off">
-                    <p class="errorMessage"><?=$error['email'] ?? ''?></p>
-                    <label class="textGreen mt-4" for="passwordRegister">Mot de passe* :</label>
+                    <p id="errorEmail" class="errorMessage"><?=$error['email'] ?? ''?></p>
+                    <label id="labelPassword" class="textGreen mt-4" for="passwordRegister">Mot de passe* :</label>
                     <input id="passwordRegister" name="passwordRegister" class="fieldForm p-2 " type="password" autocomplete="off">
-                    <p class="errorMessage"><?=$error['passwordRegister'] ?? ''?></p>
-                    <label class="textGreen mt-4" for="passwordConfirmRegister">Mot de passe de confirmation* :</label>
+                    <p id="errorPassword" class="errorMessage"><?=$error['passwordRegister'] ?? ''?></p>
+                    <label id="labelPasswordConfirm" class="textGreen mt-4" for="passwordConfirmRegister">Mot de passe de confirmation* :</label>
                     <input id="passwordConfirmRegister" name="passwordConfirmRegister" class="fieldForm p-2 " type="password">
                     <div class="mx-auto mt-4">
                         <input class="btnFormSubmit my-3" type="submit" name="confirmRegister" id="confirmRegister" value="Inscription">

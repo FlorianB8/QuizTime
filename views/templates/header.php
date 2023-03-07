@@ -20,7 +20,7 @@
             <div class="row">
                 <nav class="navbar navbar-expand-lg p-0">
                     <div class="container-fluid navMenu">
-                        <a href="../../controllers/homeCtrl.php" class="menu">
+                        <a href="/accueil" class="menu">
                             <img class="logo2" src="../../public/assets/imgs/logo2.png" alt="Logo du site QuizTime">
                         </a>
                         <button type="button" class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -30,16 +30,16 @@
                             <!-- Lien vers chaque page -->
                             <div class="navbar-nav allLinkPage me-5">
                                 <div class="me-xl-5 me-0 d-flex">
-                                    <a href="/" class="mx-4 nav-link linkPage">Accueil</a>
-                                    <a href="../../controllers/categoryCtrl.php" class="mx-4 nav-link linkPage">Catégories</a>
+                                    <a href="/accueil" class="mx-4 nav-link linkPage">Accueil</a>
+                                    <a href="/categories" class="mx-4 nav-link linkPage">Catégories</a>
                                 </div>
                                 <div class="ms-xl-5 ms-0 d-flex">
-                                    <a href="../../controllers/classmentCtrl.php" class="mx-4 nav-link linkPage">Classement</a>
-                                    <a href="../../controllers/contactCtrl.php" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
+                                    <a href="/classement" class="mx-4 nav-link linkPage">Classement</a>
+                                    <a href="/contactez-nous" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                                 </div>
                             </div>
                             <div class="navbar-nav ms-auto">
-                                <a href="../../controllers/logCtrl.php" class="nav-item nav-link btnLog linkLog">Connexion/Inscription</a>
+                                <a href="/connexion-inscription" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-user"></i></a>
                             </div>
                             <!-------------------------->
                         </div>
