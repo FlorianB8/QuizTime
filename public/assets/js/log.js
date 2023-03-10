@@ -26,8 +26,7 @@ let regexPseudo = /^[a-zA-ZÀ-ÿ0-9\' -]{2,64}$/g;
 let regexMail = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/g;
 let regexPassword = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/gm;
 // -------------------------------------------
-console.log(errorPassword.innerText);
-console.log(errorEmail.value);
+
 if(errorEmail.innerText !== ''){
     emailRegister.classList.add('redBorder');
     labelEmail.classList.add('textRed');

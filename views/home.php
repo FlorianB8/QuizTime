@@ -26,7 +26,7 @@
                             <div class="text-center d-flex flex-column">
                                 <?php foreach ($categories as $category) { ?>
                                     <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./category.php?id=<?= $category->id ?>">
-                                        <i class="<?= $category->icon ?> me-4"></i><?= $category->name ?>
+                                        <i class="<?= $category->icon ?> me-4"></i><?= htmlspecialchars($category->name) ?>
                                     </a>
                                     <hr class="w-50 textGreen mx-auto">
 
@@ -107,3 +107,4 @@
         </div>
     </div>
 </main>
+

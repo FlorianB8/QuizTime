@@ -199,12 +199,13 @@ class User
 
         return $users;
     }
+
     /**
      * @param int $id
      * 
      * @return object
      */
-    public static function get(int $id): object|bool
+    public static function get(int $id):object|bool 
     {
         $db = dbConnect();
         $query = "SELECT * FROM `users` WHERE `id` = :id ;";

@@ -10,6 +10,7 @@ try {
     }
     $quiz = Quiz::get($id);
     $quizzes = Quiz::getAll();
+    
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
     include_once(__DIR__ . '/../views/templates/headerDashboard.php');

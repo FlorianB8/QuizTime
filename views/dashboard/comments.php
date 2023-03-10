@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-10">
+                <?=$message?>
                 <h1 class="text-center mt-5">Liste des commentaires</h1>
                 <hr class="mb-5">
                 <table class="tableDashboard">

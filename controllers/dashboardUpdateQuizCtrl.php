@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . '/../models/Connect.php');
 require_once(__DIR__ . '/../models/Quiz.php');
+require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../models/Category.php');
 
 $id = intval(filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT));
@@ -41,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quizUpdate->setUpdated_at(date('Y-m-d H:i:s'));
         $result = $quizUpdate->update($id);
         if($result == false){
-            $message = 'Erreur lors de la modification de l\'utilisateur';
-            $type = 'danger';
+            Flash::setMessage(QUIZ_NOT_UPDATE,'danger');
+            header('location: ./dashboardQuizzesCtrl.php');
         } else {
-            $message = 'Utilisateur modifié avec succés';
-            $type = 'success';
+            Flash::setMessage(QUIZ_UPDATE,'success');
+            header('location: ./dashboardQuizzesCtrl.php');
         }
 
     }
@@ -57,7 +58,6 @@ try {
     }
     $quiz = Quiz::get($id);
     $categories = Category::getAll();
-    // dd($quiz->icon);
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
     include_once(__DIR__ . '/../views/templates/headerDashboard.php');

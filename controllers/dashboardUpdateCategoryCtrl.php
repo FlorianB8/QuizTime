@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . '/../models/Connect.php');
 require_once(__DIR__ . '/../models/Quiz.php');
+require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../models/Category.php');
 
 $id = intval(filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT));
@@ -39,11 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $categoryUpdate->setIcon($icon);
         $result = $categoryUpdate->update($id);
         if($result == false){
-            $message = 'Erreur lors de la modification de l\'utilisateur';
-            $type = 'danger';
+            Flash::setMessage(CATEGORY_NOT_UPDATE,'danger');
+            header('location: ./dashboardCategoriesCtrl.php');
         } else {
-            $message = 'Utilisateur modifié avec succés';
-            $type = 'success';
+            Flash::setMessage(CATEGORY_UPDATE,'success');
+            header('location: ./dashboardCategoriesCtrl.php');
         }
 
     }
@@ -54,7 +55,7 @@ try {
         throw new Exception("L'ID de la catégorie n'existe pas !", 1);
     }
     $category = Category::get($id);
-    // dd($quiz->icon);
+
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
     include_once(__DIR__ . '/../views/templates/headerDashboard.php');

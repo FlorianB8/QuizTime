@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__ . '/../models/Connect.php');
 require_once(__DIR__ . '/../models/User.php');
-require_once(__DIR__ . '/../models/Category.php');
+require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../helpers/dd.php');
 
 $id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
@@ -62,11 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $userUpdate->setRole($role);
         $result = $userUpdate->update($id);
         if ($result == false) {
-            $message = 'Erreur lors de la modification de l\'utilisateur';
-            $type = 'danger';
+            Flash::setMessage(USER_NOT_UPDATE,'danger');
+            header('location: ./dashboardUsersCtrl.php');
         } else {
-            $message = 'Utilisateur modifié avec succés';
-            $type = 'success';
+            Flash::setMessage(USER_UPDATE,'success');
+            header('location: ./dashboardUsersCtrl.php');
         }
     }
 }

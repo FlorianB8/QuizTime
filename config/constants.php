@@ -9,4 +9,16 @@ define('DB_NAME', 'mysql:dbname=quiztime;host=127.0.0.1');
 define('DB_USER', 'admin_quiztime');
 define('DB_PASSWORD', '!YZiyGSrgvgYkDwI');
 // --------------------------------------
+
+// Flash Message 
+
+define('USER_UPDATE', 'Utilisateur modifié avec succés !');
+define('USER_NOT_UPDATE', 'Erreur lors de la modification de l\'utilisateur !');
+define('CATEGORY_UPDATE', 'Catégorie modifié avec succés !');
+define('CATEGORY_NOT_UPDATE', 'Erreur lors de la modification de la catégorie !');
+define('QUIZ_UPDATE', 'Quiz modifié avec succés !');
+define('QUIZ_NOT_UPDATE', 'Erreur lors de la modification du quiz !');
+define('VALIDATE_COMMENT', 'Commentaire validé avec succés !');
+define('NOT_VALIDATE_COMMENT', 'Erreur lors de la validation du commentaire !');
+
 ?>
