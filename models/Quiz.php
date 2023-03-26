@@ -1,6 +1,7 @@
-<?php 
+<?php
 
-class Quiz  {
+class Quiz
+{
     private int $id;
     private string $name;
     private string $created_at;
@@ -11,7 +12,8 @@ class Quiz  {
     /**
      * @return [type]
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
     /**
@@ -19,14 +21,16 @@ class Quiz  {
      * 
      * @return void
      */
-    public function setId($value):void{
+    public function setId($value): void
+    {
         $this->id = $value;
     }
 
     /**
      * @return [type]
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
     /**
@@ -34,14 +38,16 @@ class Quiz  {
      * 
      * @return void
      */
-    public function setName($value):void{
+    public function setName($value): void
+    {
         $this->name = $value;
     }
 
     /**
      * @return [type]
      */
-    public function getCreated_at(){
+    public function getCreated_at()
+    {
         return $this->created_at;
     }
     /**
@@ -49,14 +55,16 @@ class Quiz  {
      * 
      * @return void
      */
-    public function setCreated_at($value):void{
+    public function setCreated_at($value): void
+    {
         $this->created_at = $value;
     }
 
     /**
      * @return [type]
      */
-    public function getUpdated_at(){
+    public function getUpdated_at()
+    {
         return $this->updated_at;
     }
     /**
@@ -64,14 +72,16 @@ class Quiz  {
      * 
      * @return void
      */
-    public function setUpdated_at($value):void{
+    public function setUpdated_at($value): void
+    {
         $this->updated_at = $value;
     }
 
     /**
      * @return [type]
      */
-    public function getDeleted_at(){
+    public function getDeleted_at()
+    {
         return $this->deleted_at;
     }
     /**
@@ -79,14 +89,16 @@ class Quiz  {
      * 
      * @return void
      */
-    public function setDeleted_at($value):void{
+    public function setDeleted_at($value): void
+    {
         $this->deleted_at = $value;
     }
 
     /**
      * @return [type]
      */
-    public function getId_categories(){
+    public function getId_categories()
+    {
         return $this->id_categories;
     }
     /**
@@ -94,7 +106,8 @@ class Quiz  {
      * 
      * @return void
      */
-    public function setId_categories($value):void{
+    public function setId_categories($value): void
+    {
         $this->id_categories = $value;
     }
 
@@ -107,8 +120,8 @@ class Quiz  {
     public static function get(int $id): object|bool
     {
         $db = dbConnect();
-        $query = 
-        'SELECT  `quiz`.`name` as "quizName", `quiz`.`id` as "id_quiz", `categories`.`name` as "categoryName", `id_categories`, `icon` 
+        $query =
+            'SELECT  `quiz`.`name` as "quizName", `quiz`.`id` as "id_quiz", `categories`.`name` as "categoryName", `id_categories`, `icon` 
         FROM `quiz` 
         LEFT JOIN `categories`
         ON `quiz`.`id_categories` = `categories`.`id` 
@@ -120,7 +133,7 @@ class Quiz  {
 
         return $result;
     }
-    public static function isIdExist(int $id):bool
+    public static function isIdExist(int $id): bool
     {
         $db = dbConnect();
         $verifQuery = "SELECT `id` FROM `quiz` WHERE `id` = :id ;";
@@ -129,7 +142,6 @@ class Quiz  {
         $verifEmail->execute();
         $result = $verifEmail->fetch();
         return !empty($result);
-
     }
     /**
      * @return array
@@ -201,4 +213,6 @@ class Quiz  {
 
         return $users;
     }
+
+   
 }

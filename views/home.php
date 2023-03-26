@@ -46,13 +46,13 @@
                                 <div class="delCarousel">
                                     <ul class="row text-center">
                                         <li class="col-12 my-4">
-                                            <a href="./quiz.html"><img class="imgQuiz" src="../public/assets/imgs/harry potter.jpg" alt="Image du quiz Harry Potter"></a>
+                                            <a href="../controllers/quizCtrl.php"><img class="imgQuiz" src="../public/assets/imgs/harry potter.jpg" alt="Image du quiz Harry Potter"></a>
                                         </li>
                                         <li class="col-12 my-4">
-                                            <a href="./quiz.html"><img class="imgQuiz" src="../public/assets/imgs/esport.jpg" alt="Image du quiz eSport"></a>
+                                            <a href="../controllers/quizCtrl.php"><img class="imgQuiz" src="../public/assets/imgs/esport.jpg" alt="Image du quiz eSport"></a>
                                         </li>
                                         <li class="col-12 my-4">
-                                            <a href="./quiz.html"><img class="imgQuiz" src="../public/assets/imgs/mythologie.jpg" alt="Image du quiz Mythologie"></a>
+                                            <a href="../controllers/quizCtrl.php"><img class="imgQuiz" src="../public/assets/imgs/mythologie.jpg" alt="Image du quiz Mythologie"></a>
                                         </li>
                                     </ul>
                                 </div>

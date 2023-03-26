@@ -127,5 +127,20 @@ public function add(): bool
     return $sth->execute();
 }
 
+public static function getAllQuestionsAnswers (int $id)
+{
+    $query =
+        'SELECT * 
+        FROM `questions` 
+        LEFT JOIN `answers` 
+        ON `questions`.`id` = `answers`.`id_questions`
+        WHERE `id_quiz` = :id_quiz ;';
+    $db = dbConnect();
+    $sth = $db->prepare($query);
+    $sth->bindValue(':id_quiz', $id, PDO::PARAM_INT);
+    $sth->execute();
+    $questions = $sth->fetchAll();
 
+    return $questions;
+}
 }
