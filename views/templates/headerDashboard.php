@@ -40,6 +40,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="../../controllers/dashboardQuestionAnswer.php" class="nav-link px-0 align-middle linkPage">
+                                <i class="fa-solid fa-file-circle-question"></i><span class="ms-1 d-none d-sm-inline"> Questions/Réponses</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="../../controllers/dashboardCategoriesCtrl.php" class="nav-link px-0 align-middle linkPage ">
                                     <i class="fa-solid fa-folder-open"></i> <span class="ms-1 d-none d-sm-inline"> Catégories</span>
                                 </a>

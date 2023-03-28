@@ -4,7 +4,7 @@ class Question {
     private int $id;
     private string $question;
     private int $points; 
-    private DateTime $created_at;
+    private string $created_at;
     private int $id_quiz;
 
 /**
@@ -53,9 +53,9 @@ public function setPoints($value):void{
 }
 
 /**
- * @return DateTime
+ * @return string
  */
-public function getCreated_at():DateTime{
+public function getCreated_at():string{
     return $this->created_at;
 }
 /**
@@ -87,14 +87,18 @@ public function setId_quiz($value):void{
  * 
  * @return object
  */
-public static function get(int $id):object|bool
+public static function get(int $id = NULL):array|object
 {
     $db = dbConnect();
-    $query = "SELECT * FROM `questions` WHERE `id` = :id ;";
+    $query = 'SELECT *
+                FROM `questions`
+                LEFT JOIN `quiz`
+                ON `questions`.`id_quiz` = `quiz`.`id`'.
+            (($id) ? 'WHERE `questions`.`id` = :id' : '');
     $sth = $db->prepare($query);
-    $sth->bindValue(':id', $id, PDO::PARAM_INT);
+    (($id) ? $sth->bindValue(':id', $id, PDO::PARAM_INT) : '');
     $sth->execute();
-    $result = $sth->fetch();
+    $result = ($id)? $sth->fetch() : $sth->fetchAll();
 
     return $result;
 }
@@ -104,7 +108,7 @@ public static function get(int $id):object|bool
 public static function getAll(): array
 {
     $query =
-        'SELECT * FROM `questions;`';
+        'SELECT * FROM `questions`;';
     $db = dbConnect();
     $sth = $db->query($query);
     $users = $sth->fetchAll();
@@ -118,7 +122,7 @@ public static function getAll(): array
 public function add(): bool
 {
     $db = dbConnect();
-    $query = 'INSERT INTO `users` (`question`, `points`,`id_quiz`) VALUES (:question, :points, :id_quiz);';
+    $query = 'INSERT INTO `questions` (`question`, `points`,`id_quiz`) VALUES (:question, :points, :id_quiz);';
     $sth = $db->prepare($query);
     $sth->bindValue(':question', $this->question, PDO::PARAM_STR);
     $sth->bindValue(':points', $this->points, PDO::PARAM_INT);
@@ -127,13 +131,11 @@ public function add(): bool
     return $sth->execute();
 }
 
-public static function getAllQuestionsAnswers (int $id)
+public static function getAllQuestions (int $id)
 {
     $query =
-        'SELECT * 
+        'SELECT `id`, `question`, `points`, `id_quiz` 
         FROM `questions` 
-        LEFT JOIN `answers` 
-        ON `questions`.`id` = `answers`.`id_questions`
         WHERE `id_quiz` = :id_quiz ;';
     $db = dbConnect();
     $sth = $db->prepare($query);
