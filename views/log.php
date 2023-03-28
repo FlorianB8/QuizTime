@@ -1,12 +1,10 @@
-<?php 
 
-
-?>
 
 <main>
     <div class="container-fluid bgBlue">
         <div class="row justify-content-center mx-5 w-75 mx-auto rounded-4 my-lg-0 my-5">
-            <div class="col-lg-10 p-0 m-0 d-flex justify-content-center mt-lg-5 mt-0 ">
+            <?=$message?>
+            <div class="col-12 col-lg-10 p-0 m-0 d-flex justify-content-center mt-lg-5 mt-0 ">
                 <button id="btnLog" class="btnActiveLogin">Connexion</button>
                 <button id="btnReg" class="btnRegister">Inscription</button>
             </div>
@@ -16,11 +14,13 @@
                     <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour la connexion -->
-                <form class="d-flex flex-column my-5 w-75 mx-auto" action="">
-                    <label class="textGreen" for="pseudoLogin">Pseudo :</label>
-                    <input id="pseudoLogin" class="fieldForm p-2 mb-4" type="text" >
+                <form class="d-flex flex-column my-5 w-75 mx-auto" action="" method="post">
+                    <label class="textGreen" for="emailLogin">E-mail :</label>
+                    <input id="emailLogin" name="emailLogin" class="fieldForm p-2 mb-4" type="text">
+                    <p id="errorEmail" class="errorMessage"><?=$error['emailLogin'] ?? ''?></p>    
                     <label class="textGreen" for="passwordLogin">Mot de passe :</label>
-                    <input id="passwordLogin" class="fieldForm p-2 mb-4" type="password">
+                    <input id="passwordLogin" name="passwordLogin" class="fieldForm p-2 mb-4" type="password">
+                    <p id="errorPaswword" class="errorMessage"><?=$error['passwordLogin'] ?? ''?></p>    
                     <a class="textGreen forgot text-end" href="">Mot de passe oublié ?</a>
                     <div class="mx-auto">
                         <input class="btnFormSubmit fieldForm my-3" type="submit" name="confirmLogin" id="confirmLogin" value="Connexion">

@@ -216,6 +216,37 @@ class User
 
         return $result;
     }
+
+    /**
+     * @param string $email
+     * 
+     * @return object
+     */
+    public static function getByEmail(string $email):object|bool 
+    {
+        $db = dbConnect();
+        $query = 'SELECT * FROM `users` WHERE `email` = :email ;';
+        $sth = $db->prepare($query);
+        $sth->bindValue(':email', $email);
+        $sth->execute();
+        $result = $sth->fetch();
+ 
+        return $result;
+    }
+
+    public static function validateEmail(string $email):bool {
+        $db = dbConnect();
+        $query = 'UPDATE `users` 
+        SET
+            `validated_at`= NOW() 
+        WHERE `email` = :email';
+        $sth = $db->prepare($query);
+        $sth->bindValue(':email', $email);
+        $sth->execute();
+        $result = $sth->rowCount();
+
+        return $result > 0 ? true : false;
+    }
     /**
      * @return bool
      */

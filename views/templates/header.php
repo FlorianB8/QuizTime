@@ -38,9 +38,16 @@
                                     <a href="/contactez-nous" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                                 </div>
                             </div>
-                            <div class="navbar-nav ms-auto">
-                                <a href="/connexion-inscription" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-user"></i></a>
-                            </div>
+                            
+                            <?php if(!isset($_SESSION['user'])) { ?>
+                                <div class="navbar-nav ms-auto">
+                                    <a href="/connexion-inscription" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-user"></i></a>
+                                </div>
+                            <?php } else { ?>
+                                <div class="navbar-nav ms-auto">
+                                    <a href="deconnexion" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                                </div>
+                            <?php } ?>
                             <!-------------------------->
                         </div>
                     </div>

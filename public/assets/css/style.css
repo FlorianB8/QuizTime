@@ -198,21 +198,21 @@ label {
 
 /* BOUTON SWITCH LOGIN/REGISTER */
 .btnLogin {
-  width: 500px;
+  width: 50vw;
   border-top-left-radius: 10px;
   opacity: 0.5;
 }
 .btnRegister{
-  width: 500px;
+  width: 50vw;
   border-top-right-radius: 10px;
   opacity: 0.5;
 }
 .btnActiveRegister {
-  width: 500px;
+  width: 50vw;
   border-top-right-radius: 10px;
 }
 .btnActiveLogin {
-  width: 500px;
+  width: 50vw;
   border-top-left-radius: 10px;
 }
 /* -------------------------- */

@@ -14,6 +14,8 @@ define('DB_PASSWORD', '!YZiyGSrgvgYkDwI');
 
 define('USER_UPDATE', 'Utilisateur modifié avec succés !');
 define('USER_NOT_UPDATE', 'Erreur lors de la modification de l\'utilisateur !');
+define('USER_ADD', 'Création de votre compte réalisé avec succés !');
+define('USER_NOT_ADD', 'Erreur lors de la création de votre compte !');
 define('CATEGORY_UPDATE', 'Catégorie modifié avec succés !');
 define('CATEGORY_NOT_UPDATE', 'Erreur lors de la modification de la catégorie !');
 define('QUIZ_UPDATE', 'Quiz modifié avec succés !');

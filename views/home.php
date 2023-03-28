@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
+                <?= $message ?>
                 <div class="m-lg-5 my-5 d-flex flex-column justify-content-center textDark presentation">
                     <h1 class="text-center">Tu veux améliorer ta culture générale ?<br> <span class="textGreen fw-bold"> QuizTime</span> est là pour toi !</h1>
                     <p class="text-center my-5">Profite d’une large sélection de quiz avec différentes catégories pour développer ta culture générale et impressionner tes proches !</p>
@@ -16,6 +17,7 @@
                 </svg>
             </div>
             <div class="col-12 bgDark">
+
                 <div class="row justify-content-around">
                     <!-- Différentes catégories de quiz -->
                     <div class="col-12 col-lg-7 p-0 borderGreenRight ">
@@ -91,10 +93,10 @@
                                 <?php foreach ($users as $user) {  ?>
                                     <tr>
                                         <td>
-                                            <h3 class="mt-5"><?=$user->pseudo?></h3>
+                                            <h3 class="mt-5"><?= $user->pseudo ?></h3>
                                         </td>
                                         <td>
-                                            <h3 class="mt-5"><?= $user->points?></h3>
+                                            <h3 class="mt-5"><?= $user->points ?></h3>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -107,4 +109,3 @@
         </div>
     </div>
 </main>
-
