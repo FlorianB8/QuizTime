@@ -1,5 +1,5 @@
     {
-        "1": {
+        "potter": {
             "1": {
                 "question": "Dans quelle année est sorti le premier livre \"Harry Potter à l'école des Sorciers \" ?",
                 "answers": {
@@ -81,7 +81,7 @@
                 "points": 4
             }
         },
-        "2": {
+        "esport": {
             "1": {
                 "question": "Quelle est la plus grande compétition annuelle de jeux vidéo ?",
                 "answers": {
@@ -147,10 +147,92 @@
                 "answers": {
                     "a": "Injustice",
                     "b": "Mortal Kombat",
-                    "c": ""
+                    "c": "Street Fighter"
                 },
                 "correctAnswer": "b",
                 "points": 10
             }   
+        },
+        "mythologie": {
+            "1": {
+                "question": "Quel est le dieu romain de la guerre ?",
+                "answers": {
+                    "a": "Apollon",
+                    "b": "Dionysos",
+                    "c": "Mars"
+                },
+                "correctAnswer": "c",
+                "points": 10
+            },  
+            "2": {
+                "question": "Qui est le dieu de la mort dans la mythologie grecque ?",
+                "answers": {
+                    "a": "Atlas",
+                    "b": "Hadès",
+                    "c": "Prométhée"
+                },
+                "correctAnswer": "b",
+                "points": 10
+            },
+            "3": {
+                "question": "Comment s'appelle le dieu grec de la musique ?",
+                "answers": {
+                    "a": "Apollon",
+                    "b": "Hadès",
+                    "c": "Éole"
+                },
+                "correctAnswer": "a",
+                "points": 10
+            },
+            "4": {
+                "question": "Qui est le dieu de la mer dans la mythologie grecque ?",
+                "answers": {
+                    "a": "Poséidon",
+                    "b": "Aphrodite",
+                    "c": "Zeus"
+                },
+                "correctAnswer": "a",
+                "points": 10
+            },
+            "5": {
+                "question": "Quel est le nom de la déesse grecque de l'amour ?",
+                "answers": {
+                    "a": "Athéna",
+                    "b": "Aphrodite",
+                    "c": "Artémis"
+                },
+                "correctAnswer": "b",
+                "points": 10
+            },
+            "6": {
+                "question": "Qui est le roi des dieux dans la mythologie romaine ?",
+                "answers": {
+                    "a": "Poséidon",
+                    "b": "Jupiter",
+                    "c": "Hadès"
+                },
+                "correctAnswer": "b",
+                "points": 10
+            },
+            "7": {
+                "question": "Quel est le nom de la déesse de la chasse dans la mythologie grecque ?",
+                "answers": {
+                    "a": "Héra",
+                    "b": "Aphrodite",
+                    "c": "Artémis"
+                },
+                "correctAnswer": "c",
+                "points": 10
+            },
+            "8": {
+                "question": "Quel est le nom de la déesse de la chasse dans la mythologie grecque ?",
+                "answers": {
+                    "a": "Ulysse",
+                    "b": "Thésée",
+                    "c": "Achille"
+                },
+                "correctAnswer": "b",
+                "points": 10
+            }
         }
     }
