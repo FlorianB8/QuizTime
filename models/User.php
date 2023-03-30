@@ -188,8 +188,18 @@ class User
 
         return $users;
     }
+    public static function getUsersClassment()
+    {
+        $query =
+            'SELECT `pseudo`, `points` FROM `users` ORDER BY  `points` DESC;';
+        $db = dbConnect();
+        $sth = $db->query($query);
+        $users = $sth->fetchAll();
 
-    public static function getTopUsers()
+        return $users;
+    }
+
+    public static function getTop3Users()
     {
         $query =
             'SELECT `pseudo`, `points` FROM `users` ORDER BY  `points` DESC LIMIT 3;';

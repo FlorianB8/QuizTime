@@ -5,6 +5,7 @@
                 <?=$message?>
                 <h1 class="text-center mt-5">Liste des quiz</h1>
                 <hr class="mb-5">
+                <a class="btnLog p-2" href="./../../controllers/dashboardAddQuizCtrl.php"><i class="m-4 fa-solid fa-plus"></i></a>
                 <table class="tableDashboard">
                     <thead>
                         <tr class="text-center">

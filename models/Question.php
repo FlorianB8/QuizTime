@@ -6,6 +6,7 @@ class Question {
     private int $points; 
     private string $created_at;
     private int $id_quiz;
+    private string $correct;
 
 /**
  * @return int
@@ -22,6 +23,20 @@ public function setId($value):void{
     $this->id = $value;
 }
 
+/**
+ * @return int
+ */
+public function getCorrect():int{
+    return $this->correct;
+}
+/**
+ * @param mixed $value
+ * 
+ * @return void
+ */
+public function setCorrect($value):void{
+    $this->correct = $value;
+}
 /**
  * @return string
  */
@@ -85,12 +100,12 @@ public function setId_quiz($value):void{
 /**
  * @param int $id
  * 
- * @return object
+ * @return 
  */
-public static function get(int $id = NULL):array|object
+public static function get(int $id = NULL)
 {
     $db = dbConnect();
-    $query = 'SELECT *
+    $query = 'SELECT `questions`.`id` ,`questions`.`question`, `questions`.`correct`, `questions`.`points`, `quiz`.`name`, `questions`.`id_quiz`
                 FROM `questions`
                 LEFT JOIN `quiz`
                 ON `questions`.`id_quiz` = `quiz`.`id`'.
@@ -98,7 +113,23 @@ public static function get(int $id = NULL):array|object
     $sth = $db->prepare($query);
     (($id) ? $sth->bindValue(':id', $id, PDO::PARAM_INT) : '');
     $sth->execute();
-    $result = ($id)? $sth->fetch() : $sth->fetchAll();
+    $result = ($id) ? $sth->fetch() : $sth->fetchAll();
+
+    return $result;
+}
+
+public static function getQuestionById(int $id = NULL)
+{
+    $db = dbConnect();
+    $query = 'SELECT `questions`.`id` ,`questions`.`question`, `questions`.`correct`, `questions`.`points`, `quiz`.`name`, `questions`.`id_quiz`
+                FROM `questions` 
+                LEFT JOIN `quiz`
+                ON `questions`.`id_quiz` = `quiz`.`id`
+                WHERE `questions`.`id` = :id ;';
+    $sth = $db->prepare($query);
+   $sth->bindValue(':id', $id, PDO::PARAM_INT);
+    $sth->execute();
+    $result = $sth->fetch();
 
     return $result;
 }
@@ -116,25 +147,27 @@ public static function getAll(): array
     return $users;
 }
 
-/**
- * @return bool
- */
-public function add(): bool
+
+public function add()
 {
     $db = dbConnect();
-    $query = 'INSERT INTO `questions` (`question`, `points`,`id_quiz`) VALUES (:question, :points, :id_quiz);';
+    $query = 'INSERT INTO `questions` (`question`,`correct`, `points`,`id_quiz`) VALUES (:question,:correct, :points, :id_quiz);';
     $sth = $db->prepare($query);
     $sth->bindValue(':question', $this->question, PDO::PARAM_STR);
     $sth->bindValue(':points', $this->points, PDO::PARAM_INT);
+    $sth->bindValue(':correct', $this->correct, PDO::PARAM_STR);
     $sth->bindValue(':id_quiz', $this->id_quiz, PDO::PARAM_INT);
+    $sth->execute();
 
-    return $sth->execute();
+    $lastId = $db->lastInsertId();
+
+    return $lastId;
 }
 
 public static function getAllQuestions (int $id)
 {
     $query =
-        'SELECT `id`, `question`, `points`, `id_quiz` 
+        'SELECT `id`, `question`, `points`, `id_quiz`, `correct`
         FROM `questions` 
         WHERE `id_quiz` = :id_quiz ;';
     $db = dbConnect();
@@ -145,4 +178,25 @@ public static function getAllQuestions (int $id)
 
     return $questions;
 }
+
+public function update(int $id): bool
+    {
+        $db = dbConnect();
+        $query = "UPDATE `questions` 
+        SET `question`=:question,
+            `correct`=:correct,
+            `points` = :points,
+            `id_quiz` = :id_quiz
+        WHERE `id` = :id";
+        $sth = $db->prepare($query);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->bindValue(':question', $this->question, PDO::PARAM_STR);
+        $sth->bindValue(':correct', $this->correct, PDO::PARAM_STR);
+        $sth->bindValue(':points', $this->points, PDO::PARAM_STR);
+        $sth->bindValue(':id_quiz', $this->id_quiz, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->rowCount();
+
+        return $result > 0 ? true : false;
+    }
 }

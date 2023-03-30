@@ -1,13 +1,18 @@
 <?php
 require_once(__DIR__ . '/../models/Connect.php');
-require_once(__DIR__ . '/../models/Question.php');
-require_once(__DIR__ . '/../models/Answer.php');
+require_once(__DIR__ . '/../models/Quiz.php');
 require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../models/Category.php');
+require_once(__DIR__ . '/../config/init.php');
 
 $id = intval(filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT));
 
 
+if($_SESSION['user']->role != 2){
+    Flash::setMessage('<i class="me-3 fa-solid fa-ban fa-beat" style="color: #f50031;"></i> Vous n\'avez pas accès à cette partie du site !', 'danger');
+    header('location: /accueil');
+    die;
+}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error = [];
 
@@ -39,12 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $categoryUpdate = new Category();
         $categoryUpdate->setName($category);
         $categoryUpdate->setIcon($icon);
-        $result = $categoryUpdate->update($id);
+        $result = $categoryUpdate->add();
         if($result == false){
-            Flash::setMessage(CATEGORY_NOT_UPDATE,'danger');
+            Flash::setMessage(CATEGORY_NOT_ADD,'danger');
             header('location: ./dashboardCategoriesCtrl.php');
         } else {
-            Flash::setMessage(CATEGORY_UPDATE,'success');
+            Flash::setMessage(CATEGORY_ADD,'success');
             header('location: ./dashboardCategoriesCtrl.php');
         }
 
@@ -52,10 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 try {
-    if(Category::isIdExist($id) == false) {
-        throw new Exception("L'ID de la catégorie n'existe pas !", 1);
-    }
-    $category = Category::get($id);
 
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
@@ -66,5 +67,5 @@ try {
 }
 
 include_once(__DIR__ . '/../views/templates/headerDashboard.php');
-include_once(__DIR__ . '/../views/dashboard/updateCategory.php');
+include_once(__DIR__ . '/../views/dashboard/addCategory.php');
 include_once(__DIR__ . '/../views/templates/footerDashboard.php');

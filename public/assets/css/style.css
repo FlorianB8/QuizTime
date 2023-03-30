@@ -134,7 +134,7 @@ a:hover {
   background-color: #7EA16B;
   transition-duration: 0.5s;
   color: #fff;
-  width: 100px;
+  width: 125px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .btnMoreCategory {
@@ -167,7 +167,10 @@ a:hover {
 
 
 /* Formulaire de chaque page */
-
+.registerText {
+  margin-top: 10px;
+  margin-left: 33vw;
+}
 .fieldForm {
   background-color: #fafaff;
   border: 0px;
@@ -209,11 +212,15 @@ label {
 }
 .btnActiveRegister {
   width: 50vw;
+  background-color: #202020;
   border-top-right-radius: 10px;
+  color: white;
 }
 .btnActiveLogin {
   width: 50vw;
   border-top-left-radius: 10px;
+  background-color: #202020;
+  color: white;
 }
 /* -------------------------- */
 
@@ -232,9 +239,6 @@ p {
   border-radius: 20px;
 }
 
-.delCarousel {
-  display: none;
-}
 
 /* ----------------------------------- */
 

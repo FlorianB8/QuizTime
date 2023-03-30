@@ -1,4 +1,8 @@
 <?php
+require_once(__DIR__ . '/../config/init.php');
+require_once(__DIR__ . '/../config/constants.php');
+require_once(__DIR__ . '/../models/Flash.php');
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error = [];
 
@@ -28,6 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     // * -----------------------------
+
+    if(empty($error)){
+        $subject = "Message de $pseudo";
+        $mailAdmin = 'contact@quiztime.fr';
+        $message .= "<br> Adresse mail du contact : $email";
+        mail($mailAdmin, $subject, $message);
+        Flash::setMessage('Votre message à bien été envoyé', 'success');
+        header('location: /');
+    }
 }
 
 

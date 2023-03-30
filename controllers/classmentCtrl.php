@@ -1,5 +1,11 @@
 <?php
+require_once(__DIR__ . '/../config/init.php');
+require_once(__DIR__ . '/../models/User.php');
+require_once(__DIR__ . '/../models/Connect.php');
 
-require_once(__DIR__.'/../views/templates/header.php');
-require(__DIR__.'/../views/classment.php');
-require_once(__DIR__.'/../views/templates/footer.php');
+$users = User::getUsersClassment();
+
+
+include_once(__DIR__.'/../views/templates/header.php');
+include(__DIR__.'/../views/classment.php');
+include_once(__DIR__.'/../views/templates/footer.php');

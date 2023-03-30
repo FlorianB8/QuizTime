@@ -27,8 +27,7 @@
                                 <h2 class="fw-bold">Informations</h2>
                                 <hr class="textGreen">
                                 <a class="linkPage nav-link" href="#">Mentions légales</a>
-                                <a class="linkPage nav-link" href="../contact.php">Contact</a>
-                                <a class="linkPage nav-link" href="#">Newsletter</a>
+                                <a class="linkPage nav-link" href="/contactez-nous">Contactez nous</a>
                             </div>
                         </div>
                     </div>

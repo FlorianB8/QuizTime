@@ -61,20 +61,6 @@
         border-right: 5px solid #7EA16B;
     }
 
-    .carouselMobile {
-        display: none;
-    }
-
-    .delCarousel {
-        display: block;
-    }
-
-    .delCarousel h1 {
-        position: absolute;
-        margin-top: 5vh;
-        margin-left: 5vh;
-    }
-
     .imgQuiz {
         width: 30vw;
         border: 0px;
@@ -114,20 +100,6 @@
         transform: rotate(180deg);
     }
 
-    .carouselMobile {
-        display: none;
-    }
-
-    .delCarousel {
-        display: block;
-    }
-
-    .delCarousel h1 {
-        position: absolute;
-        margin-top: 5vh;
-        margin-left: 5vh;
-    }
-
     .imgQuiz {
         width: 40vw;
         border: 0px;
@@ -150,10 +122,6 @@
 
     /* --------------------------- */
 
-    /* Classement  */
-    .ranking {
-        height: 40vh;
-    }
 
     /* --------------- */
     /* HEADER */
@@ -180,7 +148,7 @@
     }
 
     .allLinkPage {
-        margin-left: 27vw;
+        /* margin-left: 27vw; */
     }
 
     /* --------------------------- */

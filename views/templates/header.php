@@ -29,22 +29,27 @@
                         <div class="collapse navbar-collapse" id="navbarCollapse">
                             <!-- Lien vers chaque page -->
                             <div class="navbar-nav allLinkPage me-5">
-                                <div class="me-xl-5 me-0 d-flex">
+                                <div class=" me-0 d-flex">
                                     <a href="/accueil" class="mx-4 nav-link linkPage">Accueil</a>
                                     <a href="/categories" class="mx-4 nav-link linkPage">Catégories</a>
                                 </div>
-                                <div class="ms-xl-5 ms-0 d-flex">
+                                <div class=" ms-0 d-flex">
                                     <a href="/classement" class="mx-4 nav-link linkPage">Classement</a>
                                     <a href="/contactez-nous" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                                 </div>
                             </div>
-                            
-                            <?php if(!isset($_SESSION['user'])) { ?>
+
+                            <?php if (!isset($_SESSION['user'])) { ?>
                                 <div class="navbar-nav ms-auto">
-                                    <a href="/connexion-inscription" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-user"></i></a>
+                                    <a href="/connexion-inscription" class="nav-item nav-link btnLog linkLog">Connexion</a>
                                 </div>
-                            <?php } else { ?>
+
+                            <?php  } else { ?>
                                 <div class="navbar-nav ms-auto">
+                                    <?php if ($_SESSION['user']->role == 2) { ?>
+                                        <a href="../../controllers/dashboardHomeCtrl.php" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-hammer"></i></a>
+                                    <?php } ?>
+                                    <a href="../../controllers/profilCtrl.php" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-user"></i></a>
                                     <a href="deconnexion" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                                 </div>
                             <?php } ?>
@@ -52,7 +57,7 @@
                         </div>
                     </div>
                 </nav>
-                
+
             </div>
         </div>
         <div class="rotate wave">

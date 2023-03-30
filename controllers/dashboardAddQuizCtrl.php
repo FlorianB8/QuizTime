@@ -45,13 +45,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quizUpdate = new Quiz();
         $quizUpdate->setName($quizName);
         $quizUpdate->setId_categories($category);
-        $quizUpdate->setUpdated_at(date('Y-m-d H:i:s'));
-        $result = $quizUpdate->update($id);
+        $result = $quizUpdate->add();
         if($result == false){
-            Flash::setMessage(QUIZ_NOT_UPDATE,'danger');
+            Flash::setMessage(QUIZ_NOT_ADD,'danger');
             header('location: ./dashboardQuizzesCtrl.php');
         } else {
-            Flash::setMessage(QUIZ_UPDATE,'success');
+            Flash::setMessage(QUIZ_ADD,'success');
             header('location: ./dashboardQuizzesCtrl.php');
         }
 
@@ -59,10 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 try {
-    if(Quiz::isIdExist($id) == false) {
-        throw new Exception("L'ID du quiz n'existe pas !", 1);
-    }
-    $quiz = Quiz::get($id);
+
     $categories = Category::getAll();
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
@@ -73,5 +69,5 @@ try {
 }
 
 include_once(__DIR__ . '/../views/templates/headerDashboard.php');
-include_once(__DIR__ . '/../views/dashboard/updateQuiz.php');
+include_once(__DIR__ . '/../views/dashboard/addQuiz.php');
 include_once(__DIR__ . '/../views/templates/footerDashboard.php');

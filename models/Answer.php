@@ -3,10 +3,9 @@
 class Answer {
     private int $id;
     private string $answer;
-    private int $valid; 
     private string $created_at;
     private int $id_question;
-
+    private string $choice;
 /**
  * @return int
  */
@@ -23,6 +22,20 @@ public function setId($value):void{
 }
 
 /**
+ * @return int
+ */
+public function getChoice():int{
+    return $this->choice;
+}
+/**
+ * @param mixed $value
+ * 
+ * @return void
+ */
+public function setChoice($value):void{
+    $this->choice = $value;
+}
+/**
  * @return string
  */
 public function getAnswer():string{
@@ -35,21 +48,6 @@ public function getAnswer():string{
  */
 public function setAnswer($value):void{
     $this->answer = $value;
-}
-
-/**
- * @return int
- */
-public function getValid():int{
-    return $this->valid;
-}
-/**
- * @param mixed $value
- * 
- * @return void
- */
-public function setValid($value):void{
-    $this->valid = $value;
 }
 
 /**
@@ -120,11 +118,11 @@ public static function getAll(): array
 public function add(): bool
 {
     $db = dbConnect();
-    $query = 'INSERT INTO `answers` (`answer`, `valid`,`id_question`) VALUES (:answer, :valid, :id_question);';
+    $query = 'INSERT INTO `answers` (`answer`, `choice`,`id_questions`) VALUES (:answer, :choice, :id_questions);';
     $sth = $db->prepare($query);
     $sth->bindValue(':answer', $this->answer, PDO::PARAM_STR);
-    $sth->bindValue(':valid', $this->valid, PDO::PARAM_INT);
-    $sth->bindValue(':id_question', $this->id_question, PDO::PARAM_INT);
+    $sth->bindValue(':choice', $this->choice, PDO::PARAM_STR);
+    $sth->bindValue(':id_questions', $this->id_question, PDO::PARAM_INT);
 
     return $sth->execute();
 }
@@ -132,15 +130,32 @@ public function add(): bool
 public static function getAllAnswersQuiz (int $id)
 {
     $query =
-        'SELECT `id`, `question`, `points`, `id_quiz` 
-        FROM `questions` 
-        WHERE `id_quiz` = :id_quiz ;';
+        'SELECT `id`, `answer`, `choice`, `id_questions`  
+        FROM `answers` 
+        WHERE `id_questions` = :id_questions ;';
     $db = dbConnect();
     $sth = $db->prepare($query);
-    $sth->bindValue(':id_quiz', $id, PDO::PARAM_INT);
+    $sth->bindValue(':id_questions', $id, PDO::PARAM_INT);
     $sth->execute();
     $questions = $sth->fetchAll();
 
     return $questions;
 }
+
+public function update(int $id): bool
+    {
+        $db = dbConnect();
+        $query = "UPDATE `answers` 
+        SET `answer`=:answer,
+            `choice`=:choice
+        WHERE `id` = :id";
+        $sth = $db->prepare($query);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->bindValue(':answer', $this->answer, PDO::PARAM_STR);
+        $sth->bindValue(':choice', $this->choice, PDO::PARAM_STR);
+        $sth->execute();
+        $result = $sth->rowCount();
+
+        return $result > 0 ? true : false;
+    }
 }

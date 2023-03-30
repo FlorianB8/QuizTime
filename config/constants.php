@@ -1,4 +1,5 @@
 <?php 
+// REGEX 
 define('REGEXP_PSEUDO', '^[a-zA-ZÀ-ÿ0-9\' -]{2,64}$');
 define('REGEXP_TEXT', '^[a-zA-ZÀ-ÿ\' -]{2,64}$');
 define('REGEXP_NUMBER','^[0-9]{1,64}$');
@@ -11,16 +12,21 @@ define('DB_PASSWORD', '!YZiyGSrgvgYkDwI');
 // --------------------------------------
 
 // Flash Message 
-
 define('USER_UPDATE', 'Utilisateur modifié avec succés !');
 define('USER_NOT_UPDATE', 'Erreur lors de la modification de l\'utilisateur !');
 define('USER_ADD', 'Création de votre compte réalisé avec succés !');
 define('USER_NOT_ADD', 'Erreur lors de la création de votre compte !');
 define('CATEGORY_UPDATE', 'Catégorie modifié avec succés !');
 define('CATEGORY_NOT_UPDATE', 'Erreur lors de la modification de la catégorie !');
+define('CATEGORY_ADD', 'Catégorie ajoutée avec succés !');
+define('CATEGORY_NOT_ADD', 'Erreur lors de la création de la catégorie !');
 define('QUIZ_UPDATE', 'Quiz modifié avec succés !');
 define('QUIZ_NOT_UPDATE', 'Erreur lors de la modification du quiz !');
+define('QUIZ_ADD', 'Quiz ajouté avec succés !');
+define('QUIZ_NOT_ADD', 'Erreur lors de la création du quiz !');
 define('VALIDATE_COMMENT', 'Commentaire validé avec succés !');
 define('NOT_VALIDATE_COMMENT', 'Erreur lors de la validation du commentaire !');
+define('QUESION_ANSWER_UPDATE','La modification de la question et des réponses à été effectué !');
+define('QUESION_ANSWER_ADD','La création de la question et des réponses à été effectué !');
 
 ?>

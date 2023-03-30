@@ -3,6 +3,9 @@ include(__DIR__ . '/../config/constants.php');
 include(__DIR__ . '/../models/User.php');
 include(__DIR__ . '/../models/Flash.php');
 include(__DIR__ . '/../models/Connect.php');
+require_once(__DIR__ . '/../config/init.php');
+
+$message = Flash::getMessage();
 
 if (isset($_POST['pseudoRegister']) || isset($_POST['emailRegister']) || isset($_POST['passwordRegister'])) {
     $error = [];
@@ -72,7 +75,7 @@ if (isset($_POST['pseudoRegister']) || isset($_POST['emailRegister']) || isset($
             $mailValidate = 'Bonjour <br> Merci de valider votre compte en cliquant juste <a href="'.$link.'">ici</a>';
             mail($to, $subject, $mailValidate);
             Flash::setMessage(USER_ADD, 'success');
-            header('location: ./logCtrl.php');
+            header('location: /connexion-inscription');
         }
     }
 } else if (isset($_POST['emailLogin']) || isset($_POST['passwordLogin'])) {

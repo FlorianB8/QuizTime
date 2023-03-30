@@ -1,7 +1,7 @@
 
 
 <main>
-    <div class="container-fluid bgBlue">
+    <div class="container-fluid ">
         <div class="row justify-content-center mx-5 w-75 mx-auto rounded-4 my-lg-0 my-5">
             <?=$message?>
             <div class="col-12 col-lg-10 p-0 m-0 d-flex justify-content-center mt-lg-5 mt-0 ">
@@ -9,7 +9,8 @@
                 <button id="btnReg" class="btnRegister">Inscription</button>
             </div>
             <div id="login" class="col-12 col-lg-10 formLog bgDark  " <?=$hiddenLogin ?? ''?>>
-                <div class="my-5">
+                <p class="text-white registerText">Pas encore inscrit ? <i class="fa-solid fa-arrow-turn-up fa-bounce"></i></p>
+                <div class="mb-5">
                     <h1 class="textGreen text-center fw-bold">Connexion</h1>
                     <hr class="textGreen">
                 </div>

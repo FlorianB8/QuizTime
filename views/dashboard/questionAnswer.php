@@ -5,6 +5,7 @@
                 <?= $message ?>
                 <h1 class="text-center mt-5">Liste des questions</h1>
                 <hr class="mb-5">
+                <a class="btnLog p-2" href="./../../controllers/dashboardAddQuestionAnswerCtrl.php"><i class="m-4 fa-solid fa-plus"></i></a>
                 <table class="tableDashboard">
                     <thead>
                         <tr class="text-center">
@@ -23,7 +24,7 @@
                                 <td><?= $question->correct ?></td>
                                 <td><?= $question->name ?></td>
                                 <td class=" optionsTable">
-                                    <a class="" href="/controllers/dashboardUpdateCategoryCtrl.php?id=<?= $question->id ?>"><i class="fa-solid fa-eye"></i></a>
+                                    <a class="" href="/controllers/dashboardUpdateQuestionAnswerCtrl.php?id=<?= $question->id ?>"><i class="fa-solid fa-eye"></i></a>
                                     <a class="text-danger" href=""><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>

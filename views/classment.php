@@ -20,46 +20,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <h3 class="mt-5">Joueur 1</h3>
-                                    </td>
-                                    <td>
-                                        <h3 class="mt-5">200</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h3>Joueur 2</h3>
-                                    </td>
-                                    <td>
-                                        <h3>125</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h3>Joueur 3</h3>
-                                    </td>
-                                    <td>
-                                        <h3>100</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h3>Joueur 4</h3>
-                                    </td>
-                                    <td>
-                                        <h3>95</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h3>Joueur 5</h3>
-                                    </td>
-                                    <td>
-                                        <h3>80</h3>
-                                    </td>
-                                </tr>
+                            <?php foreach ($users as $user) {  ?>
+                                    <tr>
+                                        <td>
+                                            <h3 class="mt-5"><?= $user->pseudo ?></h3>
+                                        </td>
+                                        <td>
+                                            <h3 class="mt-5"><?= $user->points ?></h3>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

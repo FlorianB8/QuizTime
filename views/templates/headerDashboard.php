@@ -40,7 +40,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="../../controllers/dashboardQuestionAnswer.php" class="nav-link px-0 align-middle linkPage">
+                                <a href="../../controllers/dashboardQuestionAnswerCtrl.php" class="nav-link px-0 align-middle linkPage">
                                 <i class="fa-solid fa-file-circle-question"></i><span class="ms-1 d-none d-sm-inline"> Questions/Réponses</span>
                                 </a>
                             </li>
@@ -59,14 +59,14 @@
                         <div class="dropdown pb-4">
                             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="textGreen fa-solid fa-user me-3"></i>
-                                <span class="d-none d-sm-inline mx-1 textGreen">Florian</span>
+                                <span class="d-none d-sm-inline mx-1 textGreen"><?=$_SESSION['user']->pseudo?></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark bgGreen text-small shadow">
-                                <li><a class="dropdown-item" href="#">Profil</a></li>
+                                <li><a class="dropdown-item" href="../../controllers/profilCtrl.php">Profil</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                                <li><a class="dropdown-item" href="../../controllers/signOutCtrl.php">Déconnexion</a></li>
                             </ul>
                         </div>
                     </div>
