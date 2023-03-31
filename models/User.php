@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__.'/Connect.php');
 
 class User
 {
@@ -182,7 +183,7 @@ class User
     {
         $query =
             'SELECT * FROM `users`;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->query($query);
         $users = $sth->fetchAll();
 
@@ -192,7 +193,7 @@ class User
     {
         $query =
             'SELECT `pseudo`, `points` FROM `users` ORDER BY  `points` DESC;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->query($query);
         $users = $sth->fetchAll();
 
@@ -203,7 +204,7 @@ class User
     {
         $query =
             'SELECT `pseudo`, `points` FROM `users` ORDER BY  `points` DESC LIMIT 3;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->query($query);
         $users = $sth->fetchAll();
 
@@ -217,7 +218,7 @@ class User
      */
     public static function get(int $id):object|bool 
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "SELECT * FROM `users` WHERE `id` = :id ;";
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
@@ -234,7 +235,7 @@ class User
      */
     public static function getByEmail(string $email):object|bool 
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = 'SELECT * FROM `users` WHERE `email` = :email ;';
         $sth = $db->prepare($query);
         $sth->bindValue(':email', $email);
@@ -245,7 +246,7 @@ class User
     }
 
     public static function validateEmail(string $email):bool {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = 'UPDATE `users` 
         SET
             `validated_at`= NOW() 
@@ -262,7 +263,7 @@ class User
      */
     public function add(): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = 'INSERT INTO `users` (`pseudo`, `email`,`password`,`points`, `role`) VALUES (:pseudo, :email, :password, :points, :role);';
         $sth = $db->prepare($query);
         $sth->bindValue(':pseudo', $this->pseudo, PDO::PARAM_STR);
@@ -275,7 +276,7 @@ class User
 
     public static function isMailExist(string $email): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $verifQuery = "SELECT `id` FROM `users` WHERE `email` = :email ;";
         $verifEmail = $db->prepare($verifQuery);
         $verifEmail->bindValue(':email', $email, PDO::PARAM_STR);
@@ -290,7 +291,7 @@ class User
 
     public static function isIdExist(int $id):bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $verifQuery = "SELECT `id` FROM `users` WHERE `id` = :id ;";
         $verifEmail = $db->prepare($verifQuery);
         $verifEmail->bindValue(':id', $id, PDO::PARAM_STR);
@@ -299,9 +300,9 @@ class User
         return !empty($result);
 
     }
-    public function update(int $id): bool
+    public function updateAdmin(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `users` 
         SET `pseudo`=:pseudo,
             `email`=:email,
@@ -322,11 +323,29 @@ class User
         return $result > 0 ? true : false;
     }
 
+    public function updateUser(int $id): bool
+    {
+        $db = Database::dbConnect();
+        $query = "UPDATE `users` 
+        SET `pseudo`=:pseudo,
+            `email`=:email,
+            `password`=:password
+        WHERE `id` = :id";
+        $sth = $db->prepare($query);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->bindValue(':pseudo', $this->pseudo, PDO::PARAM_STR);
+        $sth->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $sth->bindValue(':password', $this->password, PDO::PARAM_STR);
+        $sth->execute();
+        $result = $sth->rowCount();
+
+        return $result > 0 ? true : false;
+    }
     public static function delete(int $id): array
     {
         $query =
             'DELETE FROM `users` WHERE  `id` = :id ;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
         $sth->execute();
@@ -336,7 +355,7 @@ class User
     }
 
     public function updatePoints($id) {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `users` 
         SET
             `points`=:points

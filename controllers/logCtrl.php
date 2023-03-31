@@ -1,8 +1,7 @@
 <?php
-include(__DIR__ . '/../config/constants.php');
-include(__DIR__ . '/../models/User.php');
-include(__DIR__ . '/../models/Flash.php');
-include(__DIR__ . '/../models/Connect.php');
+require_once(__DIR__ . '/../config/constants.php');
+require_once(__DIR__ . '/../models/User.php');
+require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../config/init.php');
 
 $message = Flash::getMessage();

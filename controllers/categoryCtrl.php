@@ -1,6 +1,5 @@
 <?php
 
-require_once(__DIR__ . '/../models/Connect.php');
 require_once(__DIR__ . '/../models/Category.php');
 require_once(__DIR__ . '/../helpers/dd.php');
 require_once(__DIR__ . '/../config/init.php');

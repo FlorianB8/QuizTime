@@ -1,5 +1,4 @@
 <?php
-require_once(__DIR__ . '/../models/Connect.php');
 require_once(__DIR__ . '/../models/Question.php');
 require_once(__DIR__ . '/../models/Answer.php');
 require_once(__DIR__ . '/../models/Flash.php');

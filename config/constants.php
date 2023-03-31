@@ -28,5 +28,17 @@ define('VALIDATE_COMMENT', 'Commentaire validé avec succés !');
 define('NOT_VALIDATE_COMMENT', 'Erreur lors de la validation du commentaire !');
 define('QUESION_ANSWER_UPDATE','La modification de la question et des réponses à été effectué !');
 define('QUESION_ANSWER_ADD','La création de la question et des réponses à été effectué !');
+define('CATEGORY_DELETE','La suppression de la catégorie été effectué !');
+define('CATEGORY_NOT_DELETE','La suppression de la catégorie n\'a pas abouti !');
+define('QUIZ_DELETE','La suppression du quiz été effectué !');
+define('QUIZ_NOT_DELETE','La suppression du quiz n\'a pas abouti !');
+define('QUESTION_DELETE','La suppression de la question et de ses réponses à été effectué !');
+define('QUESTION_NOT_DELETE','La suppression de la question et de ses réponses n\'a pas abouti !');
+define('USER_DELETE','La suppression de l\'utilisateur et de ses commentaires à été effectué !');
+define('USER_NOT_DELETE','La suppression de l\'utilisateur et de ses commentaires n\'a pas abouti !');
 
+// Envoi d'image
+define('MAX_FILE_SIZE', 5*1024*1024);
+define('EXTENSIONS', ['image/jpeg']);
+define('LOCATION_IMG_QUIZ', $_SERVER['DOCUMENT_ROOT'].'/public/assets/uploads/imgQuiz');
 ?>

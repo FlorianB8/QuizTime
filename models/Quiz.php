@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__.'/Connect.php');
 
 class Quiz
 {
@@ -119,7 +120,7 @@ class Quiz
      */
     public static function get(int $id): object|bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query =
             'SELECT  `quiz`.`name` as "quizName", `quiz`.`id` as "id_quiz", `categories`.`name` as "categoryName", `id_categories`, `icon` 
         FROM `quiz` 
@@ -135,7 +136,7 @@ class Quiz
     }
     public static function isIdExist(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $verifQuery = "SELECT `id` FROM `quiz` WHERE `id` = :id ;";
         $verifEmail = $db->prepare($verifQuery);
         $verifEmail->bindValue(':id', $id, PDO::PARAM_STR);
@@ -152,7 +153,7 @@ class Quiz
             'SELECT `quiz`.`id` as "id_quiz", `quiz`.`name` as "quizName", `categories`.`name` as "categoryName", `id_categories` FROM `quiz` 
             LEFT JOIN `categories` 
             ON `quiz`.`id_categories` = `categories`.`id`;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->query($query);
         $quizzes = $sth->fetchAll();
 
@@ -164,7 +165,7 @@ class Quiz
      */
     public function add(): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = 'INSERT INTO `quiz` (`name`, `id_categories`) VALUES (:name, :id_categories);';
         $sth = $db->prepare($query);
         $sth->bindValue(':name', $this->name, PDO::PARAM_STR);
@@ -172,6 +173,7 @@ class Quiz
         return $sth->execute();
     }
 
+    
     /**
      * @param int $id
      * 
@@ -179,7 +181,7 @@ class Quiz
      */
     public function update(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `quiz` 
         SET `name`= :name,
             `id_categories`= :id_categories,
@@ -205,7 +207,7 @@ class Quiz
     {
         $query =
             'DELETE FROM `quiz` WHERE  `id` = :id ;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
         $sth->execute();

@@ -37,10 +37,10 @@
                 <!-- Formulaire pour l'inscription -->
                 <form class="d-flex flex-column my-5 w-75 mx-auto" method="post">
                     <label id="labelPseudo" class="textGreen" for="pseudoRegister">Pseudo* :</label>
-                    <input id="pseudoRegister" name="pseudoRegister" class="fieldForm p-2 " type="text" autocomplete="off">
+                    <input id="pseudoRegister" name="pseudoRegister" class="fieldForm p-2 " type="text" autocomplete="off" value="<?=$pseudoRegister ?? ''?>">
                     <p id="errorPseudo" class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    
                     <label id="labelEmail" class="textGreen mt-4" for="emailRegister">E-mail* :</label>
-                    <input id="emailRegister" name="emailRegister" class="fieldForm p-2 " type="email" autocomplete="off">
+                    <input id="emailRegister" name="emailRegister" class="fieldForm p-2 " type="email" autocomplete="off" value="<?=$emailRegister ?? ''?>">
                     <p id="errorEmail" class="errorMessage"><?=$error['email'] ?? ''?></p>
                     <label id="labelPassword" class="textGreen mt-4" for="passwordRegister">Mot de passe* :</label>
                     <input id="passwordRegister" name="passwordRegister" class="fieldForm p-2 " type="password" autocomplete="off">

@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__.'/Connect.php');
 
 class Category
 {
@@ -78,7 +79,7 @@ class Category
 
     public static function isIdExist(int $id):bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $verifQuery = "SELECT `id` FROM `categories` WHERE `id` = :id ;";
         $verifEmail = $db->prepare($verifQuery);
         $verifEmail->bindValue(':id', $id, PDO::PARAM_STR);
@@ -94,7 +95,7 @@ class Category
     {
         $query =
             'SELECT * FROM `categories`;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->query($query);
         $users = $sth->fetchAll();
 
@@ -108,7 +109,7 @@ class Category
      */
     public static function get(int $id):object|bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "SELECT * FROM `categories` WHERE `id` = :id ;";
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
@@ -123,7 +124,7 @@ class Category
      */
     public function add(): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = 'INSERT INTO `categories` (`name`, `icon`) VALUES (:name, :icon);';
         $sth = $db->prepare($query);
         $sth->bindValue(':name', $this->name, PDO::PARAM_STR);
@@ -138,7 +139,7 @@ class Category
      */
     public function update(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `categories` 
         SET `name`= :name,
             `icon`= :icon
@@ -162,7 +163,7 @@ class Category
     {
         $query =
             'DELETE FROM `categories` WHERE  `id` = :id ;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
         $sth->execute();

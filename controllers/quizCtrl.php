@@ -1,8 +1,7 @@
 <?php
-include(__DIR__ . '/../models/Connect.php');
-include(__DIR__ . '/../models/Question.php');
-include(__DIR__ . '/../models/Comment.php');
-include(__DIR__ . '/../models/Answer.php');
+require_once(__DIR__ . '/../models/Question.php');
+require_once(__DIR__ . '/../models/Comment.php');
+require_once(__DIR__ . '/../models/Answer.php');
 require_once(__DIR__ . '/../config/init.php');
 
 // if ($_SERVER['REQUEST_METHOD'] == 'POST') {

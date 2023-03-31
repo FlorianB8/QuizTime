@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__.'/Connect.php');
 
 class Comment
 {
@@ -84,7 +85,7 @@ class Comment
             FROM `comments`
             LEFT JOIN `users`
             ON `comments`.`id_players` = `users`.`id`;';
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $sth = $db->query($query);
         $users = $sth->fetchAll();
 
@@ -93,7 +94,7 @@ class Comment
 
     public static function get(int $id): object|bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = 'SELECT `comments`.`id` , `content`, `users`.`pseudo`, `users`.`email`, `comments`.`validated_at` 
         FROM `comments`
         LEFT JOIN `users`
@@ -109,7 +110,7 @@ class Comment
 
     public function add(): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = 'INSERT INTO `comments` (`content`, `validated_at`,`id_quiz`, `id_players`) VALUES (:content, :validated_at, :id_quiz, :id_players);';
         $sth = $db->prepare($query);
         $sth->bindValue(':content', $this->content, PDO::PARAM_STR);
@@ -121,7 +122,7 @@ class Comment
     }
     public static function isIdExist(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $verifQuery = "SELECT `id` FROM `comments` WHERE `id` = :id ;";
         $verifEmail = $db->prepare($verifQuery);
         $verifEmail->bindValue(':id', $id, PDO::PARAM_STR);
@@ -132,7 +133,7 @@ class Comment
 
     public function update(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `comments` 
         SET `content`= :content,
             `validated_at`= :validated_at,
@@ -152,7 +153,7 @@ class Comment
     }
     public function validate(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `comments` 
         SET `validated_at`= :validated_at
         WHERE `id` = :id";

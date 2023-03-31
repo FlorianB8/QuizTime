@@ -25,7 +25,7 @@
                                 <td><?= $question->name ?></td>
                                 <td class=" optionsTable">
                                     <a class="" href="/controllers/dashboardUpdateQuestionAnswerCtrl.php?id=<?= $question->id ?>"><i class="fa-solid fa-eye"></i></a>
-                                    <a class="text-danger" href=""><i class="fa-solid fa-trash"></i></a>
+                                    <a class="text-danger" href="/controllers/dashboardDeleteQuestionAnswerCtrl.php?id=<?= $question->id ?>"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php

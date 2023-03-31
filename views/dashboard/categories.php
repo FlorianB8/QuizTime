@@ -21,7 +21,7 @@
                                 <td><i class="?= <?= $categorie->icon ?>"></i></td>
                                 <td class=" optionsTable">
                                     <a class="" href="/controllers/dashboardUpdateCategoryCtrl.php?id=<?= $categorie->id ?>"><i class="fa-solid fa-eye"></i></a>
-                                    <a class="text-danger" href=""><i class="fa-solid fa-trash"></i></a>
+                                    <a class="text-danger" href="/controllers/dashboardDeleteCategoryCtrl.php?id=<?= $categorie->id ?>""><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php

@@ -1,18 +1,34 @@
 <main>
     <div class="container-fluid">
         <div class="row justify-content-center">
+            <div class="col-10">
+                <?= $message ?>
+            </div>
             <div class="col-10 bgDark text-center rounded-4 text-white">
                 <h1 class="textGreen mt-5 mb-3">Informations profil</h1>
-                <div class="d-flex flex-wrap">
-                    <h3 class="mx-5">Pseudo : <?=$_SESSION['user']->pseudo?></h3>
-                    <h3 class="mx-5">Email : <?=$_SESSION['user']->email?></h3>
-                    <h3 class="mx-5">Mot de passe : **************</h3>
-                    <a href="btnLog">Modifier</a>
+                <hr class="mx-auto w-75">
+                <div class="">
+                    <div class="mb-3">
+                        <h3>Pseudo : </h3>
+                        <p class="text-danger text-center"><?= $_SESSION['user']->pseudo ?></p>
+                    </div>
+                    <hr class="mx-auto w-25">
+                    <div class="mb-3">
+                        <h3>Email : </h3>
+                        <p class="text-danger text-center"><?= $_SESSION['user']->email ?></p>
+                    </div>
+                    <hr class="mx-auto w-25">
+                    <div class="mb-3">
+                        <h3>Mot de passe :</h3>
+                        <p class="text-danger text-center">**********</p>
+                    </div>
                 </div>
+                <a class="btnLog mx-auto" href="./../controllers/updateUserCtrl.php">Modifier</a>
                 <h1 class="textGreen mt-5 mb-3">Statistiques quiz</h1>
-                <div class="d-flex flex-wrap">
+                <hr class="mx-auto w-75">
+                <div class=" text-center mb-3">
                     <h3>Nombre de points : </h3>
-                    <p class="text-danger"><?=$_SESSION['user']->points?></p>
+                    <p class="text-danger text-center"><?= $_SESSION['user']->points ?></p>
                 </div>
             </div>
         </div>

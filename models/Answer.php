@@ -1,4 +1,5 @@
 <?php 
+require_once(__DIR__.'/Connect.php');
 
 class Answer {
     private int $id;
@@ -87,7 +88,7 @@ public function setId_question($value):void{
  */
 public static function get(int $id = NULL):array|bool
 {
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $query = 'SELECT *
                 FROM `answers`' .
             (($id) ? 'WHERE `id_questions` = :id' : '');
@@ -105,7 +106,7 @@ public static function getAll(): array
 {
     $query =
         'SELECT * FROM `answers` ;';
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $sth = $db->query($query);
     $users = $sth->fetchAll();
 
@@ -117,7 +118,7 @@ public static function getAll(): array
  */
 public function add(): bool
 {
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $query = 'INSERT INTO `answers` (`answer`, `choice`,`id_questions`) VALUES (:answer, :choice, :id_questions);';
     $sth = $db->prepare($query);
     $sth->bindValue(':answer', $this->answer, PDO::PARAM_STR);
@@ -133,7 +134,7 @@ public static function getAllAnswersQuiz (int $id)
         'SELECT `id`, `answer`, `choice`, `id_questions`  
         FROM `answers` 
         WHERE `id_questions` = :id_questions ;';
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $sth = $db->prepare($query);
     $sth->bindValue(':id_questions', $id, PDO::PARAM_INT);
     $sth->execute();
@@ -144,7 +145,7 @@ public static function getAllAnswersQuiz (int $id)
 
 public function update(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `answers` 
         SET `answer`=:answer,
             `choice`=:choice

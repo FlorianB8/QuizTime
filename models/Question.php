@@ -1,4 +1,5 @@
 <?php 
+require_once(__DIR__.'/Connect.php');
 
 class Question {
     private int $id;
@@ -104,7 +105,7 @@ public function setId_quiz($value):void{
  */
 public static function get(int $id = NULL)
 {
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $query = 'SELECT `questions`.`id` ,`questions`.`question`, `questions`.`correct`, `questions`.`points`, `quiz`.`name`, `questions`.`id_quiz`
                 FROM `questions`
                 LEFT JOIN `quiz`
@@ -120,7 +121,7 @@ public static function get(int $id = NULL)
 
 public static function getQuestionById(int $id = NULL)
 {
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $query = 'SELECT `questions`.`id` ,`questions`.`question`, `questions`.`correct`, `questions`.`points`, `quiz`.`name`, `questions`.`id_quiz`
                 FROM `questions` 
                 LEFT JOIN `quiz`
@@ -140,7 +141,7 @@ public static function getAll(): array
 {
     $query =
         'SELECT * FROM `questions`;';
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $sth = $db->query($query);
     $users = $sth->fetchAll();
 
@@ -150,7 +151,7 @@ public static function getAll(): array
 
 public function add()
 {
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $query = 'INSERT INTO `questions` (`question`,`correct`, `points`,`id_quiz`) VALUES (:question,:correct, :points, :id_quiz);';
     $sth = $db->prepare($query);
     $sth->bindValue(':question', $this->question, PDO::PARAM_STR);
@@ -170,7 +171,7 @@ public static function getAllQuestions (int $id)
         'SELECT `id`, `question`, `points`, `id_quiz`, `correct`
         FROM `questions` 
         WHERE `id_quiz` = :id_quiz ;';
-    $db = dbConnect();
+    $db = Database::dbConnect();
     $sth = $db->prepare($query);
     $sth->bindValue(':id_quiz', $id, PDO::PARAM_INT);
     $sth->execute();
@@ -181,7 +182,7 @@ public static function getAllQuestions (int $id)
 
 public function update(int $id): bool
     {
-        $db = dbConnect();
+        $db = Database::dbConnect();
         $query = "UPDATE `questions` 
         SET `question`=:question,
             `correct`=:correct,
@@ -198,5 +199,23 @@ public function update(int $id): bool
         $result = $sth->rowCount();
 
         return $result > 0 ? true : false;
+    }
+
+      /**
+     * @param int $id
+     * 
+     * @return array
+     */
+    public static function delete(int $id): array
+    {
+        $query =
+            'DELETE FROM `questions` WHERE  `id` = :id ;';
+        $db = Database::dbConnect();
+        $sth = $db->prepare($query);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->execute();
+        $users = $sth->fetchAll();
+
+        return $users;
     }
 }

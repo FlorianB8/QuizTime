@@ -29,7 +29,7 @@
                                 <td><?= $userRole?></td>
                                 <td class=" optionsTable">
                                     <a class="" href="../../controllers/dashboardProfilUserCtrl.php?id=<?=$user->id?>"><i class="fa-solid fa-eye"></i></a>
-                                    <a class="text-danger" href=""><i class="fa-solid fa-trash"></i></a>
+                                    <a class="text-danger" href="../../controllers/dashboardDeleteUserCtrl.php?id=<?=$user->id?>"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php
