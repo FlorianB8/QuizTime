@@ -9,10 +9,14 @@
                             <hr>
                         </div>
                         <ul class="profilInfo">
+                            <?php if($user->role == 1) {
+                                $userRole = 'Joueur';
+                             }else {
+                                $userRole = 'Admin';
+                             } ?>
                             <li>Pseudo : <span class="ms-2"><?= $user->pseudo ?></span> </li>
-                            <li>Email : <span class="ms-2"><?= $user->email ?></span> </li>
-                            <li>Mot de passe : <span class="ms-2"><?= substr($user->password, 0, 10) ?>...</span> </li>
                             <li>Points : <span class="ms-2"><?= $user->points ?></span> </li>
+                            <li>Rôle : <span class="ms-2"><?=$userRole ?></span> </li>
                         </ul>
                     </div>
                     <div class="d-flex justify-content-center ">

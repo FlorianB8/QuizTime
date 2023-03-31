@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . '/../models/User.php');
 require_once(__DIR__ . '/../models/Category.php');
+require_once(__DIR__ . '/../models/Quiz.php');
 require_once(__DIR__ . '/../config/init.php');
 require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../helpers/dd.php');
@@ -8,6 +9,7 @@ require_once(__DIR__ . '/../helpers/dd.php');
 
 
 try {
+    $quizzes = Quiz::getAll();
     $categories = Category::getAll();
     $users = User::getTop3Users();
     $message = Flash::getMessage();

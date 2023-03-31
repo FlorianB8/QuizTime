@@ -10,12 +10,6 @@
                         <label id="labelPseudo" class="textGreen" for="pseudo">Pseudo :</label>
                         <input id="pseudo" name="pseudo" class="fieldForm p-2 " type="text" autocomplete="off" value="<?=$pseudo ??  $user->pseudo ?>">
                         <p id="errorPseudo" class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    
-                        <label id="labelEmail" class="textGreen mt-4" for="email">E-mail :</label>
-                        <input id="email" name="email" class="fieldForm p-2 " type="email" autocomplete="off" value="<?= $email  ?? $user->email?>">
-                        <p id="errorEmail" class="errorMessage"><?=$error['email'] ?? ''?></p>
-                        <label id="labelPassword" class="textGreen mt-4" for="password">Mot de passe :</label>
-                        <input id="password" name="password" class="fieldForm p-2 " type="password" autocomplete="off" value="">
-                        <p id="errorPassword" class="errorMessage mb-3"><?=$error['password'] ?? ''?></p>
                         <label for="points">Points</label>
                         <input class="mb-3" type="number" name="points" value="<?=$points ?? $user->points?>">
                         <label class="" for="role">Choix rôle</label>

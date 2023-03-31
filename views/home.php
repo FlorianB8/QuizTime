@@ -27,7 +27,7 @@
                             </div>
                             <div class="text-center d-flex flex-column">
                                 <?php foreach ($categories as $category) { ?>
-                                    <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./../controllers/quizzesCtrl.php?id=<?=$category->id ?>">
+                                    <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./../controllers/quizzesCtrl.php?id=<?= $category->id ?>">
                                         <i class="<?= $category->icon ?> me-4"></i><?= htmlspecialchars($category->name) ?>
                                     </a>
                                     <hr class="w-50 textGreen mx-auto">
@@ -47,15 +47,12 @@
                                 <h1 class="text-center my-5 fw-bold">Quiz populaires</h1>
                                 <div class="delCarousel">
                                     <ul class="row text-center">
-                                        <li class="col-12 my-4">
-                                            <a href="../controllers/quizCtrl.php"><img class="imgQuiz" src="../public/assets/imgs/harry potter.jpg" alt="Image du quiz Harry Potter"></a>
-                                        </li>
-                                        <li class="col-12 my-4">
-                                            <a href="../controllers/quizCtrl.php"><img class="imgQuiz" src="../public/assets/imgs/esport.jpg" alt="Image du quiz eSport"></a>
-                                        </li>
-                                        <li class="col-12 my-4">
-                                            <a href="../controllers/quizCtrl.php"><img class="imgQuiz" src="../public/assets/imgs/mythologie.jpg" alt="Image du quiz Mythologie"></a>
-                                        </li>
+                                        <?php foreach ($quizzes as $quiz) {  ?>
+                                            <li class="col-12 my-4">
+                                                <a href="../controllers/quizCtrl.php?id=<?=$quiz->id_quiz?>"><img class="imgQuiz" src="../public/assets/uploads/imgQuiz/imgQuiz<?= $quiz->id_quiz ?>.jpg" alt="Image du quiz <?=$quiz->quizName?>"></a>
+                                            </li>
+                                        <?php } ?>
+
                                     </ul>
                                 </div>
                             </div>

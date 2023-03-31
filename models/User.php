@@ -305,16 +305,12 @@ class User
         $db = Database::dbConnect();
         $query = "UPDATE `users` 
         SET `pseudo`=:pseudo,
-            `email`=:email,
-            `password`=:password,
             `points`=:points,
             `role`= :role 
         WHERE `id` = :id";
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
         $sth->bindValue(':pseudo', $this->pseudo, PDO::PARAM_STR);
-        $sth->bindValue(':email', $this->email, PDO::PARAM_STR);
-        $sth->bindValue(':password', $this->password, PDO::PARAM_STR);
         $sth->bindValue(':points', $this->points, PDO::PARAM_INT);
         $sth->bindValue(':role', $this->role, PDO::PARAM_INT);
         $sth->execute();

@@ -14,16 +14,6 @@ if($_SESSION['user']->role != 2){
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error = [];
 
-    // * Vérification de l'input email 
-    $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-    if (empty($email)) {
-        $error['email'] = 'Champ obligatoire';
-    } else {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error['email'] = 'Adresse mail non valide';
-        }
-    }
-    // * -----------------------------
 
     // * Vérification de l'input pseudo 
     $pseudo = trim(filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_SPECIAL_CHARS));
@@ -36,18 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     // * -----------------------------
-    $password = filter_input(INPUT_POST, 'password');
-    $validatePassword = filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEXP_PASSWORD . '/')));
-    if (empty($password)) {
-        $error['password'] = 'Champs mot de passe obligatoire';
-    } else {
-        if (!$validatePassword) {
-            $error['password'] = 'Mot de passe non valide';
-        }
-        // * Encodage de mot de passe (HASH)
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-    }
-    // * -----------------------------
+   
 
     $points = intval(filter_input(INPUT_POST, 'points', FILTER_SANITIZE_NUMBER_INT));
     if (empty($points)) {
@@ -61,8 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($error)) {
         $userUpdate = new User();
         $userUpdate->setPseudo($pseudo);
-        $userUpdate->setEmail($email);
-        $userUpdate->setPassword($passwordHash);
         $userUpdate->setPoints($points);
         $userUpdate->setRole($role);
         $result = $userUpdate->updateAdmin($id);

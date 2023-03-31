@@ -61,22 +61,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $lastId = Database::dbConnect()->lastInsertId();
 
+        // Ajout de l'image du quiz dans le dossier uploads
         $extension = pathinfo($_FILES['imgQuiz']['name'], PATHINFO_EXTENSION);
         $from = $_FILES['imgQuiz']['tmp_name'];
         $to = LOCATION_IMG_QUIZ . "/imgQuiz$lastId.". $extension;
         move_uploaded_file($from, $to);
 
-        $gd_img = imagecreatefromjpeg($to);
-        $gd_scaled = imagescale($gd_img, 300, -1, IMG_BICUBIC);
-        $to_scaled = LOCATION_IMG_QUIZ . "/scaledImgQuiz$lastId.". $extension;
-        imagejpeg($gd_scaled, $to_scaled);
+        // $gd_img = imagecreatefromjpeg($to);
+        // $gd_scaled = imagescale($gd_img, 300, -1, IMG_BICUBIC);
+        // $to_scaled = LOCATION_IMG_QUIZ . "/scaledImgQuiz$lastId.". $extension;
+        // imagejpeg($gd_scaled, $to_scaled);
 
         if ($result == false) {
             Flash::setMessage(QUIZ_NOT_ADD, 'danger');
-            // header('location: ./dashboardQuizzesCtrl.php');
+            header('location: ./dashboardQuizzesCtrl.php');
         } else {
             Flash::setMessage(QUIZ_ADD, 'success');
-            // header('location: ./dashboardQuizzesCtrl.php');
+            header('location: ./dashboardQuizzesCtrl.php');
         }
     }
 }
