@@ -41,4 +41,11 @@ define('USER_NOT_DELETE','La suppression de l\'utilisateur et de ses commentaire
 define('MAX_FILE_SIZE', 5*1024*1024);
 define('EXTENSIONS', ['image/jpeg']);
 define('LOCATION_IMG_QUIZ', $_SERVER['DOCUMENT_ROOT'].'/public/assets/uploads/imgQuiz');
+
+// Différents messages selon nombre de réponses correct
+define('BAD', 'Pas terrible... Retente ta chance avec d\'autres quiz ! ');
+define('MID', 'Pas mal mais tu peux faire mieux !');
+define('GOOD', 'Bravo ! Tu es très beau et musclé grand fou !');
+
+
 ?>

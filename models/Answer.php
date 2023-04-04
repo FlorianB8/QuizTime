@@ -82,6 +82,7 @@ public function setId_question($value):void{
 }
 
 /**
+ * Méthode pour récupérer une réponse ou une liste de réponses
  * @param int $id
  * 
  * @return array
@@ -100,6 +101,7 @@ public static function get(int $id = NULL):array|bool
     return $result;
 }
 /**
+ * Méthode pour récupérer la liste des réponses
  * @return array
  */
 public static function getAll(): array
@@ -114,6 +116,7 @@ public static function getAll(): array
 }
 
 /**
+ * Méthode pour ajouter une réponse dans la base de données
  * @return bool
  */
 public function add(): bool
@@ -128,7 +131,13 @@ public function add(): bool
     return $sth->execute();
 }
 
-public static function getAllAnswersQuiz (int $id)
+/**
+ * Méthode pour récupérer toutes les réponses d'une question
+ * @param int $id
+ * 
+ * @return [type]
+ */
+public static function getAllAnswersQuestion (int $id)
 {
     $query =
         'SELECT `id`, `answer`, `choice`, `id_questions`  
@@ -143,6 +152,12 @@ public static function getAllAnswersQuiz (int $id)
     return $questions;
 }
 
+/**
+ * Méthode pour modifier une réponse dans la base de données
+ * @param int $id
+ * 
+ * @return bool
+ */
 public function update(int $id): bool
     {
         $db = Database::dbConnect();

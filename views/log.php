@@ -2,8 +2,8 @@
 
 <main>
     <div class="container-fluid ">
+        <?=$message?>
         <div class="row justify-content-center mx-5 w-75 mx-auto rounded-4 my-lg-0 my-5">
-            <?=$message?>
             <div class="col-12 col-lg-10 p-0 m-0 d-flex justify-content-center mt-lg-5 mt-0 ">
                 <button id="btnLog" class="btnActiveLogin">Connexion</button>
                 <button id="btnReg" class="btnRegister">Inscription</button>
@@ -17,12 +17,11 @@
                 <!-- Formulaire pour la connexion -->
                 <form class="d-flex flex-column my-5 w-75 mx-auto" action="" method="post">
                     <label class="textGreen" for="emailLogin">E-mail :</label>
-                    <input id="emailLogin" name="emailLogin" class="fieldForm p-2 mb-4" type="text">
+                    <input id="emailLogin" name="emailLogin" class="fieldForm p-2 mb-4" type="text" placeholder="ex: jeandupont@gmail.com">
                     <p id="errorEmail" class="errorMessage"><?=$error['emailLogin'] ?? ''?></p>    
                     <label class="textGreen" for="passwordLogin">Mot de passe :</label>
-                    <input id="passwordLogin" name="passwordLogin" class="fieldForm p-2 mb-4" type="password">
+                    <input id="passwordLogin" name="passwordLogin" class="fieldForm p-2 mb-4" type="password" placeholder="*********">
                     <p id="errorPaswword" class="errorMessage"><?=$error['passwordLogin'] ?? ''?></p>    
-                    <a class="textGreen forgot text-end" href="">Mot de passe oublié ?</a>
                     <div class="mx-auto">
                         <input class="btnFormSubmit fieldForm my-3" type="submit" name="confirmLogin" id="confirmLogin" value="Connexion">
                     </div>
@@ -31,22 +30,25 @@
             </div>
             <div id="register" class="col-12 col-lg-10 formLog bgDark " <?=$hiddenRegister ?? 'hidden'?>>
                 <div class="my-5">
-                    <h1 class="textGreen text-center fw-bold">Pas encore inscrit ? <br> Rejoins nous !</h1>
+                    <h1 class="textGreen text-center fw-bold">Pas encore inscrit ?</h1>
+                    <h2 class="textGreen text-center fw-bold"> Rejoins nous !</h2>
                     <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour l'inscription -->
                 <form class="d-flex flex-column my-5 w-75 mx-auto" method="post">
                     <label id="labelPseudo" class="textGreen" for="pseudoRegister">Pseudo* :</label>
-                    <input id="pseudoRegister" name="pseudoRegister" class="fieldForm p-2 " type="text" autocomplete="off" value="<?=$pseudoRegister ?? ''?>">
+                    <input id="pseudoRegister" name="pseudoRegister" class="fieldForm p-2 " type="text" autocomplete="off" value="<?=$pseudoRegister ?? ''?>" placeholder="ex: Jean80">
                     <p id="errorPseudo" class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    
                     <label id="labelEmail" class="textGreen mt-4" for="emailRegister">E-mail* :</label>
-                    <input id="emailRegister" name="emailRegister" class="fieldForm p-2 " type="email" autocomplete="off" value="<?=$emailRegister ?? ''?>">
+                    <input id="emailRegister" name="emailRegister" class="fieldForm p-2 " type="email" autocomplete="off" value="<?=$emailRegister ?? ''?>" placeholder="ex: jeandupont@gmail.com">
                     <p id="errorEmail" class="errorMessage"><?=$error['email'] ?? ''?></p>
                     <label id="labelPassword" class="textGreen mt-4" for="passwordRegister">Mot de passe* :</label>
-                    <input id="passwordRegister" name="passwordRegister" class="fieldForm p-2 " type="password" autocomplete="off">
+                    <input id="passwordRegister" name="passwordRegister" class="fieldForm p-2 " type="password" autocomplete="off" placeholder="*********">
+                    <p class="text-white">Minimum : 1 majuscule , 1 minuscule, 1 chiffre et 1 caracère spécial</p>
                     <p id="errorPassword" class="errorMessage"><?=$error['passwordRegister'] ?? ''?></p>
                     <label id="labelPasswordConfirm" class="textGreen mt-4" for="passwordConfirmRegister">Mot de passe de confirmation* :</label>
-                    <input id="passwordConfirmRegister" name="passwordConfirmRegister" class="fieldForm p-2 " type="password">
+                    <input id="passwordConfirmRegister" name="passwordConfirmRegister" class="fieldForm p-2 " type="password" placeholder="*********">
+                    <p class="textGreen forgot mt-2 text-end">* Champs obligatoires</p>
                     <div class="mx-auto mt-4">
                         <input class="btnFormSubmit my-3" type="submit" name="confirmRegister" id="confirmRegister" value="Inscription">
                     </div>

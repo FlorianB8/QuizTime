@@ -71,7 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $questionUpdate->setCorrect($correctAnswer);
         $questionUpdate->setPoints($points);
         $questionUpdate->setId_quiz($quiz);
-        $lastId =  $questionUpdate->add();
+        $questionUpdate->add();
+
+        $lastId = Database::dbConnect()->lastInsertId();
+
 
         $A = new Answer;
         $A->setAnswer($answerA);
@@ -99,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 try {
     $question = Question::get($id);
-    $answers = Answer::getAllAnswersQuiz($id);
+    $answers = Answer::getAllAnswersQuestion($id);
     $quizzes = Quiz::getAll();
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();

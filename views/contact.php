@@ -10,10 +10,10 @@
                 <!-- Formulaire de contact -->
                 <form class="d-flex flex-column my-5 contact" method="post">
                     <label class="textGreen" for="pseudoContact">Pseudo :</label>
-                    <input class="fieldForm p-2" type="text" name="pseudoContact" id="pseudoContact">
+                    <input class="fieldForm p-2" type="text" name="pseudoContact" id="pseudoContact" placeholder="ex: Jean80">
                     <p class="errorMessage"><?=$error['pseudo'] ?? ''?></p>    
                     <label class="textGreen mt-4" for="emailContact">E-mail :</label>
-                    <input class="fieldForm p-2" type="email" name="emailContact" id="emailContact">
+                    <input class="fieldForm p-2" type="email" name="emailContact" id="emailContact" placeholder="ex: jeandupont@gmail.com">
                     <p class="errorMessage"><?=$error['email'] ?? ''?></p>    
                     <label class="textGreen mt-4" for="messageContact">Message :</label>
                     <textarea class="fieldForm p-2 mb-4" name="messageContact" id="messageContact" cols="30" rows="5" placeholder="200 caractères max*"></textarea>

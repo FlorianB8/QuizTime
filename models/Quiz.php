@@ -216,5 +216,14 @@ class Quiz
         return $users;
     }
 
-   
+    public static function getThirdQuiz()
+    {
+        $query =
+            'SELECT * FROM `quiz` LIMIT 3;';
+        $db = Database::dbConnect();
+        $sth = $db->query($query);
+        $users = $sth->fetchAll();
+
+        return $users;
+    }
 }

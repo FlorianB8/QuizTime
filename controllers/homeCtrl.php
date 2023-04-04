@@ -9,8 +9,8 @@ require_once(__DIR__ . '/../helpers/dd.php');
 
 
 try {
-    $quizzes = Quiz::getAll();
-    $categories = Category::getAll();
+    $thirdQuizzes = Quiz::getThirdQuiz();
+    $categories = Category::getFourthCategory();
     $users = User::getTop3Users();
     $message = Flash::getMessage();
 } catch (\Throwable $th) {

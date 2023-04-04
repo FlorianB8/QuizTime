@@ -77,6 +77,12 @@ class Category
         $this->created_at = $value;
     }
 
+    /**
+     * Méthode permettant de vérifier si un id existe
+     * @param int $id
+     * 
+     * @return bool
+     */
     public static function isIdExist(int $id):bool
     {
         $db = Database::dbConnect();
@@ -89,6 +95,7 @@ class Category
 
     }
     /**
+     * Méthode permettant de récupérer toutes les catégories
      * @return array
      */
     public static function getAll(): array
@@ -103,6 +110,7 @@ class Category
     }
 
     /**
+     * Méthode permettant de récupérer une catégorie ou la liste des catégories
      * @param int $id
      * 
      * @return object
@@ -120,6 +128,7 @@ class Category
     }
     
     /**
+     * Méthode permettant d'ajouter une catégorie dans la base de donées
      * @return bool
      */
     public function add(): bool
@@ -133,6 +142,7 @@ class Category
     }
 
     /**
+     * Méthode permettant de modifier une catégorie dans la base de données
      * @param int $id
      * 
      * @return bool
@@ -155,6 +165,7 @@ class Category
     }
 
     /**
+     * Méthode permettant de supprimer une catégorie dans la base de données
      * @param int $id
      * 
      * @return array
@@ -167,6 +178,21 @@ class Category
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
         $sth->execute();
+        $users = $sth->fetchAll();
+
+        return $users;
+    }
+    
+    /**
+     * Méthode pour récupérer les 4 premières catégories
+     * @return [type]
+     */
+    public static function getFourthCategory()
+    {
+        $query =
+            'SELECT * FROM `categories` LIMIT 4;';
+        $db = Database::dbConnect();
+        $sth = $db->query($query);
         $users = $sth->fetchAll();
 
         return $users;

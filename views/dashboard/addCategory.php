@@ -15,7 +15,7 @@
                         <input id="icon" name="icon" class="fieldForm p-2 " type="text" autocomplete="off">
                         <p id="errorIcon" class="errorMessage"><?= $error['icon'] ?? '' ?></p>
                         <div class="mx-auto mt-4">
-                            <input class="btnFormSubmit my-3" type="submit" name="confirm" id="confirm" value="ajouter">
+                            <input class="btnFormSubmit my-3" type="submit" name="confirm" id="confirm" value="Ajouter">
                         </div>
                     </form>
                 </div>

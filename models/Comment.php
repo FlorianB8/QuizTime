@@ -12,70 +12,127 @@ class Comment
     private int $id_players;
 
 
-    public function setId($value)
+    /**
+     * @param mixed $value
+     * 
+     * @return void
+     */
+    public function setId($value):void
     {
         $this->id = $value;
     }
-    public function getId()
+    /**
+     * @return int
+     */
+    public function getId():int
     {
         return $this->id;
     }
 
-    public function setContent($value)
+    /**
+     * @param mixed $value
+     * 
+     * @return void
+     */
+    public function setContent($value):void
     {
         $this->content = $value;
     }
-    public function getContent()
+    /**
+     * @return string
+     */
+    public function getContent():string
     {
         return $this->content;
     }
 
-    public function setValidated_at($value)
+    /**
+     * @param mixed $value
+     * 
+     * @return void
+     */
+    public function setValidated_at($value):void
     {
         $this->validated_at = $value;
     }
-    public function getValidated_at()
+    /**
+     * @return string
+     */
+    public function getValidated_at():string
     {
         return $this->validated_at;
     }
 
-    public function setCreated_at($value)
+    /**
+     * @param mixed $value
+     * 
+     * @return void
+     */
+    public function setCreated_at($value):void
     {
         $this->created_at = $value;
     }
-    public function getCreated_at()
+    /**
+     * @return string
+     */
+    public function getCreated_at():string
     {
         return $this->created_at;
     }
 
-    public function setDeleted_at($value)
+    /**
+     * @param mixed $value
+     * 
+     * @return void
+     */
+    public function setDeleted_at($value):void
     {
         $this->deleted_at = $value;
     }
-    public function getDeleted_at()
+    /**
+     * @return string
+     */
+    public function getDeleted_at():string
     {
         return $this->deleted_at;
     }
 
-    public function setId_quiz($value)
+    /**
+     * @param mixed $value
+     * 
+     * @return void
+     */
+    public function setId_quiz($value):void
     {
         $this->id_quiz = $value;
     }
-    public function getId_quiz()
+    /**
+     * @return int
+     */
+    public function getId_quiz():int
     {
         return $this->id_quiz;
     }
 
-    public function setId_players($value)
+    /**
+     * @param mixed $value
+     * 
+     * @return void
+     */
+    public function setId_players($value):void
     {
         $this->id_players = $value;
     }
-    public function getId_players()
+    /**
+     * @return int
+     */
+    public function getId_players():int
     {
         return $this->id_players;
     }
 
     /**
+     * Méthode permettant de récupérer la liste des commentaires
      * @return array
      */
     public static function getAll(): array
@@ -92,6 +149,12 @@ class Comment
         return $users;
     }
 
+    /**
+     * Méthode permettant de récupérer un commentaire ou la liste des commentaires
+     * @param int $id
+     * 
+     * @return object
+     */
     public static function get(int $id): object|bool
     {
         $db = Database::dbConnect();
@@ -108,6 +171,10 @@ class Comment
         return $result;
     }
 
+    /**
+     * Méthode permettant d'ajouter un commentaire
+     * @return bool
+     */
     public function add(): bool
     {
         $db = Database::dbConnect();
@@ -120,6 +187,12 @@ class Comment
 
         return $sth->execute();
     }
+    /**
+     * Méthode permettant de vérifier si un id existe
+     * @param int $id
+     * 
+     * @return bool
+     */
     public static function isIdExist(int $id): bool
     {
         $db = Database::dbConnect();
@@ -131,6 +204,12 @@ class Comment
         return !empty($result);
     }
 
+    /**
+     * Méthode permettant de modifier un commentaire
+     * @param int $id
+     * 
+     * @return bool
+     */
     public function update(int $id): bool
     {
         $db = Database::dbConnect();
@@ -151,6 +230,12 @@ class Comment
 
         return $result > 0 ? true : false;
     }
+    /**
+     * Méthode permettant de valider un commentaire
+     * @param int $id
+     * 
+     * @return bool
+     */
     public function validate(int $id): bool
     {
         $db = Database::dbConnect();

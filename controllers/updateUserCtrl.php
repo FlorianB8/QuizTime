@@ -6,7 +6,7 @@ require_once(__DIR__ . '/../config/init.php');
 
 $id = $_SESSION['user']->id;
 
-if($_SESSION['user']->role != 2){
+if(!isset($_SESSION['user'])){
     Flash::setMessage('<i class="me-3 fa-solid fa-ban fa-beat" style="color: #f50031;"></i>  Vous n\'avez pas accès à cette partie du site !', 'danger');
     header('location: /accueil');
     die;

@@ -47,9 +47,9 @@
                                 <h1 class="text-center my-5 fw-bold">Quiz populaires</h1>
                                 <div class="delCarousel">
                                     <ul class="row text-center">
-                                        <?php foreach ($quizzes as $quiz) {  ?>
+                                        <?php foreach ($thirdQuizzes as $quiz) {  ?>
                                             <li class="col-12 my-4">
-                                                <a href="../controllers/quizCtrl.php?id=<?=$quiz->id_quiz?>"><img class="imgQuiz" src="../public/assets/uploads/imgQuiz/imgQuiz<?= $quiz->id_quiz ?>.jpg" alt="Image du quiz <?=$quiz->quizName?>"></a>
+                                                <a href="../controllers/quizCtrl.php?id=<?=$quiz->id?>"><img class="imgQuiz" src="../public/assets/uploads/imgQuiz/imgQuiz<?= $quiz->id?>.jpg" alt="Image du quiz <?=$quiz->name?>"></a>
                                             </li>
                                         <?php } ?>
 

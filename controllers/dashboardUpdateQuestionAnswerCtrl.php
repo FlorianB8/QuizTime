@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 try {
     $question = Question::get($id);
-    $answers = Answer::getAllAnswersQuiz($id);
+    $answers = Answer::getAllAnswersQuestion($id);
     $quizzes = Quiz::getAll();
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
