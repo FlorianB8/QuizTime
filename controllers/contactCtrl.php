@@ -1,8 +1,10 @@
 <?php
+
 require_once(__DIR__ . '/../config/init.php');
 require_once(__DIR__ . '/../config/constants.php');
 require_once(__DIR__ . '/../models/Flash.php');
 
+unset($_SESSION['pointsVerify']);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error = [];
 

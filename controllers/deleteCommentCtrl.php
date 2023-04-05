@@ -1,6 +1,6 @@
 <?php 
 require_once(__DIR__ . '/../models/Flash.php');
-require_once(__DIR__ . '/../models/Quiz.php');
+require_once(__DIR__ . '/../models/Comment.php');
 require_once(__DIR__ . '/../helpers/dd.php');
 require_once(__DIR__ . '/../config/init.php');
 unset($_SESSION['pointsVerify']);
@@ -14,16 +14,14 @@ if($_SESSION['user']->role != 2){
     die;
 }
 try {
-    $result = Quiz::delete($id);    
+    $result = Comment::delete($id);    
     // Test pour vérifier si la suppression à était effectué
     if($result == 0){
-        Flash::setMessage(QUIZ_NOT_DELETE,'danger');
-        header('location: ./dashboardQuizzesCtrl.php');
+        Flash::setMessage(COMMENT_NOT_DELETE,'danger');
+        header('location: /compte');
     } else {
-        $pathfile = __DIR__ . '/../public/assets/uploads/imgQuiz/imgQuiz'.$id.'.jpg'; 
-        unlink($pathfile);
-        Flash::setMessage(QUIZ_DELETE,'success');
-        header('location: ./dashboardQuizzesCtrl.php');
+        Flash::setMessage(COMMENT_DELETE,'success');
+        header('location: /compte');
     }
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();

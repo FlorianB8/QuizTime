@@ -6,5 +6,10 @@ RewriteRule classement /controllers/classmentCtrl.php
 RewriteRule contactez-nous /controllers/contactCtrl.php
 RewriteRule connexion-inscription /controllers/logCtrl.php
 RewriteRule deconnexion /controllers/signOutCtrl.php
+RewriteRule mentions-legales /controllers/legalNoticesCtrl.php
+RewriteRule compte /controllers/profilCtrl.php
+RewriteRule les-quiz /controllers/quizzesCtrl.php
+RewriteRule jouer-quiz /controllers/quizCtrl.php
+RewriteRule modifier /controllers/updateUserCtrl.php
 
 ErrorDocument 404 /views/404.php

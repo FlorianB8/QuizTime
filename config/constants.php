@@ -36,6 +36,11 @@ define('QUESTION_DELETE','La suppression de la question et de ses réponses à �
 define('QUESTION_NOT_DELETE','La suppression de la question et de ses réponses n\'a pas abouti !');
 define('USER_DELETE','La suppression de l\'utilisateur et de ses commentaires à été effectué !');
 define('USER_NOT_DELETE','La suppression de l\'utilisateur et de ses commentaires n\'a pas abouti !');
+define('COMMENT_DELETE','La suppression du commentaire à été effectué !');
+define('COMMENT_NOT_DELETE','La suppression du commentaire n\'a pas abouti !');
+define('USER_REMOVE','La suppression de votre compte et de vos commentaires à été effectué !');
+define('USER_NOT_REMOVE','La suppression de votre compte et de vos commentaires n\'a pas abouti !');
+
 
 // Envoi d'image
 define('MAX_FILE_SIZE', 5*1024*1024);
@@ -43,7 +48,7 @@ define('EXTENSIONS', ['image/jpeg']);
 define('LOCATION_IMG_QUIZ', $_SERVER['DOCUMENT_ROOT'].'/public/assets/uploads/imgQuiz');
 
 // Différents messages selon nombre de réponses correct
-define('BAD', 'Pas terrible... Retente ta chance avec d\'autres quiz ! ');
+define('BAD', 'Pas terrible... On dirait que tu n\'es pas très fan de ce quiz...');
 define('MID', 'Pas mal mais tu peux faire mieux !');
 define('GOOD', 'Bravo ! Tu es très beau et musclé grand fou !');
 

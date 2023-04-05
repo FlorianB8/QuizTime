@@ -148,6 +148,29 @@ class Comment
 
         return $users;
     }
+    /**
+     * @param int $id_players
+     * 
+     * @return array
+     */
+    public static function getCommentsUser(int $id_players): array
+    {
+        $query =
+            'SELECT `comments`.`id` , `comments`.`content`, `users`.`pseudo`, `users`.`email`, `comments`.`validated_at` , `quiz`.`name` as `quizName`
+            FROM `comments`
+            LEFT JOIN `users`
+            ON `comments`.`id_players` = `users`.`id`
+            LEFT JOIN `quiz`
+            ON `comments`.`id_quiz` = `quiz`.`id`
+            WHERE `id_players` = :id_players ;';
+        $db = Database::dbConnect();
+        $sth = $db->prepare($query);
+        $sth->bindValue(':id_players', $id_players, PDO::PARAM_INT);
+        $sth->execute();
+        $users = $sth->fetchAll();
+
+        return $users;
+    }
 
     /**
      * Méthode permettant de récupérer un commentaire ou la liste des commentaires
@@ -178,10 +201,9 @@ class Comment
     public function add(): bool
     {
         $db = Database::dbConnect();
-        $query = 'INSERT INTO `comments` (`content`, `validated_at`,`id_quiz`, `id_players`) VALUES (:content, :validated_at, :id_quiz, :id_players);';
+        $query = 'INSERT INTO `comments` (`content`, `id_quiz`, `id_players`) VALUES (:content, :id_quiz, :id_players);';
         $sth = $db->prepare($query);
         $sth->bindValue(':content', $this->content, PDO::PARAM_STR);
-        $sth->bindValue(':validated_at', $this->validated_at, PDO::PARAM_INT);
         $sth->bindValue(':id_quiz', $this->id_quiz, PDO::PARAM_INT);
         $sth->bindValue(':id_players', $this->id_players, PDO::PARAM_INT);
 
@@ -249,5 +271,18 @@ class Comment
         $result = $sth->rowCount();
 
         return $result > 0 ? true : false;
+    }
+
+    public static function delete(int $id): array
+    {
+        $query =
+            'DELETE FROM `comments` WHERE  `id` = :id ;';
+        $db = Database::dbConnect();
+        $sth = $db->prepare($query);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->execute();
+        $users = $sth->fetchAll();
+
+        return $users;
     }
 }

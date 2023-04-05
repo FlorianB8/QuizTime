@@ -5,6 +5,7 @@ require_once(__DIR__ . '/../models/Category.php');
 require_once(__DIR__ . '/../config/init.php');
 
 $id = intval(filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT));
+unset($_SESSION['pointsVerify']);
 
 
 if($_SESSION['user']->role != 2){

@@ -3,6 +3,7 @@ require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../models/Question.php');
 require_once(__DIR__ . '/../helpers/dd.php');
 require_once(__DIR__ . '/../config/init.php');
+unset($_SESSION['pointsVerify']);
 
 
 // Récupération de l'ID

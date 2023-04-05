@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/Connect.php');
+require_once(__DIR__ . '/Connect.php');
 
 class Quiz
 {
@@ -150,7 +150,8 @@ class Quiz
     public static function getAll(): array
     {
         $query =
-            'SELECT `quiz`.`id` as "id_quiz", `quiz`.`name` as "quizName", `categories`.`name` as "categoryName", `id_categories` FROM `quiz` 
+            'SELECT `quiz`.`id` as "id_quiz", `quiz`.`name` as "quizName", `categories`.`name` as "categoryName", `id_categories` 
+            FROM `quiz` 
             LEFT JOIN `categories` 
             ON `quiz`.`id_categories` = `categories`.`id`;';
         $db = Database::dbConnect();
@@ -173,7 +174,7 @@ class Quiz
         return $sth->execute();
     }
 
-    
+
     /**
      * @param int $id
      * 
@@ -211,9 +212,9 @@ class Quiz
         $sth = $db->prepare($query);
         $sth->bindValue(':id', $id, PDO::PARAM_INT);
         $sth->execute();
-        $users = $sth->fetchAll();
+        $result = $sth->fetchAll();
 
-        return $users;
+        return $result;
     }
 
     public static function getThirdQuiz()
@@ -222,8 +223,25 @@ class Quiz
             'SELECT * FROM `quiz` LIMIT 3;';
         $db = Database::dbConnect();
         $sth = $db->query($query);
-        $users = $sth->fetchAll();
+        $quizzes = $sth->fetchAll();
 
-        return $users;
+        return $quizzes;
+    }
+
+    public static function getByCategory(int $id_categories)
+    {
+        $query =
+            'SELECT  `quiz`.`id` AS `id_quiz` , `quiz`.`name` , `categories`.`id` AS `id_categories`
+            FROM `quiz` 
+            JOIN `categories`
+            ON `quiz`.`id_categories` = `categories`.`id`
+            WHERE `id_categories` = :id_categories;';
+        $db = Database::dbConnect();
+        $sth = $db->prepare($query);
+        $sth->bindValue(':id_categories', $id_categories, PDO::PARAM_INT);
+        $sth->execute();
+        $quizzes = $sth->fetchAll();
+
+        return $quizzes;
     }
 }

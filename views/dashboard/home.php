@@ -1,7 +1,7 @@
 <main>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-10 d-flex justify-content-center text-center">
+        <div class="row align-items-center">
+            <div class="col-10 text-center">
                 <?=$message?>
                 <h1 class="">Bienvenue sur le tableau de bord !</h1>
             </div>

@@ -27,14 +27,14 @@
                             </div>
                             <div class="text-center d-flex flex-column">
                                 <?php foreach ($categories as $category) { ?>
-                                    <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="./../controllers/quizzesCtrl.php?id=<?= $category->id ?>">
+                                    <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="/les-quiz?id=<?= $category->id ?>">
                                         <i class="<?= $category->icon ?> me-4"></i><?= htmlspecialchars($category->name) ?>
                                     </a>
                                     <hr class="w-50 textGreen mx-auto">
 
                                 <?php } ?>
                                 <div class="navbar-nav mx-auto mt-5 textDark">
-                                    <a href="../../controllers/categoryCtrl.php" class="nav-item nav-link btnMoreCategory  linkLog">Voir plus</a>
+                                    <a href="/categories" class="nav-item nav-link btnMoreCategory  linkLog">Voir plus</a>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                     <ul class="row text-center">
                                         <?php foreach ($thirdQuizzes as $quiz) {  ?>
                                             <li class="col-12 my-4">
-                                                <a href="../controllers/quizCtrl.php?id=<?=$quiz->id?>"><img class="imgQuiz" src="../public/assets/uploads/imgQuiz/imgQuiz<?= $quiz->id?>.jpg" alt="Image du quiz <?=$quiz->name?>"></a>
+                                                <a href="/jouer-quiz?id=<?=$quiz->id?>"><img class="imgQuiz" src="../public/assets/uploads/imgQuiz/imgQuiz<?= $quiz->id?>.jpg" alt="Image du quiz <?=$quiz->name?>"></a>
                                             </li>
                                         <?php } ?>
 
@@ -70,12 +70,12 @@
             </div>
             <div class="col-8 mb-5">
                 <div class="px-3 my-5">
-                    <h1 class="mx-5 border-bottom border-3 fw-bold">Meilleurs joueurs</h1>
+                    <h1 class="mx-5 border-bottom border-3 fw-bold text-center">Meilleurs joueurs</h1>
                 </div>
                 <!-- Classement des 3 meilleurs utilisateurs -->
-                <div class="m-lg-5 my-5 d-flex flex-column justify-content-center textDark ranking">
+                <div class="m-lg-5 my-5 d-flex flex-column align-items-center justify-content-center textDark ranking">
                     <div class="px-3 text-center">
-                        <table class="text-center mt-5 mx-auto">
+                        <table class="text-center mt-5">
                             <thead>
                                 <tr>
                                     <th class="border-bottom border-3 ">

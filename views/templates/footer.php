@@ -16,16 +16,16 @@
                                 <h2 class="fw-bold">Accès rapide</h2>
                                 <hr class="textGreen">
                                 <a class="linkPage nav-link mx-4" href="/">Accueil</a>
-                                <a href="../../controllers/categoryCtrl.php" class="mx-4 nav-link linkPage">Catégories</a>
-                                <a href="../../controllers/classmentCtrl.php" class="mx-4 nav-link linkPage">Classement</a>
-                                <a href="../../controllers/contactCtrl.php" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
+                                <a href="/categories" class="mx-4 nav-link linkPage">Catégories</a>
+                                <a href="/classement" class="mx-4 nav-link linkPage">Classement</a>
+                                <a href="/contactez-nous" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="navbar-nav textGreen my-5">
                                 <h2 class="fw-bold">Informations</h2>
                                 <hr class="textGreen">
-                                <a class="linkPage nav-link" href="#">Mentions légales</a>
+                                <a class="linkPage nav-link" href="/mentions-legales">Mentions légales</a>
                                 <a class="linkPage nav-link" href="/contactez-nous">Contactez nous</a>
                             </div>
                         </div>

@@ -26,34 +26,28 @@
                         <button type="button" class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="collapse navbar-collapse " id="navbarCollapse">
                             <!-- Lien vers chaque page -->
-                            <div class="navbar-nav allLinkPage me-5">
-                                <div class=" me-0 d-flex">
+                            <div class="d-flex justify-content-between headerLink">
+                                <div class="mx-lg-0 me-lg-0 d-flex flex-wrap justify-content-center">
                                     <a href="/accueil" class="mx-4 nav-link linkPage">Accueil</a>
                                     <a href="/categories" class="mx-4 nav-link linkPage">Catégories</a>
-                                </div>
-                                <div class=" ms-0 d-flex">
                                     <a href="/classement" class="mx-4 nav-link linkPage">Classement</a>
                                     <a href="/contactez-nous" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                                 </div>
+                                <div class="mx-lg-0 me-lg-5 d-flex flex-wrap justify-content-around mb-3 mb-lg-0 mt-3 mt-lg-0">
+                                    <?php if (!isset($_SESSION['user'])) { ?>
+                                        <a href="/connexion-inscription" class=" nav-link btnLog linkLog mb-3 mb-lg-0">Connexion</a>
+                                    <?php  } else { ?>
+                                        <?php if ($_SESSION['user']->role == 2) { ?>
+                                            <a href="../../controllers/dashboardHomeCtrl.php" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-hammer"></i></a>
+                                        <?php } ?>
+                                        <a href="/compte" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-user"></i></a>
+                                        <a href="deconnexion" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                                </div>
                             </div>
-
-                            <?php if (!isset($_SESSION['user'])) { ?>
-                                <div class="navbar-nav ms-auto">
-                                    <a href="/connexion-inscription" class="nav-item nav-link btnLog linkLog">Connexion</a>
-                                </div>
-
-                            <?php  } else { ?>
-                                <div class="navbar-nav ms-auto">
-                                    <?php if ($_SESSION['user']->role == 2) { ?>
-                                        <a href="../../controllers/dashboardHomeCtrl.php" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-hammer"></i></a>
-                                    <?php } ?>
-                                    <a href="../../controllers/profilCtrl.php" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-user"></i></a>
-                                    <a href="deconnexion" class="nav-item nav-link btnLog linkLog"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-                                </div>
-                            <?php } ?>
-                            <!-------------------------->
+                        <?php } ?>
+                        <!-------------------------->
                         </div>
                     </div>
                 </nav>

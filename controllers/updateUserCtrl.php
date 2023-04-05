@@ -3,11 +3,12 @@ require_once(__DIR__ . '/../models/User.php');
 require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../helpers/dd.php');
 require_once(__DIR__ . '/../config/init.php');
+unset($_SESSION['pointsVerify']);
 
 $id = $_SESSION['user']->id;
 
 if(!isset($_SESSION['user'])){
-    Flash::setMessage('<i class="me-3 fa-solid fa-ban fa-beat" style="color: #f50031;"></i>  Vous n\'avez pas accès à cette partie du site !', 'danger');
+    Flash::setMessage('<i class="me-3 fa-solid fa-ban fa-beat" style="color: #f50031;"></i>  Vous devez être connecté pour accéder à votre profil !', 'danger');
     header('location: /accueil');
     die;
 }

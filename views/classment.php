@@ -20,7 +20,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($users as $user) {  ?>
+                                <?php foreach ($users as $user) {  ?>
                                     <tr>
                                         <td>
                                             <h3 class="mt-5"><?= $user->pseudo ?></h3>
@@ -41,16 +41,12 @@
                         <h1 class=" mt-5 fw-bold">Améliores ton classement :</h1>
                         <hr>
                         <div class="delCarousel">
-                            <ul class="row text-center">
-                                <li class="col-12 col-lg-4 col-md-6 my-4">
-                                    <a href="./quiz.html"><img class="imgQuiz" src="../public/assets/imgs/harry potter.jpg" alt="Image du quiz Harry Potter"></a>
-                                </li>
-                                <li class="col-12 col-lg-4 col-md-6 my-4">
-                                    <a href="./quiz.html"><img class="imgQuiz" src="../public/assets/imgs/esport.jpg" alt="Image du quiz eSport"></a>
-                                </li>
-                                <li class="col-12 col-lg-4 col-md-6 my-4">
-                                    <a href="./quiz.html"><img class="imgQuiz" src="../public/assets/imgs/mythologie.jpg" alt="Image du quiz Mythologie"></a>
-                                </li>
+                            <ul class="row text-center justify-content-center">
+                                <?php foreach ($quizzes as $quiz) {  ?>
+                                    <li class="col-12 col-lg-4 col-md-6 my-4">
+                                        <a href="../controllers/quizCtrl.php?id=<?= $quiz->id ?>"><img class="imgQuiz" src="../public/assets/uploads/imgQuiz/imgQuiz<?= $quiz->id ?>.jpg" alt="Image du quiz <?= $quiz->name ?>"></a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>

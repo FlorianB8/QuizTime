@@ -3,7 +3,9 @@
     body {
         font-size: 2rem;
     }
-
+    main {
+        min-height: 100vh;
+    }
     .category {
         width: 80vw;
     }
@@ -11,18 +13,46 @@
     .logo2 {
         width: 200px;
     }
+
     .wave {
         display: none;
     }
 
     .btnLog {
-        margin-right: 20px;
         font-size: 1.75rem;
         border-radius: 5px;
         background-color: #7EA16B;
         transition-duration: 0.5s;
         color: #fff;
-        width: 75px;
+        width: 125px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    .imgQuiz {
+        width: 90vw;
+    }
+
+    /* Formulaire de chaque page */
+    .registerText {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 25vw;
+    }
+    .formLog,
+    .formContact {
+
+        margin-bottom: 40px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: #202020;
+    }
+    .btnFormSubmit {
+        font-size: 1.5rem;
+        border-radius: 5px;
+        background-color: #7EA16B;
+        transition-duration: 0.5s;
+        color: #fff;
+        width: 150px;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
       }
 }
@@ -38,9 +68,19 @@
         border: 0px;
         border-radius: 20px;
     }
+    .btnLog {
+        font-size: 1.75rem;
+        border-radius: 5px;
+        background-color: #7EA16B;
+        transition-duration: 0.5s;
+        color: #fff;
+        width: 125px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
     .wave {
         display: none;
     }
+
     .slider {
         box-sizing: border-box;
         background: transparent;
@@ -58,15 +98,22 @@
 
 /* Responsive pour tablette */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-    .allLinkPage {
-        margin-left: 0;
-    }
     .logo2 {
         position: relative;
+    }
+.btnLog {
+        font-size: 1.75rem;
+        border-radius: 5px;
+        background-color: #7EA16B;
+        transition-duration: 0.5s;
+        color: #fff;
+        width: 125px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
     .wave {
         display: none;
     }
+
     .borderGreenRight {
         border-right: 5px solid #7EA16B;
     }
@@ -98,6 +145,7 @@
 
 /* Responsive pour ordinateur */
 @media screen and (min-width: 1200px) {
+
     .btnLog {
         margin-right: 20px;
         font-size: 1.75rem;
@@ -107,7 +155,8 @@
         color: #fff;
         width: 125px;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-      }
+    }
+
     main {
         min-height: 100vh;
     }
@@ -128,6 +177,16 @@
 
     li {
         list-style-type: none;
+    }
+
+    .formLog,
+    .formContact {
+        margin-bottom: 40px;
+        padding-right: 40px;
+        padding-left: 40px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: #202020;
     }
 
     /* Animation sur les quiz populaires au survol */
@@ -167,10 +226,6 @@
         overflow: hidden;
     }
 
-    .allLinkPage {
-        /* margin-left: 27vw; */
-    }
-
     /* --------------------------- */
 
     /* FOOTER */
@@ -178,7 +233,23 @@
         font-size: 1.5rem;
     }
 
-
+    /* Formulaire de chaque page */
+    .registerText {
+        margin-top: 10px;
+        margin-left: 48vw;
+    }
+    .btnFormSubmit {
+        font-size: 1.5rem;
+        border-radius: 5px;
+        background-color: #7EA16B;
+        transition-duration: 0.5s;
+        color: #fff;
+        width: 250px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      }
+      .headerLink {
+        width: 100vw;
+      }
 }
 
 /* --------------------------- */

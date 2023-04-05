@@ -35,18 +35,9 @@ html {
 .logo {
   width: 130px;
 }
-.contact {
-  height: 60vh;
-}
 
-.formLog, .formContact {
-  margin-bottom: 40px;
-  padding-right: 40px;
-  padding-left: 40px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  background-color: #202020;
-}
+
+
 
 p {
   font-size: 1.5rem;
@@ -157,11 +148,7 @@ a:hover {
 
 
 
-/* Formulaire de chaque page */
-.registerText {
-  margin-top: 10px;
-  margin-left: 33vw;
-}
+
 .fieldForm {
   background-color: #fafaff;
   border: 0px;
@@ -171,15 +158,7 @@ a:hover {
 .redBorder{
   border: 3px solid #DB2B39;
 }
-.btnFormSubmit {
-  font-size: 1.5rem;
-  border-radius: 5px;
-  background-color: #7EA16B;
-  transition-duration: 0.5s;
-  color: #fff;
-  width: 250px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
+
 .btnFormSubmit:hover {
   background-color: #fafaff;
   color: #202020;
@@ -327,6 +306,14 @@ td {
   background:#7EA16B;
   position: relative;
 }
+.rad-design-false {
+  width: 22px;
+  height: 22px;
+  border-radius: 100px;
+
+  background:#c24422;
+  position: relative;
+}
 
 .rad-design::before {
   content: '';
@@ -369,4 +356,11 @@ td {
   left: 20px;
   color: hsla(0, 0%, 0%, .5);
   font-size: 16px;
+}
+
+
+/* HEADER DASHBOARD */
+
+.headerDashboard {
+  position: sticky;
 }

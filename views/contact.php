@@ -1,8 +1,7 @@
 <main>
     <div class="container-fluid">
         
-        <div class="row justify-content-center">
-            
+        <div class="row justify-content-center p-3 mt-5">
             <div class="col-12 col-lg-6 formContact">
                 <div class="px-3 my-5">
                     <h1 class="textGreen text-center">Contact</h1>

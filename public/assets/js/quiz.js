@@ -1,7 +1,7 @@
 
 let idQuiz = document.getElementById('idQuiz')
 
-fetch('../../../controllers/ajax/questions.php?id=' + idQuiz.innerText)
+fetch('../../../controllers/ajax/questions.php?id=' + idQuiz.value)
     .then(responseQuestions => {
         return (responseQuestions.json());
     })
@@ -22,7 +22,6 @@ fetch('../../../controllers/ajax/questions.php?id=' + idQuiz.innerText)
                     let divAnswers = document.getElementById(`${cpt}`);
                     answers.forEach(answer => {
                         if (answer.id_questions == question.id) {
-                            console.log(answer.id);
                             divAnswers.innerHTML += `<label class="rad-label">
                                 <input class="rad-input" id="answer${answer.id}" type="radio" name="answer${cpt}" value="${answer.choice}.${question.id}">
                                 <div class="rad-design"></div>
@@ -36,3 +35,51 @@ fetch('../../../controllers/ajax/questions.php?id=' + idQuiz.innerText)
                 formQuiz.innerHTML += `<input class="btnLog text-dark" type="submit" value="Valider">`
             })
     })
+
+
+fetch('../../../controllers/ajax/addComment.php')
+    .then(responseComments => {
+        return (responseComments.json());
+    })
+    .then(comments => {
+        allComments.innerHTML = '';
+        comments.forEach(comment => {
+            if (comment.validated_at != null) {
+
+                allComments.innerHTML += `
+            <hr class="w-50 mx-auto">
+            <div class="col-12 my-5">
+                <h4 class="">Auteur : ${comment.pseudo}</h4>
+                <p class="text-center">"${comment.content}"</p>
+            </div> `
+            }
+        })
+    })
+
+btnComment.addEventListener('click', () => {
+    if (content.value == '') {
+        var error = '<p class="text-danger">Veuillez renseigner un commentaire<p>'
+        errorMessage.innerHTML += error;
+    } else {
+        fetch('../../../controllers/ajax/addComment.php?content=' + content.value + '&idQuiz=' + idQuiz.value)
+            .then(responseComments => {
+                return (responseComments.json());
+            })
+            .then(comments => {
+                errorMessage.innerHTML = '<p class="text-success">Commentaire envoyé, il est en cours de validation<p>';
+                allComments.innerHTML = '';
+                comments.forEach(comment => {
+
+                    if (comment.validated_at != null) {
+                        allComments.innerHTML += `
+                        <hr class="w-50 mx-auto">
+                        <div class="col-12 my-5">
+                            <h4 class="">Auteur : ${comment.pseudo}</h4>
+                            <p class="text-center">"${comment.content}"</p>
+                        </div> `
+                    }
+                })
+            })
+    }
+
+})

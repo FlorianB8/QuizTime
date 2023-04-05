@@ -132,6 +132,26 @@ class Question
 
         return $result;
     }
+    public static function getBySearch(string $search, int $limit, int $offset)
+    {
+        $db = Database::dbConnect();
+        $query = 'SELECT `questions`.`id` ,`questions`.`question`, `questions`.`correct`, `questions`.`points`, `quiz`.`name`, `questions`.`id_quiz`
+                FROM `questions`
+                JOIN `quiz`
+                ON `questions`.`id_quiz` = `quiz`.`id`
+                WHERE `questions`.`question` LIKE :search 
+                OR `quiz`.`name` LIKE :search
+                LIMIT :limit 
+                OFFSET :offset ;';
+        $sth = $db->prepare($query);
+        $sth->bindValue(':search', '%'.$search.'%');
+        $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        
+        return $result;
+    }
 
     /**
      * Méthode permettant de récupérer les question d'un quiz en fonction de l'id
