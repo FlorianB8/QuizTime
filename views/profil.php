@@ -1,6 +1,6 @@
 <main>
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center fadeIn">
             <div class="col-10">
                 <?= $message ?>
             </div>

@@ -1,6 +1,6 @@
 <main>
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center fadeIn">
             <div class="col-8 mb-5">
                 <div class="px-3 my-5">
                     <h1 class="mx-5 border-bottom border-3 fw-bold">Classement joueurs</h1>

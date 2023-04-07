@@ -35,7 +35,7 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST')) {
     $answerChoices = [$answerChoice1, $answerChoice2, $answerChoice3, $answerChoice4,$answerChoice5,$answerChoice6,$answerChoice7,$answerChoice8 ];
     if(empty($answerChoice1) || empty($answerChoice2) || empty($answerChoice3) || empty($answerChoice4) || empty($answerChoice5) || empty($answerChoice6) || empty($answerChoice7) || empty($answerChoice8)){
         Flash::setMessage('Veuillez sélectionner toutes vos réponses', 'danger');
-        header('location: ./quizCtrl.php?id='.$id);
+        header('location: /jouer-quiz?id='.$id);
         die;
     }
     // dd($answerChoice1);

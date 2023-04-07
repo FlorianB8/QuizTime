@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
                 <?= $message ?>
-                <div class="m-lg-5 my-5 d-flex flex-column justify-content-center textDark presentation">
+                <div class="m-lg-5 my-5 d-flex flex-column justify-content-center textDark presentation fadeIn">
                     <h1 class="text-center">Tu veux améliorer ta culture générale ?<br> <span class="textGreen fw-bold"> QuizTime</span> est là pour toi !</h1>
                     <p class="text-center my-5">Profite d’une large sélection de quiz avec différentes catégories pour développer ta culture générale et impressionner tes proches !</p>
                 </div>
@@ -23,11 +23,11 @@
                     <div class="col-12 col-lg-7 p-0 borderGreenRight ">
                         <div class="my-4 d-flex flex-column justify-content-center textGreen">
                             <div class="px-3 my-5">
-                                <h1 class="text-center fw-bold">Catégories de quiz</h1>
+                                <h1 class="text-center fw-bold fadeIn">Catégories de quiz</h1>
                             </div>
                             <div class="text-center d-flex flex-column">
                                 <?php foreach ($categories as $category) { ?>
-                                    <a class="bgGreen linkCategory category p-3 my-4 mx-auto" href="/les-quiz?id=<?= $category->id ?>">
+                                    <a class="fadeIn bgGreen linkCategory category p-3 my-4 mx-auto" href="/les-quiz?id=<?= $category->id ?>">
                                         <i class="<?= $category->icon ?> me-4"></i><?= htmlspecialchars($category->name) ?>
                                     </a>
                                     <hr class="w-50 textGreen mx-auto">
@@ -44,11 +44,11 @@
                     <div class="col-12 col-lg-5 p-0 ">
                         <div class="my-4 d-flex flex-column justify-content-center">
                             <div class="px-3 textGreen">
-                                <h1 class="text-center my-5 fw-bold">Quiz populaires</h1>
+                                <h1 class="text-center my-5 fw-bold fadeIn">Quiz populaires</h1>
                                 <div class="delCarousel">
                                     <ul class="row text-center">
                                         <?php foreach ($thirdQuizzes as $quiz) {  ?>
-                                            <li class="col-12 my-4">
+                                            <li class="col-12 my-4 fadeIn">
                                                 <a href="/jouer-quiz?id=<?=$quiz->id?>"><img class="imgQuiz" src="../public/assets/uploads/imgQuiz/imgQuiz<?= $quiz->id?>.jpg" alt="Image du quiz <?=$quiz->name?>"></a>
                                             </li>
                                         <?php } ?>

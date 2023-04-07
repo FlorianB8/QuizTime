@@ -20,7 +20,7 @@
                                     if ($question->id == $answer->id_questions) { ?>
                                         <div>
                                             <label class="rad-label">
-                                            <div class="rad-text <?= (substr($answerChoices[$key], 0, 1) == $answer->choice) ? (substr($answerChoices[$key], 0, 1) == $question->correct && (substr($answerChoices[$key], 0, 1) == $answer->choice) ? 'text-success' : 'text-danger') : 'text-white' ?>"><?= $answer->answer ?></div>
+                                                <div class="rad-text <?= (substr($answerChoices[$key], 0, 1) == $answer->choice) ? (substr($answerChoices[$key], 0, 1) == $question->correct && (substr($answerChoices[$key], 0, 1) == $answer->choice) ? 'text-success' : 'text-danger') : 'text-white' ?>"><?= $answer->answer ?></div>
                                         </div>
                                 <?php }
                                 } ?>
@@ -47,11 +47,18 @@
         <?php } else { ?>
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <h1 class="text-center"><?= $quiz->quizName ?></h1>
+                    <h1 class="text-center fadeIn"><?= $quiz->quizName ?></h1>
                     <hr class="mx-auto w-25">
                     <?= $message ?>
                     <form id="formQuiz" method="post" class="row text-center justify-content-center mb-5">
                     </form>
+                </div>
+                <hr class="mx-auto w-75 fadeIn">
+                <h2 class="text-center mt-5 fadeIn">Commentaires</h2>
+                <div class="col-8 mt-5 text-center textGreen mb-5 fadeIn">
+                    <div id="allComments" class="row rounded-3 bg-white">
+
+                    </div>
                 </div>
             </div>
         <?php } ?>

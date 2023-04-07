@@ -28,7 +28,7 @@
                                 <td><a href="mailto:<?= $comment->email?>"> <?= $comment->email?></a></td>
                                 <td><?= $validate?></td>
                                 <td class=" optionsTable">
-                                    <a class="" href="/controllers/dashboardValidateCommentCtrl.php?id=<?=$comment->id?>"><i class="fa-solid fa-eye"></i></a>
+                                    <a class="mt-2" href="/controllers/dashboardValidateCommentCtrl.php?id=<?=$comment->id?>"><i class="fa-solid fa-eye"></i></a>
                                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>

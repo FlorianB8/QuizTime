@@ -1,13 +1,13 @@
 <main>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-10 fadeIn">
                 <div class="my-5 d-flex flex-column justify-content-center">
                     <div class="px-3 my-5">
                         <h1 class="mx-5 border-bottom border-3">Catégories de quiz</h1>
                     </div>
                     <div class="text-center">
-                        <div class="row">
+                        <div class="row ">
                             <?php foreach ($categories as $category) { ?>
                                 <div class="col-lg-6 col-12">
                                     <div class="bgDark category p-3 my-4 mx-auto"><!-- Affichage de la catégorie à gauche -->

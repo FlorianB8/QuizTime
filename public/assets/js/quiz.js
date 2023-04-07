@@ -13,7 +13,7 @@ fetch('../../../controllers/ajax/questions.php?id=' + idQuiz.value)
             .then(answers => {
                 var cpt = 1;
                 questions.forEach(question => {
-                    formQuiz.innerHTML += `<div class=" questionBox col-lg-5 col-10 text-white m-5 p-3 bgDark rounded-3"  > 
+                    formQuiz.innerHTML += `<div class=" fadeIn questionBox col-lg-5 col-10 text-white m-5 p-3 bgDark rounded-3"  > 
                         <p class="textGreen">${question.question}</p> 
                         <hr class="mx-auto w-25">
                         <div id="${cpt}"></div>
@@ -47,10 +47,10 @@ fetch('../../../controllers/ajax/addComment.php')
             if (comment.validated_at != null) {
 
                 allComments.innerHTML += `
-            <hr class="w-50 mx-auto">
-            <div class="col-12 my-5">
-                <h4 class="">Auteur : ${comment.pseudo}</h4>
-                <p class="text-center">"${comment.content}"</p>
+                <div class="col-12 flex-column align-items-start d-flex my-5">
+                <h4 class="ms-3">Auteur : ${comment.pseudo}</h4>
+                <p class="mx-auto">"${comment.content}"</p>
+                <hr class="w-50 mx-auto">
             </div> `
             }
         })

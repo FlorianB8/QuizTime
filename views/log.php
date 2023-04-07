@@ -1,7 +1,7 @@
 <main>
     <div class="container-fluid ">
         <?= $message ?>
-        <div class="row justify-content-center mx-auto rounded-4 my-lg-0 my-5">
+        <div class="row justify-content-center mx-auto rounded-4 my-lg-0 my-5 fadeIn">
             <div class="col-12 col-lg-10 p-0 m-0 d-flex w-lg-75 justify-content-center mt-lg-5 mt-0 ">
                 <button id="btnLog" class="btnActiveLogin">Connexion</button>
                 <button id="btnReg" class="btnRegister">Inscription</button>
@@ -42,7 +42,7 @@
                     <p id="errorEmail" class="errorMessage"><?= $error['email'] ?? '' ?></p>
                     <label id="labelPassword" class="textGreen mt-4" for="passwordRegister">Mot de passe* :</label>
                     <input id="passwordRegister" name="passwordRegister" class="fieldForm p-2 " type="password" autocomplete="off" placeholder="*********">
-                    <p class="text-white">Minimum 8 caractères avec : MAJUSCULE , minuscule, chiffre et caractère spécial</p>
+                    <p class=" mt-2 text-danger">Minimum 8 caractères avec : MAJUSCULE , minuscule, chiffre et caractère spécial</p>
                     <p id="errorPassword" class="errorMessage"><?= $error['passwordRegister'] ?? '' ?></p>
                     <label id="labelPasswordConfirm" class="textGreen mt-4" for="passwordConfirmRegister">Mot de passe de confirmation* :</label>
                     <input id="passwordConfirmRegister" name="passwordConfirmRegister" class="fieldForm p-2 " type="password" placeholder="*********">

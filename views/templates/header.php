@@ -29,13 +29,13 @@
                         <div class="collapse navbar-collapse " id="navbarCollapse">
                             <!-- Lien vers chaque page -->
                             <div class="d-flex justify-content-between headerLink">
-                                <div class="mx-lg-0 me-lg-0 d-flex flex-wrap justify-content-center">
+                                <div class="mx-lg-0 me-lg-0 d-flex flex-wrap justify-content-center fadeIn">
                                     <a href="/accueil" class="mx-4 nav-link linkPage">Accueil</a>
                                     <a href="/categories" class="mx-4 nav-link linkPage">Catégories</a>
                                     <a href="/classement" class="mx-4 nav-link linkPage">Classement</a>
                                     <a href="/contactez-nous" class="mx-4 nav-link linkPage" tabindex="-1">Contact</a>
                                 </div>
-                                <div class="mx-lg-0 me-lg-5 d-flex flex-wrap justify-content-around mb-3 mb-lg-0 mt-3 mt-lg-0">
+                                <div class="mx-lg-0 me-lg-5 d-flex flex-wrap justify-content-around mb-3 mb-lg-0 mt-3 mt-lg-0 fadeIn">
                                     <?php if (!isset($_SESSION['user'])) { ?>
                                         <a href="/connexion-inscription" class=" nav-link btnLog linkLog mb-3 mb-lg-0">Connexion</a>
                                     <?php  } else { ?>
