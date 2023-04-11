@@ -1,7 +1,7 @@
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10 ">
+            <div class="col-12 ">
                 <div class="alert alert-<?= $type ?? '' ?> mt-3"><?= $message ?? '' ?></div>
                 <div class="bgDark textGreen mt-5 rounded-3 w-75 mx-auto">
                     <h1 class="text-center pt-3">Modification catégorie</h1>

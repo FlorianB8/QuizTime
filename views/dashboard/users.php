@@ -1,21 +1,30 @@
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10">
+            <div class="col-12">
                 <?=$message?>
                 <h1 class="text-center mt-5">Liste utilisateurs</h1>
                 <hr class="mb-5">
+                <div class="d-flex mb-5 ms-auto w-25">
+                    <select class="form-select ms-auto me-5" name="limit" id="limit">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                    </select>
+                    <input class="form-control ms-auto" placeholder="Rechercher.." id="search" type="search">
+                </div>
                 <table class="tableDashboard">
                     <thead>
                         <tr class="text-center">
                             <td class="titleTable radiusFirst">Pseudo</td>
                             <td class="titleTable">Email</td>
-                            <td class="titleTable">Points</td>
+                            <td class="d- d-lg-block titleTable">Points</td>
                             <td class="titleTable">Role</td>
                             <td class="titleTable lastTable radiusLast"><i class="fa-solid fa-gear"></i></td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="list">
                         <?php foreach ($users as $user) { 
                             if($user->role == 1) {
                                 $userRole = 'Joueur';
@@ -52,6 +61,8 @@
                          } ?>
                     </tbody>
                 </table>
+                <input type="number" hidden id="offset" value="1">
+
             </div>
         </div>
     </div>

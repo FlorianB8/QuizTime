@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/Connect.php');
+require_once(__DIR__ . '/Connect.php');
 
 class Comment
 {
@@ -17,14 +17,14 @@ class Comment
      * 
      * @return void
      */
-    public function setId($value):void
+    public function setId($value): void
     {
         $this->id = $value;
     }
     /**
      * @return int
      */
-    public function getId():int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -34,14 +34,14 @@ class Comment
      * 
      * @return void
      */
-    public function setContent($value):void
+    public function setContent($value): void
     {
         $this->content = $value;
     }
     /**
      * @return string
      */
-    public function getContent():string
+    public function getContent(): string
     {
         return $this->content;
     }
@@ -51,14 +51,14 @@ class Comment
      * 
      * @return void
      */
-    public function setValidated_at($value):void
+    public function setValidated_at($value): void
     {
         $this->validated_at = $value;
     }
     /**
      * @return string
      */
-    public function getValidated_at():string
+    public function getValidated_at(): string
     {
         return $this->validated_at;
     }
@@ -68,14 +68,14 @@ class Comment
      * 
      * @return void
      */
-    public function setCreated_at($value):void
+    public function setCreated_at($value): void
     {
         $this->created_at = $value;
     }
     /**
      * @return string
      */
-    public function getCreated_at():string
+    public function getCreated_at(): string
     {
         return $this->created_at;
     }
@@ -85,14 +85,14 @@ class Comment
      * 
      * @return void
      */
-    public function setDeleted_at($value):void
+    public function setDeleted_at($value): void
     {
         $this->deleted_at = $value;
     }
     /**
      * @return string
      */
-    public function getDeleted_at():string
+    public function getDeleted_at(): string
     {
         return $this->deleted_at;
     }
@@ -102,14 +102,14 @@ class Comment
      * 
      * @return void
      */
-    public function setId_quiz($value):void
+    public function setId_quiz($value): void
     {
         $this->id_quiz = $value;
     }
     /**
      * @return int
      */
-    public function getId_quiz():int
+    public function getId_quiz(): int
     {
         return $this->id_quiz;
     }
@@ -119,14 +119,14 @@ class Comment
      * 
      * @return void
      */
-    public function setId_players($value):void
+    public function setId_players($value): void
     {
         $this->id_players = $value;
     }
     /**
      * @return int
      */
-    public function getId_players():int
+    public function getId_players(): int
     {
         return $this->id_players;
     }
@@ -170,6 +170,27 @@ class Comment
         $users = $sth->fetchAll();
 
         return $users;
+    }
+    public static function getBySearch(string $search, int $limit, int $offset)
+    {
+        $db = Database::dbConnect();
+        $query = 'SELECT `comments`.`id` , `comments`.`content`, `users`.`pseudo`, `users`.`email`, `comments`.`validated_at`
+                FROM `comments`
+                LEFT JOIN `users`
+                ON `comments`.`id_players` = `users`.`id`
+                WHERE `comments`.`content` LIKE :search 
+                OR `users`.`pseudo` LIKE :search
+                OR `users`.`email` LIKE :search
+                LIMIT :limit 
+                OFFSET :offset ;';
+        $sth = $db->prepare($query);
+        $sth->bindValue(':search', '%' . $search . '%');
+        $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+
+        return $result;
     }
 
     /**

@@ -1,7 +1,7 @@
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10 d-flex justify-content-center mt-5">
+            <div class="col-12 d-flex justify-content-center mt-5">
                 <div class="mx-5 cardProfil bgDark textGreen">
                     <div class="">
                         <div class="text-center me-5">

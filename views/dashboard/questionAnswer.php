@@ -1,7 +1,7 @@
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10">
+            <div class="col-12">
                 <?= $message ?>
                 <h1 class="text-center mt-5">Liste des questions</h1>
                 <hr class="mb-5">
@@ -19,8 +19,8 @@
                     <thead>
                         <tr class="text-center">
                             <td class="titleTable radiusFirst">Questions</td>
-                            <td class="titleTable">Points</td>
-                            <td class="titleTable">Réponse correct</td>
+                            <td class="d-md- titleTable">Points</td>
+                            <td class="d-md- titleTable">Réponse correct</td>
                             <td class="titleTable">Quiz</td>
                             <td class="titleTable lastTable radiusLast"><i class="fa-solid fa-gear"></i></td>
                         </tr>

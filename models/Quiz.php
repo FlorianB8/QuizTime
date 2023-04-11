@@ -160,7 +160,27 @@ class Quiz
 
         return $quizzes;
     }
-
+    
+    public static function getBySearch(string $search, int $limit, int $offset)
+    {
+        $db = Database::dbConnect();
+        $query = 'SELECT `quiz`.`name` AS `quizName`, `categories`.`name` AS `categoryName`, `quiz`.`id`
+                FROM `quiz`
+                JOIN `categories`
+                ON `categories`.`id` = `quiz`.`id_categories`
+                WHERE `categories`.`name` LIKE :search 
+                OR `quiz`.`name` LIKE :search
+                LIMIT :limit 
+                OFFSET :offset ;';
+        $sth = $db->prepare($query);
+        $sth->bindValue(':search', '%'.$search.'%');
+        $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        
+        return $result;
+    }
     /**
      * @return bool
      */

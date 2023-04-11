@@ -228,6 +228,25 @@ class User
         return $result;
     }
 
+    public static function getBySearch(string $search, int $limit, int $offset)
+    {
+        $db = Database::dbConnect();
+        $query = 'SELECT *
+                FROM `users`
+                WHERE `pseudo` LIKE :search 
+                OR `email` LIKE :search
+                OR `points` LIKE :search
+                LIMIT :limit 
+                OFFSET :offset ;';
+        $sth = $db->prepare($query);
+        $sth->bindValue(':search', '%'.$search.'%');
+        $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        
+        return $result;
+    }
     /**
      * @param string $email
      * 

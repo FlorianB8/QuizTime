@@ -13,16 +13,18 @@ fetch('../../../controllers/ajax/questions.php?id=' + idQuiz.value)
             .then(answers => {
                 var cpt = 1;
                 questions.forEach(question => {
-                    formQuiz.innerHTML += `<div class=" fadeIn questionBox col-lg-5 col-10 text-white m-5 p-3 bgDark rounded-3"  > 
-                        <p class="textGreen">${question.question}</p> 
-                        <hr class="mx-auto w-25">
-                        <div id="${cpt}"></div>
-                    </div> 
+                    formQuiz.innerHTML += `
+                            <div class=" fadeIn questionBox col-lg-5 col-10 text-white m-5 p-3 bgDark rounded-3"  > 
+                                <p class="textGreen">${question.question}</p> 
+                                <hr class="mx-auto w-25">
+                                <div id="${cpt}"></div>
+                            </div> 
                     `;
                     let divAnswers = document.getElementById(`${cpt}`);
                     answers.forEach(answer => {
                         if (answer.id_questions == question.id) {
-                            divAnswers.innerHTML += `<label class="rad-label">
+                            divAnswers.innerHTML += `
+                                <label class="rad-label">
                                 <input class="rad-input" id="answer${answer.id}" type="radio" name="answer${cpt}" value="${answer.choice}.${question.id}">
                                 <div class="rad-design"></div>
                                 <div class="rad-text">${answer.answer}</div>
@@ -48,10 +50,10 @@ fetch('../../../controllers/ajax/addComment.php')
 
                 allComments.innerHTML += `
                 <div class="col-12 flex-column align-items-start d-flex my-5">
-                <h4 class="ms-3">Auteur : ${comment.pseudo}</h4>
-                <p class="mx-auto">"${comment.content}"</p>
-                <hr class="w-50 mx-auto">
-            </div> `
+                    <h4 class="ms-3">Auteur : ${comment.pseudo}</h4>
+                    <p class="mx-auto">"${comment.content}"</p>
+                    <hr class="w-50 mx-auto">
+                </div> `
             }
         })
     })

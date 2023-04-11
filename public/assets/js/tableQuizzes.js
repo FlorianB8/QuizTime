@@ -1,20 +1,18 @@
 
-function searchQuestions() {
-    fetch('../../../controllers/ajax/questionAnswer.php?search=' + search.value + '&limit=' + limit.value + '&offset=' + offset.value)
+function searchQuiz() {
+    fetch('../../../controllers/ajax/quizzes.php?search=' + search.value + '&limit=' + limit.value + '&offset=' + offset.value)
         .then(response => {
             return (response.json());
         })
-        .then(questions => {
+        .then(quizzes => {
             list.innerHTML = '';
-            questions.forEach(question => {
+            quizzes.forEach(quiz => {
                 list.innerHTML += `
             <tr class="trDetails text-center">
-                <td> ${question.question} </td>
-                <td class="d-md-"> ${question.points} </td>
-                <td class="d-md-"> ${question.correct} </td>
-                <td> ${question.name} </td>
+                <td class=""> ${quiz.quizName} </td>
+                <td class=""> ${quiz.categoryName} </td>
                 <td class="optionsTable">
-                    <a class="mt-2" href="/controllers/dashboardUpdateQuestionAnswerCtrl.php?id=${question.id}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="mt-2" href="/controllers/dashboardUpdateQuizCtrl.php?id=${quiz.id}"><i class="fa-solid fa-eye"></i></a>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete">
                         <i class="fa-solid fa-trash"></i>
                     </button>
@@ -30,7 +28,7 @@ function searchQuestions() {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                        <a class="btn btn-danger" href="/controllers/dashboardDeleteQuestionAnswerCtrl.php?id=${question.id}">Supprimer</a>
+                        <a class="btn btn-danger" href="/controllers/dashboardDeleteQuizCtrl.php?id=${quiz.id}">Supprimer</a>
                     </div>
                 </div>
             </div>
@@ -39,7 +37,7 @@ function searchQuestions() {
         })
 }
 
-searchQuestions();
-search.addEventListener('keyup', searchQuestions)
+searchQuiz();
+search.addEventListener('keyup', searchQuiz)
 
-limit.addEventListener('change', searchQuestions)
+limit.addEventListener('change', searchQuiz)

@@ -91,6 +91,8 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST')) {
         
     }
 
+    $correctAnswers = [$correctAnswer1->correct,$correctAnswer2->correct,$correctAnswer3->correct,$correctAnswer4->correct,$correctAnswer5->correct,$correctAnswer6->correct,$correctAnswer7->correct,$correctAnswer8->correct];
+    // dd($correctAnswers);
     if($nbCorrect >= 0 && $nbCorrect <= 2){
         $messageResult = BAD;
     } else if($nbCorrect > 2 && $nbCorrect <= 5) {

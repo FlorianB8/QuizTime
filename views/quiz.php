@@ -20,7 +20,7 @@
                                     if ($question->id == $answer->id_questions) { ?>
                                         <div>
                                             <label class="rad-label">
-                                                <div class="rad-text <?= (substr($answerChoices[$key], 0, 1) == $answer->choice) ? (substr($answerChoices[$key], 0, 1) == $question->correct && (substr($answerChoices[$key], 0, 1) == $answer->choice) ? 'text-success' : 'text-danger') : 'text-white' ?>"><?= $answer->answer ?></div>
+                                                <div class="rad-text <?= (substr($answerChoices[$key], 0, 1) == $answer->choice) ? (substr($answerChoices[$key], 0, 1) == $question->correct && (substr($answerChoices[$key], 0, 1) == $answer->choice) ? 'text-success' : 'text-danger') : 'text-white' ?>"><?= $answer->answer ?> <?=($correctAnswers[$key] == $answer->choice) ? '<span class="text-success"> <i class="fa-solid fa-arrow-left"></i> Bonne réponse </span>' : ''?></div>
                                         </div>
                                 <?php }
                                 } ?>
@@ -36,8 +36,8 @@
                             <textarea class="col-8" name="content" id="content" rows="5"></textarea>
                             <input id="btnComment" class="btnLog mt-3" type="button" value="Envoyer">
                         </div>
-                        <div class="col-8 mt-5 textGreen">
-                            <div id="allComments" class="row mx-auto bgDark rounded-3 mx-5">
+                        <div class="col-8 mt-5">
+                            <div id="allComments" class="row text-dark bg-white rounded-3 mx-5">
 
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                 </div>
                 <hr class="mx-auto w-75 fadeIn">
                 <h2 class="text-center mt-5 fadeIn">Commentaires</h2>
-                <div class="col-8 mt-5 text-center textGreen mb-5 fadeIn">
+                <div class="col-8 mt-5 text-center mb-5 fadeIn">
                     <div id="allComments" class="row rounded-3 bg-white">
 
                     </div>

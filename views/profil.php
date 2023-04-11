@@ -48,7 +48,7 @@
 
                 <hr class="w-75 mx-auto">
                 <div class="col-12 my-5 text-center d-flex align-items-center justify-content-around w-50 bgDark text-white p-3 rounded-3">
-                    <h3 class="">Publié le : <?= date('d/m/Y', strtotime($comment->validated_at)) ?></h3>
+                    <h3 class=""> <?=($comment->validated_at == null) ? 'En cours de validation' : 'Publié le :'.date('d/m/Y', strtotime($comment->validated_at)) ?></h3>
                     <p class="">"<?= $comment->content ?>"</p>
                     <p>Quiz : <br> <?= $comment->quizName ?></p>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete">

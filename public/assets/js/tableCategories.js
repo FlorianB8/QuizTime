@@ -1,20 +1,17 @@
-
-function searchQuestions() {
-    fetch('../../../controllers/ajax/questionAnswer.php?search=' + search.value + '&limit=' + limit.value + '&offset=' + offset.value)
-        .then(response => {
-            return (response.json());
-        })
-        .then(questions => {
+function searchCategory() {
+    fetch('../../../controllers/ajax/categories.php?search=' + search.value + '&limit=' + limit.value + '&offset=' + offset.value)
+    .then(response => {
+        return (response.json());
+    })
+    .then(categories => {
             list.innerHTML = '';
-            questions.forEach(question => {
+            categories.forEach(category => {
                 list.innerHTML += `
             <tr class="trDetails text-center">
-                <td> ${question.question} </td>
-                <td class="d-md-"> ${question.points} </td>
-                <td class="d-md-"> ${question.correct} </td>
-                <td> ${question.name} </td>
+                <td> ${category.name} </td>
+                <td class="d-md-"><i class="${category.icon}"> </i> </td>
                 <td class="optionsTable">
-                    <a class="mt-2" href="/controllers/dashboardUpdateQuestionAnswerCtrl.php?id=${question.id}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="mt-2" href="/controllers/dashboardUpdateCategoryCtrl.php?id=${category.id}"><i class="fa-solid fa-eye"></i></a>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete">
                         <i class="fa-solid fa-trash"></i>
                     </button>
@@ -30,7 +27,7 @@ function searchQuestions() {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                        <a class="btn btn-danger" href="/controllers/dashboardDeleteQuestionAnswerCtrl.php?id=${question.id}">Supprimer</a>
+                        <a class="btn btn-danger" href="/controllers/dashboardDeleteCategoryCtrl.php?id=${category.id}">Supprimer</a>
                     </div>
                 </div>
             </div>
@@ -39,7 +36,7 @@ function searchQuestions() {
         })
 }
 
-searchQuestions();
-search.addEventListener('keyup', searchQuestions)
+searchCategory();
+search.addEventListener('keyup', searchCategory)
 
-limit.addEventListener('change', searchQuestions)
+limit.addEventListener('change', searchCategory)

@@ -109,6 +109,24 @@ class Category
         return $users;
     }
 
+    public static function getBySearch(string $search, int $limit, int $offset)
+    {
+        $db = Database::dbConnect();
+        $query = 'SELECT `name`, `icon`, `id`
+                FROM `categories`
+                WHERE `name` LIKE :search 
+                OR `icon` LIKE :search
+                LIMIT :limit 
+                OFFSET :offset ;';
+        $sth = $db->prepare($query);
+        $sth->bindValue(':search', '%'.$search.'%');
+        $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        
+        return $result;
+    }
     /**
      * Méthode permettant de récupérer une catégorie ou la liste des catégories
      * @param int $id

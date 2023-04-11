@@ -71,4 +71,4 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                <div class="col-auto col-md-9 col-xl-10 px-sm-2">
