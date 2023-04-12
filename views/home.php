@@ -44,7 +44,7 @@
                     <div class="col-12 col-lg-5 p-0 ">
                         <div class="my-4 d-flex flex-column justify-content-center">
                             <div class="px-3 textGreen">
-                                <h1 class="text-center my-5 fw-bold fadeIn">Quiz populaires</h1>
+                                <h1 class="text-center my-5 fw-bold fadeIn">Gagne des points : </h1>
                                 <div class="delCarousel">
                                     <ul class="row text-center">
                                         <?php foreach ($thirdQuizzes as $quiz) {  ?>

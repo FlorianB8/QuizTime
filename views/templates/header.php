@@ -37,13 +37,13 @@
                                 </div>
                                 <div class="mx-lg-0 me-lg-5 d-flex flex-wrap justify-content-around mb-3 mb-lg-0 mt-3 mt-lg-0 fadeIn">
                                     <?php if (!isset($_SESSION['user'])) { ?>
-                                        <a href="/connexion-inscription" class=" nav-link btnLog linkLog mb-3 mb-lg-0">Connexion</a>
+                                        <a href="/connexion-inscription" class=" nav-link btnLog linkLog mb-3 mb-lg-0 p-1">Connexion</a>
                                     <?php  } else { ?>
                                         <?php if ($_SESSION['user']->role == 2) { ?>
                                             <a href="../../controllers/dashboardHomeCtrl.php" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-hammer"></i></a>
                                         <?php } ?>
                                         <a href="/compte" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-user"></i></a>
-                                        <a href="deconnexion" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                                        <a href="/deconnexion" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                                 </div>
                             </div>
                         <?php } ?>

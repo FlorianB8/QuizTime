@@ -74,10 +74,10 @@ btnComment.addEventListener('click', () => {
 
                     if (comment.validated_at != null) {
                         allComments.innerHTML += `
-                        <hr class="w-50 mx-auto">
-                        <div class="col-12 my-5">
-                            <h4 class="">Auteur : ${comment.pseudo}</h4>
-                            <p class="text-center">"${comment.content}"</p>
+                        <div class="col-12 flex-column align-items-start d-flex my-5">
+                            <h4 class="ms-3">Auteur : ${comment.pseudo}</h4>
+                            <p class="mx-auto">"${comment.content}"</p>
+                            <hr class="w-50 mx-auto">
                         </div> `
                     }
                 })

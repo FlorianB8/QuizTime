@@ -12,13 +12,13 @@ function searchCategory() {
                 <td class="d-md-"><i class="${category.icon}"> </i> </td>
                 <td class="optionsTable">
                     <a class="mt-2" href="/controllers/dashboardUpdateCategoryCtrl.php?id=${category.id}"><i class="fa-solid fa-eye"></i></a>
-                    <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete">
+                    <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete${category.id}">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                     
                 </td>
             </tr>
-        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+        <div class="modal fade" id="delete${category.id}" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

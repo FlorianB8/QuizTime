@@ -50,7 +50,7 @@ define('LOCATION_IMG_QUIZ', $_SERVER['DOCUMENT_ROOT'].'/public/assets/uploads/im
 // Différents messages selon nombre de réponses correct
 define('BAD', 'Pas terrible... On dirait que tu n\'es pas très fan de ce quiz...');
 define('MID', 'Pas mal mais tu peux faire mieux !');
-define('GOOD', 'Bravo ! Tu es très beau et musclé grand fou !');
+define('GOOD', 'Bravo ! Tu es beaucoup trop fort(e) !');
 
 
 ?>

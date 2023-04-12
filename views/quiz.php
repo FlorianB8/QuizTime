@@ -11,6 +11,8 @@
                     <h3 class="text-center">Résultats du quiz :</h3>
                     <p class="text-center">Réponse(s) correcte(s) : <?= $nbCorrect ?>/8</p>
                     <p class="text-center">Points gagné(s) : <?= $_SESSION['user']->nbPointsLast ?></p>
+                    <hr class="mx-auto w-25">
+                    <p class="text-center"> Vas vite voir ton classement <i class="fa-solid fa-arrow-right"></i> <a href="/classement" class="btnLog p-1">Ici</a></p>
                     <form class="row text-center justify-content-center mb-5">
                         <?php foreach ($questions as  $key => $question) { ?>
                             <div class=" questionBox col-lg-5 col-10 text-white m-5 p-3 bgDark rounded-3">
