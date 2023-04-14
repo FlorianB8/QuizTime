@@ -232,7 +232,13 @@ class Question
         return $questions;
     }
 
-    public static function  verifyCorrectAnswer(int $id)
+    /**
+     * Méthode permettant de récupérer la bonne réponse et le nombre de points d'une question
+     * @param int $id
+     * 
+     * @return object
+     */
+    public static function  verifyCorrectAnswer(int $id):object
     {
         $db = Database::dbConnect();
         $query =

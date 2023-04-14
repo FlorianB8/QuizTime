@@ -11,7 +11,7 @@ function searchCategory() {
                 <td> ${category.name} </td>
                 <td class="d-md-"><i class="${category.icon}"> </i> </td>
                 <td class="optionsTable">
-                    <a class="mt-2" href="/controllers/dashboardUpdateCategoryCtrl.php?id=${category.id}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="mt-2" href="/controllers/dashboardUpdateCategoryCtrl.php?id=${category.id}"><i class="fa-solid fa-pen-to-square"></i></a>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete${category.id}">
                         <i class="fa-solid fa-trash"></i>
                     </button>

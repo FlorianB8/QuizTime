@@ -8,20 +8,21 @@ unset($_SESSION['pointsVerify']);
 
 $message = Flash::getMessage();
 
-if (isset($_POST['pseudoRegister']) || isset($_POST['emailRegister']) || isset($_POST['passwordRegister'])) {
+if (isset($_POST['pseudoRegister']) || isset($_POST['emailRegister']) || isset($_POST['passwordRegister'])) { // * Controle si la méthode POST est utilisé pour les données d'inscription
     $error = [];
     // Affichage du bon formulaire
     $hiddenRegister = "";
     $hiddenLogin = "hidden";
+    
     // * Vérification de l'input email REGISTER
     $emailRegister = trim(filter_input(INPUT_POST, 'emailRegister', FILTER_SANITIZE_EMAIL));
-    if (empty($emailRegister)) {
+    if (empty($emailRegister)) { // * Si vide affiche un message d'erreur
         $error['email'] = 'Champ obligatoire';
     } else {
-        if (!filter_var($emailRegister, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($emailRegister, FILTER_VALIDATE_EMAIL)) { // * Si l'email ne correspond pas au bon format affiche un message d'erreur
             $error['email'] = 'Adresse mail non valide';
         }
-        if (User::isMailExist($emailRegister)) {
+        if (User::isMailExist($emailRegister)) { // * Si l'email existe déjà dans la bdd affiche un message d'erreur
             $error['email'] = 'Adresse mail déjà existante dans la base de données';
         }
     }

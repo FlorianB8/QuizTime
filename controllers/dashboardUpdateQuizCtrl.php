@@ -20,17 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quizName = trim(filter_input(INPUT_POST, 'quizName', FILTER_SANITIZE_SPECIAL_CHARS));
     if (empty($quizName)) {
         $error['quizName'] = 'Champ obligatoire';
-    } else {
-        $validateQuizName = filter_var($quizName, FILTER_VALIDATE_REGEXP,  array("options" => array("regexp" => '/' . REGEXP_TEXT . '/')));
-        if (!$validateQuizName) {
-            $error['quizName'] = 'Veuillez renseigner un nom de quiz valide !';
-        }
     }
     // * -----------------------------
 
  
   
-
+    // * Vérification de l'input category
     $category = intval(filter_input(INPUT_POST, 'category', FILTER_SANITIZE_NUMBER_INT));
     if(empty($category)){
         $error['category'] = 'Catégorie obligatoire';

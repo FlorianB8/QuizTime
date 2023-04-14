@@ -13,7 +13,7 @@ function searchCategory() {
                 <td> ${comment.email} </td>
                 <td>${(comment.validated_at == null) ? '<i class="fa-solid fa-xmark text-danger"></i>' : '<i class="fa-solid fa-check text-success"></i>'} </td>
                 <td class="optionsTable">
-                    <a class="mt-2" href="/controllers/dashboardValidateCommentCtrl.php?id=${comment.id}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="mt-2" href="/controllers/dashboardValidateCommentCtrl.php?id=${comment.id}"><i class="fa-solid fa-pen-to-square"></i></a>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete${comment.id}">
                         <i class="fa-solid fa-trash"></i>
                     </button>

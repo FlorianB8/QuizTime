@@ -12,7 +12,7 @@ function searchQuiz() {
                 <td class=""> ${quiz.quizName} </td>
                 <td class=""> ${quiz.categoryName} </td>
                 <td class="optionsTable">
-                    <a class="mt-2" href="/controllers/dashboardUpdateQuizCtrl.php?id=${quiz.id}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="mt-2" href="/controllers/dashboardUpdateQuizCtrl.php?id=${quiz.id}"><i class="fa-solid fa-pen-to-square"></i></a>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete${quiz.id}">
                         <i class="fa-solid fa-trash"></i>
                     </button>

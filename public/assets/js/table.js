@@ -14,7 +14,7 @@ function searchQuestions() {
                 <td class="d-md-"> ${question.correct} </td>
                 <td> ${question.name} </td>
                 <td class="optionsTable">
-                    <a class="mt-2" href="/controllers/dashboardUpdateQuestionAnswerCtrl.php?id=${question.id}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="mt-2" href="/controllers/dashboardUpdateQuestionAnswerCtrl.php?id=${question.id}"><i class="fa-solid fa-pen-to-square"></i></a>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete${question.id}">
                         <i class="fa-solid fa-trash"></i>
                     </button>

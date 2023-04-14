@@ -29,7 +29,7 @@
                                 <td><?= $quiz->quizName?></td>
                                 <td><?= $quiz->categoryName?></td>
                                 <td class=" optionsTable">
-                                    <a class="mt-2" href="/controllers/dashboardQuizCtrl.php?id=<?=$quiz->id_quiz?>"><i class="fa-solid fa-eye"></i></a>
+                                    <a class="mt-2" href="/controllers/dashboardQuizCtrl.php?id=<?=$quiz->id_quiz?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>

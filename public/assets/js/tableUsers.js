@@ -13,7 +13,7 @@ function searchUser() {
                 <td class="d- d-lg-block">${user.points} </td>
                 <td>${(user.role == 2) ? 'Admin' : 'Joueur'} </td>
                 <td class="optionsTable">
-                    <a class="mt-2" href="/controllers/dashboardUpdateUserCtrl.php?id=${user.id}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="mt-2" href="/controllers/dashboardUpdateUserCtrl.php?id=${user.id}"><i class="fa-solid fa-pen-to-square"></i></a>
                     <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#delete${user.id}">
                         <i class="fa-solid fa-trash"></i>
                     </button>
