@@ -24,7 +24,6 @@ try {
         header('location: /accueil');
     }
     unset($_SESSION['user']);
-    session_destroy();
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
     include_once(__DIR__ . '/../views/templates/header.php');

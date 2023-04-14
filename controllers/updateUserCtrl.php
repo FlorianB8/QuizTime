@@ -6,6 +6,7 @@ require_once(__DIR__ . '/../config/init.php');
 unset($_SESSION['pointsVerify']);
 
 $id = $_SESSION['user']->id;
+$user = User::get($id);
 
 if(!isset($_SESSION['user'])){
     Flash::setMessage('<i class="me-3 fa-solid fa-ban fa-beat" style="color: #f50031;"></i>  Vous devez être connecté pour accéder à votre profil !', 'danger');
@@ -40,13 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = filter_input(INPUT_POST, 'password');
     $validatePassword = filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEXP_PASSWORD . '/')));
     if (empty($password)) {
-        $error['password'] = 'Champs mot de passe obligatoire';
+       $password = $user->password;
     } else {
         if (!$validatePassword) {
             $error['password'] = 'Mot de passe non valide';
         }
         // * Encodage de mot de passe (HASH)
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $password = password_hash($password, PASSWORD_DEFAULT);
     }
     // * -----------------------------
 
@@ -54,16 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $userUpdate = new User();
         $userUpdate->setPseudo($pseudo);
         $userUpdate->setEmail($email);
-        $userUpdate->setPassword($passwordHash);
+        $userUpdate->setPassword($password);
         $result = $userUpdate->updateUser($id);
         if ($result == false) {
             Flash::setMessage(USER_NOT_UPDATE,'danger');
-            header('location: ./profilCtrl.php');
+            header('location: /compte');
         } else {
             $_SESSION['user']->pseudo = $pseudo;
             $_SESSION['user']->email = $email;
             Flash::setMessage(USER_UPDATE,'success');
-            header('location: ./profilCtrl.php');
+            header('location: /compte');
         }
     }
 }
