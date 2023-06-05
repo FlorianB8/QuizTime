@@ -5,6 +5,7 @@
             <div class="col-12 col-lg-6 rounded-3 formContact">
                 <div class="px-3 my-5">
                     <h1 class="textGreen text-center">Contact</h1>
+                    <p class="textGreen text-center">Utilise ce formulaire pour nous contacter</p>
                 </div>
                 <!-- Formulaire de contact -->
                 <form class="d-flex flex-column my-5 contact" method="post">

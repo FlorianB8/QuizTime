@@ -7,6 +7,7 @@ RewriteRule ^contactez-nous$ /controllers/contactCtrl.php
 RewriteRule ^connexion-inscription$ /controllers/logCtrl.php
 RewriteRule ^deconnexion$ /controllers/signOutCtrl.php
 RewriteRule ^mentions-legales$ /controllers/legalNoticesCtrl.php
+RewriteRule ^cgu$ /controllers/cguCtrl.php
 RewriteRule ^compte$ /controllers/profilCtrl.php
 RewriteRule ^les-quiz$ /controllers/quizzesCtrl.php
 RewriteRule ^jouer-quiz$ /controllers/quizCtrl.php

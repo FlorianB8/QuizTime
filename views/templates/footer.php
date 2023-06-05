@@ -25,8 +25,9 @@
                             <div class="navbar-nav textGreen my-5">
                                 <h2 class="fw-bold">Informations</h2>
                                 <hr class="textGreen">
-                                <a class="linkPage nav-link" href="/mentions-legales">Mentions légales</a>
                                 <a class="linkPage nav-link" href="/contactez-nous">Contactez nous</a>
+                                <a class="linkPage nav-link" href="/mentions-legales">Mentions légales</a>
+                                <a class="linkPage nav-link" href="/cgu">CGU</a>
                             </div>
                         </div>
                     </div>

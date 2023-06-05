@@ -10,6 +10,7 @@
                 <p class="text-white registerText">Pas encore inscrit ? <i class="fa-solid fa-arrow-turn-up fa-bounce"></i></p>
                 <div class="mb-5">
                     <h1 class="textGreen text-center fw-bold">Connexion</h1>
+                    <p class="textGreen text-center">Connecte toi et viens jouer à nos quiz !</p>
                     <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour la connexion -->
@@ -28,8 +29,8 @@
             </div>
             <div id="register" class="col-12 col-lg-10 formLog bgDark w-lg-75" <?= $hiddenRegister ?? 'hidden' ?>>
                 <div class="my-5">
-                    <h1 class="textGreen text-center fw-bold">Pas encore inscrit ?</h1>
-                    <h2 class="textGreen text-center fw-bold"> Rejoins nous !</h2>
+                    <h1 class="textGreen text-center fw-bold">Inscription</h1>
+                    <p class="textGreen text-center"> Inscris toi et deviens le meilleur !</p>
                     <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour l'inscription -->

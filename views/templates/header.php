@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="../../public/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geologica&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../public/assets/css/mediaScreen.css">
     <link rel="shortcut icon" href="../../public/assets/imgs/logo2.png" type="image/x-icon">
     <title>QuizTime</title>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="mx-lg-0 me-lg-5 d-flex flex-wrap justify-content-around mb-3 mb-lg-0 mt-3 mt-lg-0 fadeIn">
                                     <?php if (!isset($_SESSION['user'])) { ?>
-                                        <a href="/connexion-inscription" class=" nav-link btnLog linkLog mb-3 mb-lg-0 p-1">Connexion</a>
+                                        <a href="/connexion-inscription" class=" nav-link btnHeader linkLog mb-3 mb-lg-0 p-1">Connexion/Inscription</a>
                                     <?php  } else { ?>
                                         <?php if ($_SESSION['user']->role == 2) { ?>
                                             <a href="../../controllers/dashboardHomeCtrl.php" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-hammer"></i></a>
