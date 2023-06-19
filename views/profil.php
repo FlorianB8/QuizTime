@@ -23,7 +23,11 @@
                         <p class="text-danger text-center">**********</p>
                     </div>
                 </div>
-                <a class="btnLog mx-auto p-2" href="/modifier">Modifier</a>
+                <?php if ($_SESSION['user']->email == 'utilisateurtest@gmail.com') { ?>
+                    <p class=" mx-auto p-2 text-danger">Pas de modification possible pour l'Utilisateur Test</p>
+                <?php } else { ?>
+                    <a class=" mx-auto p-2 text-danger btnLog" href="/modifier">Modifier</a>
+                <?php } ?>
                 <h1 class="textGreen mt-5 mb-3">Statistiques quiz</h1>
                 <hr class="mx-auto w-75">
                 <div class=" text-center mb-3">

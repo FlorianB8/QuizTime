@@ -1,10 +1,10 @@
 <main>
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <?= $message ?>
         <div class="row justify-content-center mx-auto rounded-4 my-lg-0 my-5 fadeIn">
             <div class="col-12 col-lg-10 p-0 m-0 d-flex w-lg-75 justify-content-center mt-lg-5 mt-0 ">
-                <button id="btnLog" class="btnActiveLogin">Connexion</button>
-                <button id="btnReg" class="btnRegister">Inscription</button>
+                <button id="btnLog" class="btnActiveLogin ">Connexion</button>
+                <button id="btnReg" class="btnRegister ">Inscription</button>
             </div>
             <div id="login" class="col-12 col-lg-10 w-lg-75 formLog bgDark  " <?= $hiddenLogin ?? '' ?>>
                 <p class="text-white registerText">Pas encore inscrit ? <i class="fa-solid fa-arrow-turn-up fa-bounce"></i></p>
@@ -30,7 +30,7 @@
             <div id="register" class="col-12 col-lg-10 formLog bgDark w-lg-75" <?= $hiddenRegister ?? 'hidden' ?>>
                 <div class="my-5">
                     <h1 class="textGreen text-center fw-bold">Inscription</h1>
-                    <p class="textGreen text-center"> Inscris toi et deviens le meilleur !</p>
+                    <p class="textGreen text-center p-2"> Inscris toi et deviens le meilleur !</p>
                     <hr class="textGreen">
                 </div>
                 <!-- Formulaire pour l'inscription -->

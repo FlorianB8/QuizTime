@@ -3,6 +3,7 @@ require_once(__DIR__ . '/../config/constants.php');
 require_once(__DIR__ . '/../models/User.php');
 require_once(__DIR__ . '/../models/Flash.php');
 require_once(__DIR__ . '/../config/init.php');
+
 $script = 'log';
 unset($_SESSION['pointsVerify']);
 
@@ -72,10 +73,15 @@ if (isset($_POST['pseudoRegister']) || isset($_POST['emailRegister']) || isset($
             header('location: ./controllers/logCtrl.php');
         } else {
             $to= $user->getEmail();
+            $mailAdmin = "billaultflorian80@gmail.com";
             $subject = 'Validation compte';
             $link = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/controllers/emailValidateCtrl.php?email='.$user->getEmail();
-            $mailValidate = 'Bonjour <br> Merci de valider votre compte en cliquant juste <a href="'.$link.'">ici</a>';
-            mail($to, $subject, $mailValidate);
+            $mailValidate = '<p>Bonjour <br> Merci de valider votre compte en cliquant juste <a href="'.$link.'">ici</a></p>';
+            $headers ='MIME-Version: 1.0'."\r\n"; 
+            $headers .='Content-type:text/html;charset=UTF-8'."\r\n"; 
+            $headers .='From: <'.$mailAdmin.'>'."\r\n"; 
+
+            mail($to, $subject, $mailValidate, $headers);
             Flash::setMessage(USER_ADD, 'success');
             header('location: /connexion-inscription');
         }

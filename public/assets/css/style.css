@@ -112,6 +112,9 @@ a:hover {
   font-size: 1.5rem;
   border-radius: 5px;
   background-color: #7EA16B;
+  display: flex;
+  align-items: center;
+  height: 7vh;
   color: #FAFAFF;
 }
 .btnHeader:hover {
@@ -215,12 +218,6 @@ p {
   padding: 0;
 }
 
-.imgQuizCarousel {
-  width: 100%;
-  border: 0px;
-  border-radius: 20px;
-}
-
 
 /* ----------------------------------- */
 
@@ -259,6 +256,10 @@ svg {
 }
 td {
   padding: 10px;
+}
+
+li {
+  list-style-type:none ;
 }
 
 /* Profil utilisateur dashboard */

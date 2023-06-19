@@ -29,14 +29,14 @@
     }
 
     .imgQuiz {
-        width: 90vw;
+        width: 80vw;
+        border-radius: 5vw;
     }
 
     /* Formulaire de chaque page */
     .registerText {
         margin-top: 10px;
-        margin-bottom: 20px;
-        margin-left: 25vw;
+        margin-left: 40vw;
     }
     .formLog,
     .formContact {
@@ -149,7 +149,11 @@
         width: 125px;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
-
+    .registerText {
+        margin-top: 10px;
+        margin-left: 48vw;
+    }
+   
 }
 
 /* --------------------------- */
@@ -174,6 +178,7 @@
         width: 125px;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
+    
 
     main {
         min-height: 100vh;
@@ -271,3 +276,13 @@
 }
 
 /* --------------------------- */
+
+@media screen and (max-width: 500px) {
+
+
+.registerText {
+    margin-top: 10px;
+    margin-left: 20vw;
+}
+
+}

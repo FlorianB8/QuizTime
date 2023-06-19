@@ -1,9 +1,9 @@
 <main>
     <div class="container-fluid">
         <div class="row justify-content-center fadeIn">
-            <div class="col-8 mb-5">
+            <div class="col-12 col-lg-8 mb-5">
                 <div class="px-3 my-5">
-                    <h1 class="mx-5 border-bottom border-3 fw-bold">Classement joueurs</h1>
+                    <h1 class="mx-5 border-bottom border-3 text-center fw-bold">Classement joueurs</h1>
                 </div>
                 <!-- Classement des 3 meilleurs utilisateurs -->
                 <div class="m-lg-5 my-5 d-flex flex-column justify-content-center textDark ranking">
@@ -35,10 +35,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8 my-5">
+            <div class="col-12 col-lg-8 my-5">
                 <div class="my-4 d-flex flex-column justify-content-center">
                     <div class="px-3">
-                        <h1 class=" mt-5 fw-bold">Améliores ton classement :</h1>
+                        <h1 class=" mt-5 text-center fw-bold">Améliores ton classement</h1>
                         <hr>
                         <div class="delCarousel">
                             <ul class="row text-center justify-content-center">

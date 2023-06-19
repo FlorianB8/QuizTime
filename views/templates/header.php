@@ -28,7 +28,7 @@
                         </button>
                         <div class="collapse navbar-collapse " id="navbarCollapse">
                             <!-- Lien vers chaque page -->
-                            <div class="d-flex justify-content-between headerLink">
+                            <div class="d-flex flex-wrap justify-content-center justify-content-lg-between headerLink">
                                 <div class="mx-lg-0 me-lg-0 d-flex flex-wrap justify-content-center fadeIn">
                                     <a href="/accueil" class="mx-4 nav-link linkPage">Accueil</a>
                                     <a href="/categories" class="mx-4 nav-link linkPage">Catégories</a>
@@ -42,11 +42,11 @@
                                         <?php if ($_SESSION['user']->role == 2) { ?>
                                             <a href="../../controllers/dashboardHomeCtrl.php" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-hammer"></i></a>
                                         <?php } ?>
-                                        <a href="/compte" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-user"></i></a>
-                                        <a href="/deconnexion" class=" nav-link btnLog linkLog mb-3 mb-lg-0"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                                        <a href="/compte" class=" nav-link btnLog linkLog mb-3 mx-2 mb-lg-0 my-md-2"><i class="fa-solid fa-user"></i></a>
+                                        <a href="/deconnexion" class=" nav-link btnLog linkLog mb-3 mx-2 mb-lg-0 my-md-2"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                                    <?php } ?>
                                 </div>
                             </div>
-                        <?php } ?>
                         <!-------------------------->
                         </div>
                     </div>
